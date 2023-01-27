@@ -44,7 +44,7 @@ h1 span {
 
 .ul-button li {
     margin: 0 0 32px;
-    max-width: 360px;
+    max-width: 340px;
 }
 
 .ul-button li > a,
@@ -137,7 +137,7 @@ h1 span {
 }
 
 .ul-career {
-    max-width:360px;
+    max-width:340px;
     width: calc(100vw - 32px);
     padding: 0 16px;
     text-align: left;
