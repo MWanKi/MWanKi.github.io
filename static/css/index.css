@@ -133,6 +133,7 @@ h1 span {
 }
 
 .ul-career {
+    max-width:320px;
     width: calc(100vw - 32px);
     padding: 0 16px;
     text-align: left;
