@@ -8,34 +8,29 @@
    </head>
    <style>
         @font-face {
-            font-family: 'Cafe24Ssurround';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Cafe24SsurroundAir';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+            font-family: 'MaruBuri-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
             font-weight: normal;
             font-style: normal;
         }
         #container {
             width:100vw;
             height:100vh;
-            color:#fff;
+            color:#333;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
         .quotes_wrapper {
+            position: relative;
             width: 392px;
             height: 315px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-image: url(../images/noshooni_bg.jpg);
+            background-image: url(../images/organic.png);
             background-position: center center;
             background-size: contain;
             background-repeat: no-repeat;
@@ -44,14 +39,18 @@
             width: 70%;
             text-align: center;
             font-size: 20px;
-            line-height: 1.5;
+            line-height: 1.9;
             letter-spacing: -0.025em;
             word-break: keep-all;
-            font-family: 'Cafe24Ssurround';
+            font-family: 'MaruBuri-Regular';
         }
         .quotes_wrapper .txt-human {
+            position: absolute;
+            bottom:20px;
+            width:62%;
             font-size: 16px;
-            font-family: 'Cafe24SsurroundAir';
+            text-align:right;
+            font-family: 'MaruBuri-Regular';
         }
    </style>
    <body>
@@ -72,7 +71,7 @@
         let dateFormat = year + ". " + month + ". " + date;
 
         let data = [
-            {
+        {
                 quotes: "새로운 목표를 세우거나, 새로운 삶의 꿈을 꾸기 위해, 늦은 때란 결코 존재하지 않는다. ",
                 speaker: "c.s.루이스",
                 date: "2023. 3. 8",
@@ -724,7 +723,7 @@
             },
             {
                 quotes: "상처 느끼기를 거부하면 상처 자체가 사라진다. ",
-                speaker: "-마르쿠스 아우렐리우스-",
+                speaker: "마르쿠스 아우렐리우스",
                 date: "2023. 7. 16",
             },
             {
@@ -744,7 +743,7 @@
             },
             {
                 quotes: "환경이 사람을 만드는 게 아니다. 환경은 그가 어떤 사람인지 드러낼 뿐이다. ",
-                speaker: "-에픽테토스-",
+                speaker: "에픽테토스",
                 date: "2023. 7. 20",
             },
             {
@@ -764,7 +763,7 @@
             },
             {
                 quotes: "운명은 의지를 가진 자는 앞에서 인도하고, 주저하는 자는 질질 끌고 간다. ",
-                speaker: "-세네카-",
+                speaker: "세네카",
                 date: "2023. 7. 24",
             },
             {
@@ -784,7 +783,7 @@
             },
             {
                 quotes: "갖지 못한 것에 한탄하지 않고 가진 것을 기뻐하는 자가 현명한 사람이다. ",
-                speaker: "-에픽테토스-",
+                speaker: "에픽테토스",
                 date: "2023. 7. 28",
             },
             {
@@ -804,7 +803,7 @@
             },
             {
                 quotes: "인생의 행복은 생각의 질에 달려있다. 그러니 그에 맞게 경계하라. 그리고 미덕이나 이성적 본성에 맞지 않는 생각은 품지 마라. ",
-                speaker: "-마르쿠스 아우렐리우스-",
+                speaker: "마르쿠스 아우렐리우스",
                 date: "2023. 8. 1",
             },
             {
@@ -824,7 +823,7 @@
             },
             {
                 quotes: "모든 불운이 하나의 덩어리에서 출발하고, 모든 사람이 거기서 같은 양을 가져가야만 한다면 대부분의 사람은 불평 없이 자기 몫을 챙겨 떠날 것이다. ",
-                speaker: "-소크라테스-",
+                speaker: "소크라테스",
                 date: "2023. 8. 5",
             },
             {
@@ -844,92 +843,92 @@
             },
             {
                 quotes: "기분이 안 좋을 때 일어나는 독특한 현상이 하나 있다. 사실이 아닌 얘기를 스스로에게 들려주어 비참함을 만들어내고 자신을 바보로 만드는 것. ",
-                speaker: "-데이비드 D. 번즈-",
+                speaker: "데이비드 D. 번즈",
                 date: "2023. 8. 9",
             },
             {
                 quotes: "안전하고 싶은 욕망은 모든 훌륭하고 고귀한 모험에 방해가 된다. ",
-                speaker: "-타키루스-",
+                speaker: "타키루스",
                 date: "2023. 8. 10",
             },
             {
                 quotes: "결정의 순간이 왔을 때 최선은 옳은 일을 하는 것이다. 차선은 틀린 일을 하는 것이다. 최악은 아무것도 하지 않는 것이다. ",
-                speaker: "-시어도어 루스벨트-",
+                speaker: "시어도어 루스벨트",
                 date: "2023. 8. 11",
             },
             {
                 quotes: "내가 아는 것은 내가 아무것도 모른다는 사실 뿐이다. ",
-                speaker: "-소크라테스-",
+                speaker: "소크라테스",
                 date: "2023. 8. 12",
             },
             {
                 quotes: "더 나은 사람이 되고 싶다면 바보 같고 멍청하게 여겨질 것을 감수하라. ",
-                speaker: "-에픽테토스-",
+                speaker: "에픽테토스",
                 date: "2023. 8. 13",
             },
             {
                 quotes: "훌륭한 사상은 생각이 깊은 사람에게만 말을 걸지만, 훌륭한 행동은 모든 인류에게 말을 건다. ",
-                speaker: "-시어도어 루스벨트-",
+                speaker: "시어도어 루스벨트",
                 date: "2023. 8. 14",
             },
             {
                 quotes: "행동이 꼭 행복을 가져오지는 않을 수 있지만, 행동 없이는 행복도 없다. ",
-                speaker: "-벤저민 디즈레일리-",
+                speaker: "벤저민 디즈레일리",
                 date: "2023. 8. 15",
             },
             {
                 quotes: "우리는 공정한 행동을 함으로써 공정해지고, 절제하는 행동을 함을로써 절제되고, 용감한 행동을 함으로써 용감해진다. ",
-                speaker: "-아리스토텔레스-",
+                speaker: "아리스토텔레스",
                 date: "2023. 8. 16",
             },
             {
                 quotes: "아무것도 하지 않으면 의심과 공포가 생긴다. 행동하면 자신감과 용기가 생긴다. 두려움을 정복하고 싶다면, 집에 앉아서 생각만 하지 말고 나가서 바쁘게 움직여라. ",
-                speaker: "-데일카네기-",
+                speaker: "데일카네기",
                 date: "2023. 8. 17",
             },
             {
                 quotes: "세상에 노력과 고통, 어려움이 아닌 것 중에 가지거나 할 가치가 없는 것은 없다. ",
-                speaker: "-시어도어 루스벨트-",
+                speaker: "시어도어 루스벨트",
                 date: "2023. 8. 18",
             },
             {
                 quotes: "어떤 사상을 받아들이지 않고도 생각해볼수 있는 것은 교육 받은 사람의 특징이다. ",
-                speaker: "-아리스토텔레스-",
+                speaker: "아리스토텔레스",
                 date: "2023. 8. 19",
             },
             {
                 quotes: "불가능하다고 생각하지만 않는다면 우리는 더 많은 것을 이룰 수 있다. ",
-                speaker: "-빈스 롬바르디-",
+                speaker: "빈스 롬바르디",
                 date: "2023. 8. 20",
             },
             {
                 quotes: "누구도 같은 강에 두번 발을 담글 수 없다. ",
-                speaker: "-헤라클레이토스-",
+                speaker: "헤라클레이토스",
                 date: "2023. 8. 21",
             },
             {
                 quotes: "스스로를 통제하지 못하는 사람은 결코 자유롭지 않다. ",
-                speaker: "-에픽테토스-",
+                speaker: "에픽테토스",
                 date: "2023. 8. 22",
             },
             {
                 quotes: "죽음을 내 인생으로 끌여들여, 인정하고, 정면으로 응시하면, 죽음이라는 불안과 삶의 좀스러움으로부터 해방될 것이다. 그제야 나는 마음껏 나 자신이 될 것이다. ",
-                speaker: "-마르틴 하이데거-",
+                speaker: "마르틴 하이데거",
                 date: "2023. 8. 23",
             },
             {
                 quotes: "매사가 당신 뜻대로 되기를 바라지 마라. 일어나는 대로 일어나기를 바라라. 그러면 모든게 괜찮을 것이다. ",
-                speaker: "-에픽테토스-",
+                speaker: "에픽테토스",
                 date: "2023. 8. 24",
             },
             {
                 quotes: "당신이 '할 거라고' 말하는 일 말고, 당신이 '하는' 일이 당신이다. ",
-                speaker: "-카를 융-",
+                speaker: "카를 융",
                 date: "2023. 8. 25",
             },
             {
                 quotes: "시간을 갖고 심사숙고하라. 하지만 행동할 시점이 오면 생각은 그만두고 뛰어들어라. ",
-                speaker: "-나폴레옹 보나파르트-",
+                speaker: "나폴레옹 보나파르트",
                 date: "2023. 8. 26",
             },
         ];
@@ -939,7 +938,7 @@
             if (date === dateFormat) {
                 $("title").text(quotes + " | 노슈니");
                 $(".txt-title").text(quotes);
-                $(".txt-human").text(speaker);
+                $(".txt-human").text("- "+speaker+" -");
             }
         });
       </script>
