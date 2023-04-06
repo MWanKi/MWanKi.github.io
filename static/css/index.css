@@ -185,3 +185,7 @@ h1 span {
 .box-snc .btn-app-download img {
     width: 100%;
 }
+
+.ul-button li .txt-cta.disabled {
+    background: grey;
+}
