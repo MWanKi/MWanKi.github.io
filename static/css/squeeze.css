@@ -162,7 +162,11 @@ button {
 button i {
     color:rgb(255, 255, 255);
     display: inline-block;
-    margin-left:4px;
+    margin:0 4px;
+}
+
+button i.fa-spinner {
+    display: none;
 }
 
 /* input */
