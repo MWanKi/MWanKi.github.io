@@ -146,7 +146,7 @@ button {
     border-color: rgba(0, 0, 0, 0.13);
     border-style: solid;
     border-radius: 3px;
-    margin-top: 15px;
+    margin-top: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
     box-shadow: 0px 4px 8px 0px rgba(0, 28, 56, 0.15);
@@ -157,6 +157,11 @@ button {
     font-weight: 800;
     letter-spacing: 0;
     line-height: 100%;
+    transition: background .2s ease;
+}
+
+button:hover {
+    background: #be420c;
 }
 
 button i {
@@ -172,7 +177,7 @@ button i.fa-spinner {
 /* input */
 [data-page-element="Input/V1"] {
     margin: 0px auto;
-    margin-top: 15px;
+    margin-top: 10px;
     font-family: inherit;
     position: relative;
     padding: 0 !important;
@@ -347,4 +352,31 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
    -webkit-transition-delay: 9999s;
    transition-delay: 9999s;
+}
+
+.box-book {
+    margin-bottom: 12px;
+}
+
+.box-book img {
+    max-width:100%;
+    border-radius: 10px;
+}
+
+.box-book .txt-book-desc {
+    font-size:12px;
+    margin: 12px 0;
+}
+
+.box-book li {
+    font-size:12px;
+    margin: 6px 0;
+}
+
+.box-book li span::before {
+    content: "•";
+    color: #000;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
 }
