@@ -50,8 +50,8 @@
                 무료 전자책 신청: Step 1 of 2
             </p>
             <form id="contact-form" method="post" action="#">
-                <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block hasValue" type="name">
-                    <input class="elFormItem elInput inputHolder" type="name" name="name" placeholder="이름" maxlength="">
+                <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block" type="name">
+                    <input class="elFormItem elInput inputHolder" id="name" type="name" name="name" placeholder="이름" maxlength="">
                     <div class="elLabel">
                         <div class="borderHolder"></div>
                     <div class="borderHolder labelText">
@@ -62,7 +62,7 @@
                 <div class="inputHolder" data-input-status-type="true"></div>
                 </div>
 				<div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block " type="email">
-                    <input class="elFormItem elInput inputHolder" type="email" name="email" placeholder="이메일" maxlength="">
+                    <input class="elFormItem elInput inputHolder" id="email" type="email" name="email" placeholder="이메일" maxlength="">
                     <div class="elLabel">
                         <div class="borderHolder"></div>
                     <div class="borderHolder labelText">
@@ -80,7 +80,7 @@
 			<div class="box-term">
 				<p class="txt-term">
                     <i data-page-element="IconNode" class="fas fa-lock"></i>
-                    귀하의 정보를 제공함으로써 귀하는 <a href="">서비스 약관</a> 및 <a href="">개인정보보호정책</a>에 따라 귀하의 정보 수집 및 사용에 동의하는 것입니다.
+                    귀하의 정보를 제공함으로써 귀하는 <a href="#">서비스 약관</a> 및 <a href="#">개인정보보호정책</a>에 따라 귀하의 정보 수집 및 사용에 동의합니다.
                 </a>
 			</div>
         </div>
@@ -91,11 +91,35 @@
 		$('#contact-form').submit(function (e) {
 			e.preventDefault();
 			var name = $('#name').val();
+            if (!name) {
+                $('#name').focus();
+                return;
+            }
+
 			var email = $('#email').val();
-			google.script.run.withSuccessHandler(function () {
-				alert('제출되었습니다!');
-				$('#contact-form')[0].reset();
-			}).submitForm(name, email);
+            if (!email) {
+                $('#email').focus();
+                return;
+            }
+
+            if (name.length && email.length) {
+                $.ajax({
+                    url: "https://script.google.com/macros/s/AKfycbznmuRLAH6hr_pVDHSFDDkUE5Z0wK_2y_ZCaJAn2UzIgc2MtLeEafXSUrwbdPmFUyKG/exec",
+                    data: {
+                        name: name,
+                        email: email,
+                    },
+                    type: "POST",
+                    success: function(data){
+                        console.log(data);
+                        console.log('Success');
+                    },
+                    error: function(request, status, error){
+                        console.log('Error');
+                        alert("문제가 발생했습니다. @mingzan.dev로 DM주세요!")
+                    }
+                });
+            }
 		});
 
         $('input').focus(function() {

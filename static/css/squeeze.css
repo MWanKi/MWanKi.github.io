@@ -178,7 +178,7 @@ button i {
 
 [data-page-element="Input/V1"] .elInput {
     width: 100%;
-    font-size: 12px;
+    font-size: 16px;
     background: transparent;
     border: 0;
     z-index: 1;
@@ -320,11 +320,13 @@ button i {
     border-bottom-color: transparent !important;
 }
 [data-page-element="Input/V1"].elInputFocused .labelText, [data-page-element="Input/V1"].hasValue .labelText {
+    font-size:12px;
     border-top-color: transparent !important;
 }
 
 input {
     outline:none;
+    font-size: 16px;
 }
 
 input::placeholder {
