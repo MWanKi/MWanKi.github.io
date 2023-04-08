@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GJTHG7JNB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2GJTHG7JNB');
+    </script>
+	<title>밍잔 | 무료 전자책 신청하기</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW, NOARCHIVE">
+    <meta name="GOOGLEBOT" content="NOSNIPPET">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="naver-site-verification" content="22d00cae0c6f71c8eb815194f12fdda4890c0713" />
+    <link rel="shortcut icon" href="static/images/ico.png">
+	<link rel="stylesheet" href="./static/css/reset.css">
+	<link rel="stylesheet" href="./static/css/squeeze.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<div class="container">
+        <div class="box-content">
+            <div class="box-header">
+                <div class="box-profile">
+                    <img src="./static/images/profile_big.jpg" alt="프로필">
+                </div>
+                <div class="box-name">
+                    <p class="txt-name">밍잔</p>
+                    <p class="txt-role">지식 수익화 가이드</p>
+                </div>
+            </div>
+            <div class="card">
+			<h1>여태껏 당신의 지식을 수익화 못 한 이유?</h1>
+			<p class="txt-title">
+                그건 바로 '권위 프레임' 때문입니다. 자세한 내용을 알고 싶다면 이메일로 무료 전자책을 보내드리겠습니다.
+            </p>
+            <div class="progress">
+                <div style="width: 50%;" class="progress__bar progress__bar--animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                </div>
+            </div>
+            <p class="txt-step">
+                무료 전자책 신청: Step 1 of 2
+            </p>
+            <form id="contact-form" method="post" action="#">
+                <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block hasValue" type="name">
+                    <input class="elFormItem elInput inputHolder" type="name" name="name" placeholder="이름" maxlength="">
+                    <div class="elLabel">
+                        <div class="borderHolder"></div>
+                    <div class="borderHolder labelText">
+                        <label>이름</label>
+                    </div>
+                    <div class="borderHolder"></div>
+                </div>
+                <div class="inputHolder" data-input-status-type="true"></div>
+                </div>
+				<div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block " type="email">
+                    <input class="elFormItem elInput inputHolder" type="email" name="email" placeholder="이메일" maxlength="">
+                    <div class="elLabel">
+                        <div class="borderHolder"></div>
+                    <div class="borderHolder labelText">
+                        <label>이메일</label>
+                    </div>
+                    <div class="borderHolder"></div>
+                </div>
+                <div class="inputHolder" data-input-status-type="true"></div><div class="mailcheck index0"></div>
+                </div>
+				<button type="submit">
+                    지금 무료 전자책 받기
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+			</form>
+			<div class="box-term">
+				<p class="txt-term">
+                    <i data-page-element="IconNode" class="fas fa-lock"></i>
+                    귀하의 정보를 제공함으로써 귀하는 <a href="">서비스 약관</a> 및 <a href="">개인정보보호정책</a>에 따라 귀하의 정보 수집 및 사용에 동의하는 것입니다.
+                </a>
+			</div>
+        </div>
+    </div>
+</div>
+	<script>
+	$(function () {
+		$('#contact-form').submit(function (e) {
+			e.preventDefault();
+			var name = $('#name').val();
+			var email = $('#email').val();
+			google.script.run.withSuccessHandler(function () {
+				alert('제출되었습니다!');
+				$('#contact-form')[0].reset();
+			}).submitForm(name, email);
+		});
+
+        $('input').focus(function() {
+            $(this).parent().addClass('elInputFocused');
+        });
+
+        $('input').blur(function() {
+            $(this).parent().removeClass('elInputFocused');
+
+            if ($(this).val().length) {
+                $(this).parent().addClass('hasValue');
+            } else {
+                $(this).parent().removeClass('hasValue');
+            }
+        });
+	});
+	</script>
+</body>
+</html>
