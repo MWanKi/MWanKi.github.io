@@ -23,8 +23,12 @@ h2 {
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 24px;
+}
+
+u {
+    text-decoration: underline;
 }
 
 p,span,div,a,strong,li {
@@ -443,7 +447,6 @@ input:-webkit-autofill:active {
 .txt-story {
     text-align: left;
     margin-bottom: 24px;
-    font-size: 0.875rem;
     line-height: 1.9;
 }
 
@@ -454,7 +457,7 @@ input:-webkit-autofill:active {
 .box-path {
     background-color: #fafafa;
     border-radius: 10px;
-    padding: 56px 20px;
+    padding: 56px 20px 20px;
 }
 
 .box-path ol {
@@ -462,6 +465,74 @@ input:-webkit-autofill:active {
 }
 
 .box-path ol li {
-    line-height:2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height:2.2;
     font-size: 0.875rem;;
+}
+
+.box-path ol li span {
+    color: rgb(228, 59, 44);
+    font-weight: 900;
+}
+
+.txt-total-value {
+    font-weight: 900;
+    font-size: 28px;
+    margin: 32px 0 16px;
+    word-break: keep-all;
+    color: rgb(228, 59, 44);
+}
+
+.txt-if-do-now {
+    word-break: keep-all;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.txt-free {
+    font-size:160px;
+    font-weight: 900;
+    word-break: keep-all;
+    color:#ff4f02;
+    line-height:1;
+}
+
+.txt-just-cover {
+    word-break: keep-all;
+    margin-top: 24px;
+    font-weight: bold;
+}
+
+.txt-btn-desc {
+    color:rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    font-weight: normal;
+    display: block;
+    margin-top: 8px;
+}
+
+.box-prize {
+    padding-top: 40px;
+}
+
+.ul-prize li {
+    padding: 20px;
+    box-shadow: 0px 10px 40px 0px rgba(29, 46, 59, 0.15);
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.txt-prize-title {
+    background:#333;
+    color:#fff;
+    font-weight: bold;
+    padding: 8px 0;
+    border-radius: 4px;
+}
+
+.txt-prize {
+    padding: 20px;
+    line-height: 2;
 }
