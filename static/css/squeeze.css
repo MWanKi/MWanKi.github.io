@@ -1,10 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;700;900&display=swap');
 
-h1 {
+b {
+    font-weight: bold;
+}
+
+h1, h2, h3 {
     font-size:40px;
     font-family: 'Black Han Sans', sans-serif;
     word-break: keep-all;
     line-height: 1.1;
+}
+
+h1 .month {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight:900;
+    line-height: 0;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 24px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 24px;
 }
 
 p,span,div,a,strong,li {
@@ -88,6 +108,10 @@ body {
     line-height: 1.6;
 }
 
+.txt-title2 {
+    font-size: 1rem;
+}
+
 .progress {
     position: relative;
     display: block;
@@ -120,7 +144,7 @@ body {
 .txt-step {
     margin: 12px 0 12px;
     letter-spacing: 0;
-    line-height: 140%;
+    line-height: 1.4;
     font-size: 0.75rem;
     color:rgb(152 160 166);
 }
@@ -379,4 +403,65 @@ input:-webkit-autofill:active {
     display: inline-block;
     width: 1em;
     margin-left: -1em;
+}
+
+.txt-highlight {
+    display: flex;
+    flex-direction: column;
+    margin:0 auto;
+    color:#000;
+    margin-bottom: 24px;
+    font-size:18px;
+}
+
+.txt-highlight span {
+    display: block;
+    margin:0 auto;
+    padding: 4px 12px;
+    background: yellow;
+}
+
+.box-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 280px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    margin-bottom: 24px;
+}
+
+.box-video i {
+    font-size: 48px;
+    color: #ccc;
+}
+
+.box-story {
+    margin-top: 64px;
+}
+
+.txt-story {
+    text-align: left;
+    margin-bottom: 24px;
+    font-size: 0.875rem;
+    line-height: 1.9;
+}
+
+.txt-story span {
+    color: #ff4f02;
+}
+
+.box-path {
+    background-color: #fafafa;
+    border-radius: 10px;
+    padding: 56px 20px;
+}
+
+.box-path ol {
+    text-align: left;
+}
+
+.box-path ol li {
+    line-height:2;
+    font-size: 0.875rem;;
 }
