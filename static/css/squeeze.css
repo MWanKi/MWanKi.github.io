@@ -456,9 +456,11 @@ input:-webkit-autofill:active {
 }
 
 .box-path {
+    width: calc(100% + 20px);
     background-color: #fafafa;
     border-radius: 10px;
-    padding: 56px 20px 20px;
+    padding: 56px 12px 20px;
+    margin-left: -10px;
 }
 
 .box-path ol {
@@ -469,8 +471,11 @@ input:-webkit-autofill:active {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    line-height:2.2;
+    gap:24px;
+    line-height:1.4;
+    margin: 12px 0;
     font-size: 0.875rem;;
+    word-break: keep-all;
 }
 
 .box-path ol li span {
@@ -493,7 +498,7 @@ input:-webkit-autofill:active {
 }
 
 .txt-free {
-    font-size:160px;
+    font-size:120px;
     font-weight: 900;
     word-break: keep-all;
     color:#ff4f02;
@@ -534,6 +539,7 @@ input:-webkit-autofill:active {
 }
 
 .txt-prize {
-    padding: 20px;
+    padding: 20px 20px 0;
     line-height: 2;
+    word-break: keep-all;
 }
