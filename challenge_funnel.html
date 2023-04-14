@@ -24,6 +24,17 @@
 	<link rel="stylesheet" href="./static/css/reset.css">
 	<link rel="stylesheet" href="./static/css/squeeze.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Hotjar Tracking Code for https://mingzan.dev -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:3450762,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
 </head>
 <body>
 	<div class="container">
@@ -42,11 +53,45 @@
                 <span>아직도 당신에게 가르칠 자격이 없다는</span>
                 <span>두려움을 갖고 계신가요?</span>
             </p> -->
-			<h1>자는 동안 지식이 벌어오게 만드는 <span class="month">1</span>개월 동안의 도전!</h1>
+			<h1>자는 동안 지식이 벌어오게 만드는 한 달 동안의 도전!</h1>
 			<p class="txt-title">
                 🌱 내 지식과 경험을 수익화 하는 스프라웃 챌린지 💎<br/>
                 <span style="color:gray">(sprout 싹이 트다)</span>
             </p>
+            <div class="box-timer">
+                <i class="fa-regular fa-clock"></i> 모집 마감까지
+                <p>
+                    <span id="days"></span> :
+                    <span id="hours"></span> :
+                    <span id="minutes"></span> :
+                    <span id="seconds"></span>
+                </p>
+                <script type="text/javascript">
+                    function updateTimer() {
+                        var now = new Date();
+                        var dueMonth = now.getMonth() > 22 ? now.getMonth() + 1 : now.getMonth();
+                        var dueDate = new Date(now.getFullYear(), now.getMonth(), 22);
+                        var timeDiff = dueDate.getTime() - now.getTime();
+                        var seconds = Math.floor(timeDiff / 1000);
+                        var minutes = Math.floor(seconds / 60);
+                        var hours = Math.floor(minutes / 60);
+                        var days = Math.floor(hours / 24);
+                        hours %= 24;
+                        minutes %= 60;
+                        seconds %= 60;
+                        document.getElementById("days").textContent = formatTime(days);
+                        document.getElementById("hours").textContent = formatTime(hours);
+                        document.getElementById("minutes").textContent = formatTime(minutes);
+                        document.getElementById("seconds").textContent = formatTime(seconds);
+                        setTimeout(updateTimer, 1000);
+                    }
+
+                    function formatTime(time) {
+                        return time < 10 ? "0" + time : time;
+                    }
+                    updateTimer();
+                </script>
+            </div>
             <div class="box-video">
                 <i class="fas fa-play"></i>
             </div>
