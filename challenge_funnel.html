@@ -59,8 +59,8 @@
                 <span style="color:gray">(sprout 싹이 트다)</span>
             </p>
             <div class="box-timer">
-                <p>
-                    <i class="fa-regular fa-clock"></i> 모집 마감까지
+                <p class="txt-ment">
+                    <i class="fa-regular fa-clock"></i> 모집 마감 <strong id="month"></strong>월 22일까지
                 </p>
                 <p>
                     <span id="days"></span> :
@@ -69,9 +69,10 @@
                     <span id="seconds"></span>
                 </p>
                 <script type="text/javascript">
+                    var now = new Date();
+                    var dueMonth = now.getDate() > 22 ? now.getMonth() + 2 : now.getMonth() + 1;
+
                     function updateTimer() {
-                        var now = new Date();
-                        var dueMonth = now.getMonth() > 22 ? now.getMonth() + 1 : now.getMonth();
                         var dueDate = new Date(now.getFullYear(), now.getMonth(), 22);
                         var timeDiff = dueDate.getTime() - now.getTime();
                         var seconds = Math.floor(timeDiff / 1000);
@@ -91,7 +92,9 @@
                     function formatTime(time) {
                         return time < 10 ? "0" + time : time;
                     }
+
                     updateTimer();
+                    $("#month").text(dueMonth);
                 </script>
             </div>
             <div class="box-video">
@@ -118,7 +121,7 @@
                     어느날 무자본 지식 창업에 대해 알게 됐고, 단 2개월 만에 200만 원의 매출을 달성했습니다.
                     그리고 마침내 당신의 지식 수익화를 실현하는 방법 10단계를 알아냈습니다.
                     <br/><br/>
-                    <b>지금 스프라웃 챌린지에 신청하시면 <span>비법 3단계까지 담긴 전자책을 무료로 즉시 보내드립니다.</span></b>
+                    <b>지금 스프라웃 챌린지에 신청하시면 <span>비법 3단계까지 담긴 20만 원 상당의 전자책을 무료로 즉시 보내드립니다.</span></b>
                 </p>
             </div>
             <div class="box-book">
@@ -249,7 +252,7 @@
                         <br/><br/>
                     <b>
                         스프라웃 챌린지는 스스로 수익화를 할 수 있도록 도와드리는 단체 진행 프로그램입니다.
-                        지금 챌린지를 신청하시면 실행을 망설이게 하는 문제에 대한 해법이 담긴 전자책 "지식 수익화 스타팅 가이드북"(2만 원)을 무료로 이메일로 보내드립니다.
+                        지금 챌린지를 신청하시면 실행을 망설이게 하는 문제에 대한 해법이 담긴 전자책 "지식 수익화 스타팅 가이드북"(20만 원)을 무료로 이메일로 보내드립니다.
                     </b>
                     <br/><br/>
                     절대 강제로 참여를 유도하거나 무료 전자책을 이용해 무관한 광고를 하지 않습니다.
