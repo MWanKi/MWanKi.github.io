@@ -37,6 +37,17 @@
     </script>
 </head>
 <body>
+    <script>
+        let step = localStorage.getItem("step");
+        switch(step) {
+            case "squeeze_thanks":
+                location.href = "./squeeze_thanks.html"
+                break;
+            case "challenge_funnel":
+                location.href = "./challenge_funnel.html"
+                break;
+        }
+    </script>
 	<div class="container">
         <div class="box-content">
             <div class="box-header">
@@ -185,6 +196,7 @@
                     success: function(data){
                         hideLoading();
                         location.href = "./squeeze_thanks.html";
+                        localStorage.setItem("step", "squeeze_thanks");
                     },
                     error: function(request, status, error){
                         console.log('Error');
