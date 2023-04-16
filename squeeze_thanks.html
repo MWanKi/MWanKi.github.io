@@ -47,12 +47,6 @@
                 location.href = "./challenge_funnel.html"
                 break;
         }
-
-        let is_visible_challenge_button = localStorage.getItem("is_visible_challenge_button");
-        if (is_visible_challenge_button == "true") {
-            $('#contact-form').show();
-            $('.box-waiting').hide();
-        }
     </script>
 	<div class="container">
         <div class="box-content">
@@ -83,7 +77,8 @@
                 <br/><br/>
                 이 기회는 전자책을 읽고 오신 분들에게만 제공됩니다.
                 <br/><br/>
-                아래에 '다음 단계' 버튼이 나타나면 버튼을 눌러 지식 수익화를 시작해보세요!
+                아래에 '다음 단계' 버튼이 나타나면 버튼을 눌러 지식 수익화를 시작해보세요!<br>
+                <span style="font-size:11px; color:gray">(만약 버튼이 활성화되지 않는다면 잠시 기다려주세요.)</span>
             </p>
             <div class="box-waiting">
                 <i class="fa-solid fa-spinner fa-spin-pulse"></i>
@@ -101,6 +96,13 @@
 </div>
 <script>
     $(function(){
+        let is_visible_challenge_button = localStorage.getItem("is_visible_challenge_button");
+
+        if (is_visible_challenge_button == "true") {
+            $('#contact-form').show();
+            $('.box-waiting').hide();
+        }
+
         $('#contact-form').submit(function (e) {
             e.preventDefault();
             localStorage.setItem("step", "challenge_funnel");
