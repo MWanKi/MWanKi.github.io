@@ -73,6 +73,7 @@
                     var dueMonth = now.getDate() > 22 ? now.getMonth() + 2 : now.getMonth() + 1;
 
                     function updateTimer() {
+                        var now = new Date();
                         var dueDate = new Date(now.getFullYear(), now.getMonth(), 22);
                         var timeDiff = dueDate.getTime() - now.getTime();
                         var seconds = Math.floor(timeDiff / 1000);
