@@ -48,7 +48,15 @@
                     <p class="txt-role">지식 수익화 가이드</p>
                 </div>
             </div>
-            <div class="card">
+            <div class="card thanks" style="display:none;">
+                <p class="txt-thanks">
+                    정말 감사합니다.
+                    <br/>
+                    <br/>
+                    지식 수익화 챌린지 2기 모집이 마감되었습니다.
+                </p>
+            </div>
+            <div class="card form">
             <!-- <p class="txt-highlight">
                 <span>아직도 당신에게 가르칠 자격이 없다는</span>
                 <span>두려움을 갖고 계신가요?</span>
@@ -70,11 +78,19 @@
                 </p>
                 <script type="text/javascript">
                     var now = new Date();
-                    var dueMonth = now.getDate() > 22 ? now.getMonth() + 2 : now.getMonth() + 1;
+                    var dueDate = new Date(now.getFullYear(), now.getMonth(), 22);
+                    var dueMonth = now.getDate() > dueDate ? now.getMonth() + 2 : now.getMonth() + 1;
+
+                    if (now < dueDate) {
+                        $('.card.form').show();
+                        $('.card.thanks').hide();
+                    } else {
+                        $('.card.form').hide();
+                        $('.card.thanks').show();
+                    }
 
                     function updateTimer() {
                         var now = new Date();
-                        var dueDate = new Date(now.getFullYear(), now.getMonth(), 22);
                         var timeDiff = dueDate.getTime() - now.getTime();
                         var seconds = Math.floor(timeDiff / 1000);
                         var minutes = Math.floor(seconds / 60);
