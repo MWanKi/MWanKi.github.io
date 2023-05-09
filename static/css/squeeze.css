@@ -607,3 +607,13 @@ input:-webkit-autofill:active {
     color: #666;
     border-radius: 4px;
 }
+
+.txt-apply-count {
+    margin-top: 24px;
+    font-size: 14px;
+    color:gray;
+}
+
+#num-apply-count {
+    font-weight: bold;
+}

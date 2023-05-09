@@ -129,6 +129,21 @@
                     <i class="fas fa-arrow-right"></i>
                     <!-- <span class="txt-btn-desc">챌린지 참가 보증금 10만 원 (성공시 전액 환급)</span> -->
                 </button>
+                <p class="txt-apply-count">(현재까지 <span id="num-apply-count">50</span>명이 신청했습니다.)</p>
+                <script>
+                    // 누적신청자 수 조회
+                    $.ajax({
+                        url: 'https://script.google.com/macros/s/AKfycbx3Cal5vl9_odsF3o3XUA18jznOpRHdT3abq-0IRNuaXiSvMCvRmuowkeWG4o7bu6_2/exec?action=getRowCount',
+                        type: 'GET',
+                        success: function(data) {
+                            if (data.result == "success") {
+                                $('#num-apply-count').text(data.row);
+                            } else {
+                                $('#num-apply-count').text(51);
+                            }
+                        },
+                    });
+                </script>
 			</form>
             <div class="box-story">
                 <h2>8년 동안 n번 실패한 사업가가 지식을 단 번에 수익화한 비법</h2>
