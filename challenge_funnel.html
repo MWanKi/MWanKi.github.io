@@ -129,7 +129,10 @@
                     <i class="fas fa-arrow-right"></i>
                     <!-- <span class="txt-btn-desc">챌린지 참가 보증금 10만 원 (성공시 전액 환급)</span> -->
                 </button>
-                <p class="txt-apply-count">(현재까지 <span id="num-apply-count">50</span>명이 신청했습니다.)</p>
+                <div class="box-count">
+                    <p class="txt-count-loading"><i class="fa-solid fa-spinner fa-spin-pulse"></i> &nbsp;신청자 수를 불러오고 있습니다.</p>
+                    <p class="txt-apply-count">(현재까지 <span id="num-apply-count">52</span>명이 신청했습니다.)</p>
+                </div>
                 <script>
                     // 누적신청자 수 조회
                     $.ajax({
@@ -139,8 +142,11 @@
                             if (data.result == "success") {
                                 $('#num-apply-count').text(data.row);
                             } else {
-                                $('#num-apply-count').text(51);
+                                $('#num-apply-count').text(52);
                             }
+
+                            $('.box-count .txt-count-loading').hide();
+                            $('.box-count .txt-apply-count').show();
                         },
                     });
                 </script>

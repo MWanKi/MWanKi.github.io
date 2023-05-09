@@ -608,8 +608,18 @@ input:-webkit-autofill:active {
     border-radius: 4px;
 }
 
-.txt-apply-count {
+
+.box-count {
     margin-top: 24px;
+}
+
+.txt-apply-count {
+    display: none;
+    font-size: 14px;
+    color:gray;
+}
+
+.txt-count-loading {
     font-size: 14px;
     color:gray;
 }
