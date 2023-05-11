@@ -2,6 +2,32 @@
     max-width: none;
 }
 
+.box-header-content {
+    max-width: 1124px;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-header .box-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.box-header-content .box-menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.box-header-content .box-menu a {
+    letter-spacing: 0;
+}
+
 .container, .container-lg, .container-md, .container-sm, .container-xl {
     max-width: none;
     padding:0;
@@ -121,20 +147,166 @@
 
 .landing-container .txt-title span {
     font-weight: bold;
-    background-color: #f0f0f0;
 }
 
+.box-footer {
+    margin-top: 100px;
+    border-top:1px solid #eee;
+}
 
 .box-footer .box-content {
     max-width:1124px;
     width: 100%;
-    height: 64px;
-    border-top:1px solid #eee;
+    height: 100px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.box-letter {
+    padding: 120px 20px;
+    background-color: #f5f5f5;
+}
+
+.box-letter .txt-receiver {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.box-letter .txt-letter {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    font-weight: 300;
+}
+
+.box-letter .txt-letter b {
+    color: #555;
+}
+
+.box-review {
+    max-width:1124px;
+    margin: 120px auto;
+}
+
+.box-review .box-layout {
+    display: flex;
+    gap:160px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 220px;
+}
+
+.box-review .box-txt {
+    width:70%;
+}
+
+.box-review .box-txt .txt-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    word-break: keep-all;
+}
+
+.box-review .box-layout.box-type2 {
+    flex-direction: row-reverse;
+}
+
+.box-review .txt-desc {
+    width: 80%;
+    color:#666;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 300;
+    word-break: keep-all;
+}
+
+.box-review .box-video {
+    display: block;
+    width:30%;
+    height: 300px;
+    max-height: calc(100% * 5/3);
+    background-color: #000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.box-review .box-video video {
+    margin: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 200%;
+    z-index: -1000;
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+    overflow: hidden;
+}
+
+.box-review .box-video video.last-video {
+    -webkit-transform: translateX(-10%) translateY(-25%);
+    transform: translateX(-10%) translateY(-25%);
+}
+
+.box-challenge {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    min-height: 800px;
+    height: calc(100vh - 40px);
+    position: relative;
+    background: url(../images/challenge.png) center center no-repeat;
+    background-size:cover;
+}
+
+.box-challenge .box-bg {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0, 0, 20, 0.7);
+    z-index: 1;
+}
+
+.box-challenge .box-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 0
+}
+
+.box-challenge .box-txt h3 {
+    font-size: 40px;
+    margin-bottom: 24px;
+    color:#fff;
+}
+
+.box-challenge .box-txt h3 span {
+    font-weight: 900;
+    color:#fff;
+    line-height: 1.7;
+}
+
+.box-challenge .box-txt p {
+    font-size: 18px;
+    line-height: 2.2;
+    font-weight: 300;
+    margin-bottom: 24px;
+    color:#fff;
+}
+
+.box-challenge form {
+    margin-top: 100px;
+}
+
+.box-challenge .box-txt .txt-desc {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 24px;
 }
 
 @media (max-width: 640px) {
@@ -166,4 +338,114 @@
     .landing-container .box-free-book .box-form {
         width:100%;
     }
+
+    .landing-container .box-free-book .txt-free-book {
+        font-size: 14px;
+        padding-bottom: 8px;
+    }
+
+    .landing-container .box-free-book h2 {
+        font-size: 24px;
+    }
+
+    .landing-container .txt-title {
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+
+    .landing-container .txt-title span {
+        font-weight: bold;
+    }
+
+    .box-review {
+        padding: 0 20px;
+    }
+    .box-review .box-layout {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 120px;
+    }
+    .box-review .box-layout.box-type2 {
+        flex-direction: column;
+    }
+
+    .box-review .box-txt {
+        width:100%;
+    }
+
+    .box-review .box-txt .txt-title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .box-review .txt-desc {
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .box-review .box-video {
+        width:100%;
+        height: 200px;
+    }
+
+    .box-review .box-video video.last-video {
+        -webkit-transform: translateY(-20%);
+        transform: translateY(-20%);
+    }
+
+    .box-challenge {
+        min-height: 600px;
+    }
+
+    .box-challenge .box-txt h3 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .box-challenge .box-txt h3 span {
+        font-weight: 900;
+        line-height: 1.7;
+    }
+
+    .box-challenge .box-txt p {
+        font-size: 14px;
+        line-height: 2.2;
+        margin-bottom: 16px;
+    }
+
+    .box-challenge .box-txt .txt-desc {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+
+    .box-challenge form {
+        padding: 0 20px;
+        margin-top: 40px;
+    }
+
+    .box-challenge form button {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .box-footer .box-content {
+        flex-direction: column;
+        justify-content: center;
+        padding:24px;
+        gap: 24px;
+        height: 200px;
+    }
+
+    .box-footer .box-content .box-menu {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .box-footer .box-content .box-menu a {
+        font-size: 14px;
+    }
+
+
 }
