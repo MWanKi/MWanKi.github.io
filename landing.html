@@ -107,7 +107,7 @@
                             무료 전자책 신청: Step 1 of 2
                         </p>
                         <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block" type="name">
-                            <input class="elFormItem elInput inputHolder" id="name" type="name" name="name" placeholder="이름" maxlength="">
+                            <input class="elFormItem elInput inputHolder" id="name" type="name" name="name" placeholder="이름" maxlength="" required>
                             <div class="elLabel">
                                 <div class="borderHolder"></div>
                             <div class="borderHolder labelText">
@@ -118,7 +118,7 @@
                         <div class="inputHolder" data-input-status-type="true"></div>
                         </div>
                         <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block " type="email">
-                            <input class="elFormItem elInput inputHolder" id="email" type="email" name="email" placeholder="이메일" maxlength="">
+                            <input class="elFormItem elInput inputHolder" id="email" type="email" name="email" placeholder="이메일" maxlength="" required>
                             <div class="elLabel">
                                 <div class="borderHolder"></div>
                             <div class="borderHolder labelText">
@@ -281,7 +281,7 @@
                 </h3>
                 <p>
                     혼자서 계속 미루면서 자책하지 마세요.<br/>
-                    똑똑한 사람이라면 환경설정의 힘을 알고 있습니다.<br/><br/>
+                    똑똑한 사람은 환경설정의 힘을 이용합니다.<br/><br/>
 
                     체계적인 커리큘럼, 현실적인 타임라인<br/>
                     그리고 적극적인 동료들과 함께<br/>
@@ -291,12 +291,56 @@
                     스프라웃 챌린지를 예약하세요.
                 </p>
             </div>
-            <form action="#">
+            <form action="./challenge_funnel.html" method="GET">
                 <button type="submit">
                     스프라웃 챌린지 대기 명단 무료 등록하기
                 </button>
             </form>
-
+        </div>
+    </section>
+    <section class="box-last-section">
+        <div class="card">
+            <form id="contact-form" method="post" action="#">
+                <p class="txt-title">
+                    모네타 스타팅 가이드북 PDF 신청
+                </p>
+                <p class="txt-desc">
+                    권위에 대한 고민을 부수고 지식 수익화를 시작하는 구체적인 방법
+                </p>
+                <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block" type="name">
+                    <input class="elFormItem elInput inputHolder" id="name" type="name" name="name" placeholder="이름" maxlength="" required>
+                    <div class="elLabel">
+                        <div class="borderHolder"></div>
+                    <div class="borderHolder labelText">
+                        <label>이름</label>
+                    </div>
+                    <div class="borderHolder"></div>
+                </div>
+                <div class="inputHolder" data-input-status-type="true"></div>
+                </div>
+                <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block " type="email">
+                    <input class="elFormItem elInput inputHolder" id="email" type="email" name="email" placeholder="이메일" maxlength="" required>
+                    <div class="elLabel">
+                        <div class="borderHolder"></div>
+                    <div class="borderHolder labelText">
+                        <label>이메일</label>
+                    </div>
+                    <div class="borderHolder"></div>
+                </div>
+                <div class="inputHolder" data-input-status-type="true"></div><div class="mailcheck index0"></div>
+                </div>
+                <button type="submit">
+                    <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+                    즉시 무료 PDF 받기
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="box-term">
+                    <p class="txt-term">
+                        <i data-page-element="IconNode" class="fas fa-lock"></i>
+                        귀하의 정보를 제공함으로써 귀하는 <a href="#">서비스 약관</a> 및 <a href="#">개인정보보호정책</a>에 따라 귀하의 정보 수집 및 사용에 동의합니다.
+                    </a>
+                </div>
+            </form>
         </div>
     </section>
     <div class="box-footer">

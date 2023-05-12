@@ -167,7 +167,7 @@
 
 .box-letter {
     padding: 120px 20px;
-    background-color: #f5f5f5;
+    background-color: #fff;
 }
 
 .box-letter .txt-receiver {
@@ -267,7 +267,7 @@
     left:0;
     right:0;
     bottom:0;
-    background-color: rgba(0, 0, 20, 0.7);
+    background-color: rgba(0, 0, 20, 0.8);
     z-index: 1;
 }
 
@@ -309,6 +309,24 @@
     margin-bottom: 24px;
 }
 
+.box-last-section {
+    padding:120px 20px 0;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.box-last-section .txt-title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.box-last-section .txt-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+
 @media (max-width: 640px) {
     .box-hero .box-txt {
         padding: 72px 20px 0;
@@ -345,11 +363,11 @@
     }
 
     .landing-container .box-free-book h2 {
-        font-size: 24px;
+        font-size: 32px;
     }
 
     .landing-container .txt-title {
-        font-size: 14px;
+        font-size: 16px;
         margin-bottom: 16px;
     }
 
@@ -380,7 +398,7 @@
 
     .box-review .txt-desc {
         width: 100%;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.6;
     }
 
@@ -399,7 +417,7 @@
     }
 
     .box-challenge .box-txt h3 {
-        font-size: 24px;
+        font-size: 32px;
         margin-bottom: 16px;
     }
 
@@ -409,7 +427,7 @@
     }
 
     .box-challenge .box-txt p {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 2.2;
         margin-bottom: 16px;
     }
@@ -447,5 +465,7 @@
         font-size: 14px;
     }
 
-
+    .box-last-section .txt-title {
+        font-size: 28px;
+    }
 }
