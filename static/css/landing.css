@@ -16,6 +16,10 @@
     gap: 12px;
 }
 
+.box-header a:hover {
+    text-decoration: none;
+}
+
 .box-header-content .box-menu {
     display: flex;
     align-items: center;
@@ -58,6 +62,41 @@
     right:0;
     bottom:0;
     z-index: 1;
+}
+
+.course-container {
+    min-height: auto;
+}
+
+.course-container .box-hero {
+    margin-top: 0;
+    height:320px;
+    background: url(../images/challenge.png) center center no-repeat;
+    background-size: cover;
+}
+
+.box-course-item {
+    max-width: 1140px;
+    width:100%;
+    margin: 120px auto;
+}
+
+.box-course-item ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap:24px;
+}
+
+.box-course-item ul li {
+    width: calc(33.333% - 24px);
+}
+
+.box-course-item ul li:nth-child(3n) {
+    margin-right: 0;
+}
+
+.box-course-item ul li:nth-last-child(-n+3) {
+    margin-bottom: 0;
 }
 
 .box-hero video {
@@ -329,6 +368,7 @@
 }
 
 .box-last-section .txt-title {
+    padding-top: 0;
     font-size: 32px;
     font-weight: bold;
 }
@@ -398,6 +438,13 @@
 .box-courses .box-content .box-image {
     width: 30%;
     background: #f5f5f5;
+    border-radius: 4px;
+}
+
+.box-courses .box-content .box-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 4px;
 }
 
@@ -581,5 +628,13 @@
 
     .box-last-section .txt-title {
         font-size: 28px;
+    }
+
+    .course-container .box-hero {
+        height: 200px;
+    }
+
+    .course-container .box-hero .box-txt {
+        padding-top: 24px;
     }
 }
