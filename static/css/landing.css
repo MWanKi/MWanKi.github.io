@@ -87,8 +87,74 @@
     gap:24px;
 }
 
-.box-course-item ul li {
+.box-course-item > ul > li {
     width: calc(33.333% - 24px);
+}
+
+.box-course-item ul li .card {
+    padding:0;
+    border-radius: 8px;
+}
+
+.box-course-item ul li a {
+    display: block;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.box-course-item ul li a:hover {
+    transform: scale(1.02);
+    text-decoration: none;
+}
+
+.box-course-item ul li .box-thumb {
+    background-color: #f5f5f5;
+    border-radius: 4px 4px 0 0;
+}
+
+.box-course-item ul li .box-thumb img {
+    display: block;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.box-course-item ul li .box-txt {
+    padding: 24px 36px 36px;
+}
+
+.box-course-item ul li .box-txt .txt-title {
+    padding-top: 12px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.box-course-item ul li .box-txt .txt-summary {
+    padding-bottom: 24px;
+    font-size: 12px;
+    color:gray;
+    word-break: keep-all;
+}
+
+.box-course-item ul li .box-txt .txt-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: left;
+    word-break: keep-all;
+}
+
+.box-course-item .ul-label {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 36px;
+}
+
+.box-course-item .ul-label li {
+    color: orangered;
+    padding: 0 8px 0 0;
+    font-size: 12px;
 }
 
 .box-course-item ul li:nth-child(3n) {
@@ -636,5 +702,49 @@
 
     .course-container .box-hero .box-txt {
         padding-top: 24px;
+    }
+
+    .box-course-item > ul {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .box-course-item > ul > li {
+        width: 100%;
+    }
+
+    .box-course-item ul li a {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 24px;
+    }
+
+    .box-course-item ul li .box-thumb {
+        width: 40%;
+    }
+
+    .box-course-item ul li .box-txt {
+        width: 60%;
+        padding: 20px 20px;
+        text-align: left;
+    }
+
+    .box-course-item ul li .box-txt .txt-title {
+        padding: 0 0 4px;
+        font-size: 18px;
+    }
+
+    .box-course-item ul li .box-txt .txt-summary {
+        padding: 0 0 4px;
+    }
+
+    .box-course-item ul li .box-txt .txt-desc {
+        margin: 12px 0;
+    }
+
+    .box-course-item .ul-label {
+        padding-top: 0;
+        gap: 0;
     }
 }
