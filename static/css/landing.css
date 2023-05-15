@@ -370,6 +370,10 @@
 
 .box-challenge {
     display: flex;
+    max-width: 1140px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
     min-height: 800px;
@@ -392,13 +396,15 @@
 .box-challenge .box-content {
     text-align: center;
     position: relative;
+    max-width: none;
     z-index: 2;
     padding: 0
 }
 
 .box-challenge .box-txt h3 {
-    font-size: 40px;
+    font-size: 80px;
     margin-bottom: 24px;
+    line-height:0;
     color:#fff;
 }
 
@@ -409,15 +415,20 @@
 }
 
 .box-challenge .box-txt p {
-    font-size: 18px;
-    line-height: 2.2;
+    font-size: 16px;
+    line-height: 2;
     font-weight: 300;
     margin-bottom: 24px;
     color:#fff;
 }
 
 .box-challenge form {
-    margin-top: 100px;
+    max-width: 480px;
+    margin: 80px auto 0;
+}
+
+.box-wrapper {
+    padding: 0 20px;
 }
 
 .box-challenge .box-txt .txt-desc {
@@ -544,6 +555,104 @@
     border-radius: 4px;
 }
 
+.box-expect {
+    background: rgba(50,50,50, 1);
+}
+
+.box-expect p {
+    color: #fff;
+}
+
+.box-expect .box-content {
+    max-width:1140px;
+    margin:0 auto;
+}
+
+.box-expect .txt-ready {
+    padding: 48px 0 24px;
+    color: orangered;
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+    word-break: keep-all;
+}
+
+.box-expect .txt-title {
+    font-size: 90px;
+    color:#fff;
+    line-height: 1;
+    text-align: center;
+}
+
+.box-expect .box-before-after {
+    display: flex;
+    gap: 40px;
+}
+
+.box-expect .box-before-after > div {
+    width:50%;
+}
+
+.box-expect .box-before-after .card {
+    padding: 24px 48px;
+    margin-bottom: 0;
+}
+
+.box-expect .box-before-after .txt-title {
+    color: orangered;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.box-expect .box-before-after .box-right .txt-title {
+    color: green;
+}
+
+.box-expect .box-before-after ul {
+    text-align: left;
+}
+
+.box-expect .box-before-after ul li {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.box-expect .box-content {
+    padding: 0 20px;
+}
+
+.box-expect .box-all-course {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.box-expect .box-all-course .btn-all-course {
+    color:#fff;
+    text-decoration: underline;
+}
+
+@media (max-width: 780px) {
+    .box-challenge .box-txt h3 {
+        font-size: 60px;
+    }
+
+    .box-expect .txt-title {
+        font-size: 60px;
+    }
+
+    .box-expect .box-before-after {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .box-expect .box-before-after .card {
+        width:100%;
+        padding: 24px;
+    }
+}
+
 @media (max-width: 640px) {
     .box-hero .box-txt {
         padding: 72px 20px 0;
@@ -659,7 +768,7 @@
 
     .box-challenge .box-txt h3 {
         font-size: 32px;
-        margin-bottom: 16px;
+        margin: 16px 0;
     }
 
     .box-challenge .box-txt h3 span {
