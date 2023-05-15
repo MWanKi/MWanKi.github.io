@@ -538,6 +538,12 @@
     margin-bottom: 0;
 }
 
+.img-history {
+    display: block;
+    width:100%;
+    border-radius: 4px;
+}
+
 @media (max-width: 640px) {
     .box-hero .box-txt {
         padding: 72px 20px 0;
