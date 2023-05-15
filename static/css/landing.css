@@ -530,6 +530,14 @@
     transform: translateY(-50px);
 }
 
+.course-container .box-hero .box-txt {
+    padding-top: 0;
+}
+
+.course-container .box-hero p {
+    margin-bottom: 0;
+}
+
 @media (max-width: 640px) {
     .box-hero .box-txt {
         padding: 72px 20px 0;
