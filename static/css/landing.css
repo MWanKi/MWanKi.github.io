@@ -706,45 +706,19 @@
 
     .box-course-item > ul {
         flex-direction: column;
-        gap: 16px;
-        padding: 20px;
+        padding: 0 20px;
     }
 
     .box-course-item > ul > li {
         width: 100%;
+        margin-bottom: 0;
     }
 
-    .box-course-item ul li a {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 24px;
-    }
-
-    .box-course-item ul li .box-thumb {
-        width: 40%;
+    .box-course-item > ul > li a {
+        margin-bottom: 0;
     }
 
     .box-course-item ul li .box-txt {
-        width: 60%;
-        padding: 20px 20px;
-        text-align: left;
-    }
-
-    .box-course-item ul li .box-txt .txt-title {
-        padding: 0 0 4px;
-        font-size: 18px;
-    }
-
-    .box-course-item ul li .box-txt .txt-summary {
-        padding: 0 0 4px;
-    }
-
-    .box-course-item ul li .box-txt .txt-desc {
-        margin: 12px 0;
-    }
-
-    .box-course-item .ul-label {
-        padding-top: 0;
-        gap: 0;
+        padding: 20px 20px 36px;
     }
 }
