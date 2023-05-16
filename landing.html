@@ -224,9 +224,12 @@
     </section>
     <section class="box-letter">
         <div class="box-content">
-            <p class="txt-receiver fade-in-text">
-                돈 걱정 없이 하고 싶은 일만 하며 살고 싶으신가요?
-            </p>
+            <h4 class="txt-receiver fade-in-text">
+                돈 걱정 없이 <br/>
+                하고 싶은 일만 하며  <br/>
+                살고 싶으신가요?
+            </h4>
+            <img class="fade-in-text" src="./static/images/signiel.jpg" alt="">
             <br/><br/><br/>
             <p class="txt-letter fade-in-text">
                 <b>회사는 직원을 평생 책임져주지 않는다</b>는 사실을
@@ -382,6 +385,79 @@
             </div>
         </section>
     </div>
+    <section class="box-faq">
+        <div class="box-content">
+            <h4 class="box-header fade-in-text">
+                자주 묻는 질문
+            </h4>
+            <ul class="ul-question fade-in-text">
+                <li>
+                    <a href="#" class="txt-question">사업자가 없어도 가능한가요?</a>
+                    <div class="box-answer">
+                        <p>
+                            네, 사업자등록증이 없어도 가능합니다. 개인으로 전자책을 판매할 수 있고, 수익을 얻을 수 있습니다.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="txt-question">정체성과 실력에 대한 고민이 생겼어요.</a>
+                    <div class="box-answer">
+                        <p>
+                            괜찮습니다. 바쁜 일상을 살아가보면 자신과 대화를 나누는 시간이 부족해지는데,
+                            막상 대화를 나누면 '나는 과연 무엇을 하고 싶은가?'에 대한 혼란이 오는게 자연스러운 현상입니다.
+                            챕터를 진행하면서 실력 부족은 곧 나만의 프레임이였다는 걸 아시게 될 겁니다.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="txt-question">완벽주의 때문에 계속 미루는데 어떻게 해야할까요?</a>
+                    <div class="box-answer">
+                        <p>
+                            완벽주의는 미루는 이유가 아니라 미루는 방법입니다.
+                            인간의 뇌는 시작하기 전에 동기부여가 되는게 아니라,
+                            시작하고 나서 지속할 수 있도록 동기부여 되는 호르몬이 분비됩니다.
+                            즉, 실행할 수 밖에 없는 환경설정이 중요하며, 모네타 코스가 최고의 환경설정이 될 것입니다.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="txt-question">왜 제작부터 안 하고 판매를 먼저 하나요?</a>
+                    <div class="box-answer">
+                        <p>
+                            8년 동안 사업을 망하면서 가장 뼈저리게 깨달은 게 있습니다.
+                            바로 시장이 원하는 제품을 만들어야 한다는 사실이죠.
+                            판매를 먼저 해보면 시장의 반응을 빠르게 확인할 수 있습니다.
+                            즉, 제품부터 만들었다가 자원을 낭비하는 일을 예방할 수 있습니다.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="txt-question">전자책을 내고 나서 종이책을 또 내도 괜찮을까요?</a>
+                    <div class="box-answer">
+                        <p>
+                            네, 괜찮습니다. 전자책을 내고 나서 종이책을 내는 것은 전혀 문제가 되지 않습니다.
+                            플랫폼에 따라 앵콜펀딩 가능 여부는 달라지며, 자세한 내용은
+                            코스 진행에 필요한 플랫폼에서 확인하실 수 있습니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script>
+            $('.ul-question li a').click(function() {
+                let opened = $(this).hasClass('active');
+
+                $('.ul-question li a').removeClass('active');
+                $('.ul-question li div').removeClass('show');
+
+                if (!opened) {
+                    $(this).toggleClass('active');
+                    $(this).next('.box-answer').toggleClass('show');
+                }
+                return false;
+            });
+        </script>
+    </section>
     <section class="box-story-video">
         <div class="box-content">
             <div class="box-video-frame">
