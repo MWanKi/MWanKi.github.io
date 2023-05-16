@@ -428,7 +428,7 @@
 }
 
 .box-wrapper {
-    padding: 0 20px;
+    padding: 0 8px;
 }
 
 .box-challenge .box-txt .txt-desc {
@@ -600,12 +600,24 @@
 
 .box-expect .box-before-after .txt-title {
     color: orangered;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 900;
 }
 
 .box-expect .box-before-after .box-right .txt-title {
     color: green;
+}
+
+.box-expect .box-before-after .txt-title span {
+    text-decoration: underline;
+}
+
+.box-expect .box-before-after .box-right .txt-title span {
+    color: green;
+}
+
+.box-expect .box-before-after .box-left .txt-title span {
+    color: orangered;
 }
 
 .box-expect .box-before-after ul {
@@ -639,6 +651,10 @@
 .box-expect .box-all-course .btn-all-course {
     color:#fff;
     text-decoration: underline;
+}
+
+.box-story-video {
+    display: none;
 }
 
 @media (max-width: 780px) {
