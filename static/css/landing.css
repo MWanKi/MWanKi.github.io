@@ -615,6 +615,14 @@
 .box-expect .box-before-after ul li {
     font-size: 20px;
     margin-bottom: 20px;
+    word-break: keep-all;
+}
+
+.box-expect ul li img {
+    height: 24px;
+    margin-right: 8px;
+    position: relative;
+    top:4px;
 }
 
 .box-expect .box-content {
