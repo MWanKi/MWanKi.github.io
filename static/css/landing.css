@@ -513,9 +513,7 @@
 }
 
 .box-courses .box-content .box-image {
-    width: 30%;
-    background: #f5f5f5;
-    border-radius: 4px;
+    width: 50%;
 }
 
 .box-courses .box-content .box-image img {
