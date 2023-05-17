@@ -772,6 +772,7 @@
     margin-top: 64px;
     font-size: 18px;
     line-height: 1.7;
+    word-break: keep-all;
 }
 
 .box-introduce .box-left .txt-about a {
