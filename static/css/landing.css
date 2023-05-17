@@ -733,6 +733,85 @@
     background: none;
 }
 
+.box-introduce {
+    padding: 120px 20px;
+}
+
+.box-introduce .box-content {
+    max-width: 1140px;
+    display: flex;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap:120px;
+    align-items: center;
+}
+
+.box-introduce .box-left {
+    width: 60%;
+}
+
+.box-introduce .txt-header {
+    display: inline-block;
+    font-size: 48px;
+}
+
+.box-introduce .txt-header2 {
+    display: none;
+    margin-bottom: 40px;
+}
+
+.box-introduce .txt-header::after {
+    content:'';
+    display: block;
+    width:100%;
+    background:orangered;
+    height: 4px;
+}
+
+.box-introduce .box-left .txt-about {
+    margin-top: 64px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.box-introduce .box-left .txt-about b {
+    font-style: italic;
+}
+
+.box-introduce .box-left .box-sns {
+    margin: 120px 0 64px;
+}
+
+.box-introduce .box-left .box-sns img {
+    height: 48px;
+}
+
+.box-introduce .box-right {
+    width: 40%;
+}
+
+.box-introduce .box-mockup {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box-introduce .box-mockup img {
+    position: relative;
+    height:100%;
+}
+
+.box-introduce .box-mockup video {
+    position: absolute;
+    height: 72%;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    margin: -40px -65px 0 0px;
+}
+
 @media (max-width: 780px) {
     .box-challenge .box-txt h3 {
         font-size: 60px;
@@ -960,5 +1039,76 @@
 
     .ul-question li a::after {
         left:20px;
+    }
+
+    .box-introduce .box-content {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .box-introduce .box-left {
+        width: 100%;
+    }
+
+    .box-introduce .box-left .txt-header {
+        font-size: 32px;
+    }
+
+    .box-introduce .box-left .txt-header::after {
+        width: 100%;
+    }
+
+    .box-introduce .box-left .txt-about {
+        margin-top: 40px;
+        font-size: 16px;
+    }
+
+    .box-introduce .box-left .box-sns {
+        margin: 80px 0 40px;
+    }
+
+    .box-introduce .box-left .box-sns img {
+        height: 32px;
+    }
+
+    .box-introduce .box-right {
+        width: 100%;
+    }
+
+    .box-introduce .box-left .txt-header {
+        display: none;
+    }
+
+    .box-introduce .box-left .txt-about {
+        margin-top: 0;
+        font-size: 14px;
+    }
+
+    .box-introduce .box-right .box-header {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .box-introduce .box-content {
+        gap:0;
+    }
+
+    .box-introduce .box-mockup {
+        position: relative;
+        height: 70vh;
+        margin-left: -70px;
+    }
+
+    .box-introduce .box-left .box-sns {
+        margin: 32px 0 0;
+    }
+
+    .box-introduce .box-mockup video {
+        margin: -36px -46px 0 0px;
+    }
+
+    .box-introduce .txt-header2 {
+        display: inline-block;
     }
 }
