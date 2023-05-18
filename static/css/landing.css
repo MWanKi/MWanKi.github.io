@@ -826,6 +826,57 @@
     margin: -50px -67px 0 0;
 }
 
+.course-detail-container .box-form {
+    margin-bottom: 0;
+    max-width: 640px;
+}
+
+.course-detail-container .box-form .txt-course-name {
+    font-size: 40px;
+}
+
+.course-detail-container .box-form p {
+    color:#333;
+}
+
+.course-detail-container .box-form .txt-term {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.course-detail-container .box-form .txt-step {
+    margin: 12px 0 12px;
+    letter-spacing: 0;
+    line-height: 1.4;
+    font-size: 0.75rem;
+    color:rgb(152 160 166);
+}
+
+.course-detail-container .box-form .txt-course-desc {
+    margin: 12px auto 40px;
+    max-width: 480px;
+    letter-spacing: 0;
+    line-height: 1.4;
+    font-weight: bold;
+    font-size: 16px;
+    color:#333;
+    word-break: keep-all;
+}
+
+.course-detail-container .box-form .txt-course-desc span {
+    color:#333;
+}
+
+.course-detail-container .box-form .txt-course-desc2 {
+    margin: 12px auto 40px;
+    max-width: 360px;
+    letter-spacing: 0;
+    line-height: 1.4;
+    font-size: 18px;
+    color:#333;
+    word-break: keep-all;
+}
+
 @media (max-width: 780px) {
     .box-challenge .box-txt h3 {
         font-size: 60px;

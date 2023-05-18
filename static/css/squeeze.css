@@ -637,3 +637,12 @@ input:-webkit-autofill:active {
 .box-privacy h1 {
     text-align: center;
 }
+
+.course-detail-thanks-container .txt-course-name {
+    font-weight: bold;
+    line-height: 1;
+}
+
+.course-detail-thanks-container .txt-desc {
+    margin-top: 40px;
+}

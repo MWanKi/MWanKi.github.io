@@ -49,31 +49,134 @@
         }
 
         let html_title = '밍잔 | ';
+        let course_name = '';
+        let course_detail = '';
+        let tag = '';
+
         switch(params.course_id) {
             case '1':
-                html_title += '시드 스프라웃 코스';
+                course_name = '시드 스프라웃 코스';
+                course_desc = '전자책 기획부터 펀딩까지 스스로 지식을 수익화 하는 경제적 자립 능력을 얻어가세요.';
+                tag = 'seed_sprout';
                 break;
             case '2':
-                html_title += '스페셜 스토리 카피라이팅';
+                course_name = '스페셜 스토리 카피라이팅 코스';
+                course_desc = '스토리 기반 상세페이지 카피라이팅 스킬을 얻어가세요.';
+                tag = 'story_copywriting';
                 break;
             case '3':
-                html_title += '패스트 디자인 테크닉';
+                course_name = '패스트 디자인 테크닉 코스';
+                course_desc = '필요한 시간단축 디자인 테크닉을 얻어가세요.';
+                tag = 'fast_design';
                 break;
             case '4':
-                html_title += '몬타나 블라썸 코스';
+                course_name = '몬타나 블라썸 코스';
+                course_desc = 'VOD 강의 1인 제작과 프리미엄 지식 상품 런칭으로 매출을 폭발적으로 늘리세요.';
+                tag = 'montana_blossom';
                 break;
             case '5':
-                html_title += '프로 비쥬얼 테크닉';
+                course_name = '프로 비쥬얼 테크닉';
+                course_desc = '신체적 표현법을 통해 고객 불신을 예방하세요.';
+                tag = 'pro_visual';
                 break;
             case '6':
-                html_title += '가제트 오토메이션 코스';
+                course_name = '가제트 오토메이션 코스';
+                course_desc = '그림자 노동시간을 자동화 하세요.';
+                tag = 'gadget_automation';
                 break;
             case '7':
-                html_title += '안티 프레카리아트 코스';
+                course_name = '안티 프레카리아트 코스';
+                course_desc = 'AI기술 발전의 위협으로부터 벗어나세요.';
+                tag = 'anit_precariat';
                 break;
         }
 
-        document.title = html_title;
+        document.title = html_title + course_name;
+
+
+        $(function() {
+            $('.txt-course-name').html(course_name);
+            $('.txt-course-name-span').html(course_name);
+            $('.txt-course-desc2').html(course_desc);
+
+            var name = $('#name').val();
+            var email = $('#email').val();
+
+            if (name.length) {
+                $('#name').parent().addClass('hasValue');
+                return;
+            }
+
+            if (email.length) {
+                $('#email').parent().addClass('hasValue');
+                return;
+            }
+
+            function showLoading() {
+                $('i.fa-spinner').css({'display':'inline-block'});
+                $('i.fa-arrow-right').hide();
+            }
+
+            function hideLoading() {
+                $('i.fa-spinner').hide();
+                $('i.fa-arrow-right').css({'display':'inline-block'});
+            }
+
+            $('#contact-form').submit(function (e) {
+                e.preventDefault();
+                showLoading();
+
+                var name = $('#name').val();
+                if (!name) {
+                    $('#name').focus();
+                    hideLoading();
+                    return;
+                }
+
+                var email = $('#email').val();
+                if (!email) {
+                    $('#email').focus();
+                    hideLoading();
+                    return;
+                }
+
+                if (name.length && email.length) {
+                    $.ajax({
+                        url: "https://script.google.com/macros/s/AKfycbznmuRLAH6hr_pVDHSFDDkUE5Z0wK_2y_ZCaJAn2UzIgc2MtLeEafXSUrwbdPmFUyKG/exec",
+                        data: {
+                            name: name,
+                            email: email,
+                            tag: tag,
+                        },
+                        type: "POST",
+                        success: function(data){
+                            hideLoading();
+                            location.href = "./course_detail_thanks.html?course_id="+params.course_id;
+                            localStorage.setItem("step", "squeeze_thanks");
+                        },
+                        error: function(request, status, error){
+                            console.log('Error');
+                            hideLoading();
+                            alert("문제가 발생했습니다. @mingzan.dev로 DM주세요!")
+                        }
+                    });
+                }
+            });
+
+            $('input').focus(function() {
+                $(this).parent().addClass('elInputFocused');
+            });
+
+            $('input').blur(function() {
+                $(this).parent().removeClass('elInputFocused');
+
+                if ($(this).val().length) {
+                    $(this).parent().addClass('hasValue');
+                } else {
+                    $(this).parent().removeClass('hasValue');
+                }
+            });
+        })
     </script>
 </head>
 <body>
@@ -99,19 +202,20 @@
             </div>
             <div class="box-hero">
                 <div class="box-txt">
-                    <h1>
-                        단 <span>1</span>개월의 도전으로<br/>
-                        경제적 자립을 시작하세요.
-                    </h1>
                     <div class="box-form card">
-                        <h2 class="">모네타 스타팅 가이드북</h2>
+                        <h2 class="txt-course-name"></h2>
+                        <p class="txt-course-desc">
+                            2023년 <span class="txt-course-name-span"></span>, 단 5일 동안만 열립니다.<br/>
+                            무료 예약 등록하시고 한정적인 기회를 놓치지 마세요.
+                        </p>
+                        <p class="txt-course-desc2"></p>
                         <form class="" id="contact-form" method="post" action="#">
                             <div class="progress">
                                 <div style="width: 50%;" class="progress__bar progress__bar--animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
                                 </div>
                             </div>
                             <p class="txt-step">
-                                무료 전자책 신청: Step 1 of 2
+                                무료 대기 예약 등록 : Step 1 of 2
                             </p>
                             <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block" type="name">
                                 <input class="elFormItem elInput inputHolder" id="name" type="name" name="name" placeholder="이름" maxlength="" required>
@@ -137,7 +241,7 @@
                             </div>
                             <button type="submit">
                                 <i class="fa-solid fa-spinner fa-spin-pulse"></i>
-                                무료 참여 신청
+                                무료 대기 예약 등록
                                 <i class="fas fa-arrow-right"></i>
                             </button>
                             <div class="box-term">
@@ -154,7 +258,7 @@
             </div>
         </div>
     </div>
-    <div class="box-footer">
+    <div class="box-footer" style="margin-top:0;">
         <div class="box-content">
             <a href="./privacy.html" target="_blank">
                 개인정보처리방침
