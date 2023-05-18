@@ -842,6 +842,7 @@
 .course-detail-container .box-form .txt-term {
     font-size: 12px;
     margin-bottom: 0;
+    line-height: 1;
 }
 
 .course-detail-container .box-form .txt-step {
@@ -1176,5 +1177,23 @@
 
     .box-introduce .txt-header2 {
         display: inline-block;
+    }
+
+    .course-detail-container .box-form .txt-course-name {
+        font-size: 32px;
+    }
+
+    .course-detail-container .box-form .txt-course-desc {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .course-detail-container .box-form .txt-course-desc {
+        margin: 0 auto;
+        font-size: 12px;
+    }
+
+    .course-detail-container .box-form .txt-course-desc2 {
+        font-size: 12px;
     }
 }
