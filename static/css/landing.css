@@ -551,16 +551,20 @@
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s ease, transform 1s ease;
+    -webkit-transform: translateY(50px);
+    -webkit-transition: opacity 1s ease, transform 1s ease;
 }
 
 .fade-in-text.fade-in {
     opacity: 1;
     transform: translateY(0);
+    -webkit-transform: translateY(0);
 }
 
 .fade-in-text.fade-out {
     opacity: 0;
     transform: translateY(-50px);
+    -webkit-transform: translateY(-50px);
 }
 
 .course-container .box-hero .box-txt {
