@@ -639,8 +639,9 @@ input:-webkit-autofill:active {
 }
 
 .course-detail-thanks-container .txt-course-name {
-    font-weight: bold;
+    font-family: 'Black Han Sans', sans-serif;
     line-height: 1;
+    color: #00decd;
 }
 
 .course-detail-thanks-container .txt-desc {
