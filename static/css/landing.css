@@ -553,18 +553,31 @@
     transition: opacity 1s ease, transform 1s ease;
     -webkit-transform: translateY(50px);
     -webkit-transition: opacity 1s ease, transform 1s ease;
+    -moz-transform: translateY(50px);
+    -moz-transition: opacity 1s ease, transform 1s ease;
+    -ms-transform: translateY(50px);
+    -ms-transition: opacity 1s ease, transform 1s ease;
+    -o-transform: translateY(50px);
+    -o-transition: opacity 1s ease, transform 1s ease;
+
 }
 
 .fade-in-text.fade-in {
     opacity: 1;
     transform: translateY(0);
     -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
 }
 
 .fade-in-text.fade-out {
     opacity: 0;
     transform: translateY(-50px);
     -webkit-transform: translateY(-50px);
+    -moz-transform: translateY(-50px);
+    -ms-transform: translateY(-50px);
+    -o-transform: translateY(-50px);
 }
 
 .course-container .box-hero .box-txt {
