@@ -1318,6 +1318,7 @@
     .course-detail-container .box-form .txt-course-desc {
         margin: 0 auto;
         font-size: 12px;
+        line-height: 1.7;
     }
 
     .course-detail-container .box-form .txt-course-desc2 {
