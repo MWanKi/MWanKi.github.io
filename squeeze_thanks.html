@@ -40,8 +40,11 @@
     <script>
         let step = localStorage.getItem("step");
         switch(step) {
-            case "challenge_funnel":
-                location.href = "./challenge_funnel.html"
+            // case "challenge_funnel":
+            //     location.href = "./challenge_funnel.html"
+            //     break;
+            default:
+                location.href = "./course_detail.html?course_id=1"
                 break;
         }
     </script>
@@ -81,7 +84,7 @@
                 <i class="fa-solid fa-spinner fa-spin-pulse"></i>
                 읽고 오시면 버튼이 활성화됩니다!
             </div>
-            <form id="contact-form" method="get" action="./challenge_funnel.html" style="display:none">
+            <form id="contact-form" method="get" action="./course_detail.html?course_id=1" style="display:none">
 				<button type="submit">
                     <i class="fa-solid fa-spinner fa-spin-pulse"></i>
                     다음 단계

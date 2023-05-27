@@ -51,6 +51,7 @@
         let html_title = '밍잔 | ';
         let course_name = '';
         let course_detail = '';
+        let img_src = '';
         let tag = '';
 
         switch(params.course_id) {
@@ -58,36 +59,43 @@
                 course_name = '시드 스프라웃 코스';
                 course_desc = '전자책 기획부터 펀딩까지 스스로 지식을 수익화 하는 경제적 자립 능력을 얻어가세요.';
                 tag = 'seed_sprout';
+                img_src = './static/images/book_cover1-min.jpg';
                 break;
             case '2':
                 course_name = '스페셜 스토리 카피라이팅 코스';
                 course_desc = '권위 없는 개발자도 400% 판매를 달성시킨 스토리 기반 상세페이지 카피라이팅 스킬을 얻어가세요.';
                 tag = 'story_copywriting';
+                img_src = './static/images/book_cover2-min.jpg';
                 break;
             case '3':
                 course_name = '패스트 디자인 테크닉 코스';
                 course_desc = '북커버, 상세페이지, 썸네일 등 온라인 세일즈에 필요한 시간단축 디자인 테크닉을 얻어가세요.';
                 tag = 'fast_design';
+                img_src = './static/images/book_cover3-min.jpg';
                 break;
             case '4':
                 course_name = '몬타나 블라썸 코스';
                 course_desc = 'VOD 강의 1인 제작과 프리미엄 지식 상품 런칭으로 매출을 폭발적으로 늘리세요.';
                 tag = 'montana_blossom';
+                img_src = './static/images/book_cover4-min.jpg';
                 break;
             case '5':
                 course_name = '프로 비쥬얼 테크닉';
                 course_desc = '온/오프라인에서 프로페셔널 하게 보이는 신체적 표현법을 통해 고객 불신을 예방하세요.';
                 tag = 'pro_visual';
+                img_src = './static/images/book_cover5-min.jpg';
                 break;
             case '6':
                 course_name = '가제트 오토메이션 코스';
                 course_desc = '서비스 운영에 필요한 마케팅 업무로 낭비되는 그림자 노동시간을 자동화 하세요.';
                 tag = 'gadget_automation';
+                img_src = './static/images/book_cover6-min.jpg';
                 break;
             case '7':
                 course_name = '안티 프레카리아트 코스';
                 course_desc = '시대의 발전에 대체되지 않을 나만의 플랫폼을 만들어 AI기술 발전의 위협으로부터 벗어나세요.';
                 tag = 'anit_precariat';
+                img_src = './static/images/book_cover7-min.jpg';
                 break;
         }
 
@@ -98,6 +106,7 @@
             $('.txt-course-name').html(course_name);
             $('.txt-course-name-span').html(course_name);
             $('.txt-course-desc2').html(course_desc);
+            $('.box-thumbnail img').attr('src', img_src);
 
             var name = $('#name').val();
             var email = $('#email').val();
@@ -205,29 +214,41 @@
                     <div class="box-form card">
                         <h2 class="txt-course-name"></h2>
                         <p class="txt-course-desc">
-                            2023년 6월 한 달간 [VOD] <span class="txt-course-name-span"></span> <em>무료 대기 예약 등록</em>을 시작합니다.<br/>
-                            이 코스는 집에서 무력함을 느끼는 경단녀, 은퇴 후의 삶이 두려운 사람, 직장이 없는 삶이 두려운 사람들에게
-                            세상에는 자신의 도움이 필요한 사람이 많다는 사실을 일깨워 새로운 인생을 살도록 돕기 위해 제작됩니다.<br/>
+                            2023년 6월 한 달간 [VOD] <span class="txt-course-name-span"></span> <em>무료 대기 예약 등록</em>을 시작합니다. <br/><br/>
+                            <span class="box-target">
+                                <span class="disc">집에서 무력함을 느끼는 경단녀</span>
+                                <span class="disc">은퇴 후의 삶이 두려운 사람</span>
+                                <span class="disc">직장 없는 삶이 두려운 사람</span>
+                                <span class="disc">스스로 돈 버는 방법을 모르는 사람</span>
+                                <span class="disc">언젠가 본인 사업을 하고 싶은 사람</span>
+                            </span>
+                            <br/>
+                            이 코스는 위와 같은 사람들에게 세상에는 자신의 도움이 필요한 사람이 많다는 사실을 일깨워 새로운 인생을 살도록 돕기 위해 제작됩니다.<br/><br/>
                             당신의 지지가 수많은 사람들의 인생을 바꾸는데에 큰 힘이 됩니다.
                             <!-- 무료 예약 등록하시고 <s>400,000원</s> 200,000원 <em>50% 할인</em>의 한정적인 기회를 놓치지 마세요. -->
                         </p>
                         <p class="txt-course-desc2"></p>
+                        <div class="box-seperator"></div>
+                        <div class="box-thumbnail">
+                            <img src="" alt="">
+                            <span class="txt-running-time">2:12:56</span>
+                        </div>
                         <ul class="ul-index">
-                            <li>1강 - 잘 다니던 직장을 갑자기 잃는다면?</li>
-                            <li>2강 - 당신이 아직 전자책을 못 만드는 이유와 초간단 해결법</li>
-                            <li>3강 - 의외로 잘 모르는 팔리는 주제 찾는 법</li>
-                            <li>4강 - 진짜 시장 조사를 통한 전자책 기획법</li>
-                            <li>5강 - 사람들이 전자책을 구매하는 심리와 설득 테크닉</li>
-                            <li>6강 - 또 사고 싶다고 칭찬 들었던 전자책 작성법</li>
-                            <li>7강 - 권위가 없어도 팔리는 스토리 카피라이팅</li>
-                            <li>8강 - 내가 아닌 전자책에 권위를 부여하는 법</li>
-                            <li>9강 - 이과 개발자도 400% 판매한 상세페이지 스킬</li>
-                            <li>10강 - 지나가던 사람도 멈춰 세우는 제목 짓는 법</li>
-                            <li>11강 - 인공지능 기술 활용한 고퀄리티 썸네일 제작법</li>
-                            <li>12강 - 전환율을 높이는 필수 펀딩 이벤트 3가지</li>
-                            <li>13강 - 똑똑하게 펀딩 심사 제출하기</li>
-                            <li>14강 - 펀딩 진행중 절대 놓치면 안 되는 1가지</li>
-                            <li>15강 - 리워드 발송법 및 무사고 프로젝트 마무리</li>
+                            <li><span class="chapter">1강</span> 잘 다니던 직장을 갑자기 잃는다면?</li>
+                            <li><span class="chapter">2강</span> 당신이 아직 전자책을 못 만드는 이유와 초간단 해결법</li>
+                            <li><span class="chapter">3강</span> 의외로 잘 모르는 팔리는 주제 찾는 법</li>
+                            <li><span class="chapter">4강</span> 진짜 시장 조사를 통한 전자책 기획법</li>
+                            <li><span class="chapter">5강</span> 사람들이 전자책을 구매하는 심리와 설득 테크닉</li>
+                            <li><span class="chapter">6강</span> 또 사고 싶다고 칭찬 들었던 전자책 작성법</li>
+                            <li><span class="chapter">7강</span> 권위가 없어도 팔리는 스토리 카피라이팅</li>
+                            <li><span class="chapter">8강</span> 내가 아닌 전자책에 권위를 부여하는 법</li>
+                            <li><span class="chapter">9강</span> 이과 개발자도 400% 판매한 상세페이지 스킬</li>
+                            <li><span class="chapter">10강</span> 지나가던 사람도 멈춰 세우는 제목 짓는 법</li>
+                            <li><span class="chapter">11강</span> 인공지능 기술 활용한 고퀄리티 썸네일 제작법</li>
+                            <li><span class="chapter">12강</span> 전환율을 높이는 필수 펀딩 이벤트 3가지</li>
+                            <li><span class="chapter">13강</span> 똑똑하게 펀딩 심사 제출하기</li>
+                            <li><span class="chapter">14강</span> 펀딩 진행중 절대 놓치면 안 되는 1가지</li>
+                            <li><span class="chapter">15강</span> 리워드 발송법 및 무사고 프로젝트 마무리</li>
                         </ul>
                         <p class="txt-course-desc3">
                             <b>등록하신 이메일로 1강부터 5강까지 VOD가 제작되는 즉시 무료로 순차 발송</b>될 예정입니다.

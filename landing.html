@@ -509,7 +509,7 @@
     </section>
     <section class="box-last-section">
         <div class="card fade-in-text">
-            <form id="contact-form" method="post" action="#">
+            <form id="contact-form2" method="post" action="#">
                 <p class="txt-title">
                     모네타 스타팅 가이드북 PDF 신청
                 </p>
@@ -587,20 +587,20 @@
             $('i.fa-arrow-right').css({'display':'inline-block'});
         }
 
-		$('#contact-form').submit(function (e) {
+		$('#contact-form, #contact-form2').submit(function (e) {
 			e.preventDefault();
             showLoading();
 
-			var name = $('#name').val();
+			var name = $(this).find('input[name=name]').val();
             if (!name) {
-                $('#name').focus();
+                $(this).find('input[name=name]').focus();
                 hideLoading();
                 return;
             }
 
-			var email = $('#email').val();
+			var email = $(this).find('input[name=email]').val();
             if (!email) {
-                $('#email').focus();
+                $(this).find('input[name=email]').focus();
                 hideLoading();
                 return;
             }
