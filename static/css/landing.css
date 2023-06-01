@@ -960,14 +960,33 @@
     padding: 40px 0px;
 }
 
+.course-detail-container .box-index {
+    position: relative;
+    padding: 16px 0;
+    background-color: #1b1b1b;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+}
+
+.course-detail-container .box-index::after {
+    position: absolute;
+    content: '';
+    display: block;
+    bottom:0;
+    left:0;
+    right:0;
+    height: 80px;
+    background: linear-gradient(0deg, rgba(27,27,27,1) 0%, rgba(27,27,27,0) 100%);
+}
+
 .course-detail-container .ul-index {
     display: flex;
     flex-direction: column;
     gap: 16px;
     text-align: left;
-    background-color: #1b1b1b;
-    border-radius: 0 0 4px 4px;
-    padding: 24px 16px;
+    padding: 0 16px 32px;
+    max-height: 180px;
+    overflow: scroll;
 }
 
 .course-detail-container .ul-index li {
