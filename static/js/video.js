@@ -12,6 +12,7 @@ $(function() {
     var controls = document.getElementById("controls");
     var fullscreenBtn = document.getElementById("fullscreen-btn");
     var controlsTimeout;
+    var seekDuration = 15; // Duration in seconds for forward/rewind
 
     video.addEventListener("play", updatePlayPauseIcon);
     video.addEventListener("pause", updatePlayPauseIcon);
@@ -197,4 +198,48 @@ $(function() {
             video.webkitEnterFullscreen();
         }
     }
+
+    video.addEventListener("dblclick", handleDoubleTap);
+
+    function handleDoubleTap(event) {
+        var currentTime = video.currentTime;
+        var clientX = event.clientX || (event.touches && event.touches[0].clientX);
+
+        if (clientX < window.innerWidth / 2) {
+            // Rewind 15 seconds
+            video.currentTime = currentTime - seekDuration;
+        } else {
+            // Forward 15 seconds
+            video.currentTime = currentTime + seekDuration;
+        }
+    }
+
+    var touchStartTimestamp = 0;
+
+    video.addEventListener("touchstart", handleTouchStart);
+
+    function handleTouchStart(event) {
+        var currentTime = video.currentTime;
+
+        if (event.touches.length === 1) {
+            var touch = event.touches[0];
+
+            if (touchStartTimestamp === 0) {
+            touchStartTimestamp = Date.now();
+            } else {
+            var timeSinceLastTap = Date.now() - touchStartTimestamp;
+            touchStartTimestamp = 0;
+
+            if (timeSinceLastTap < 300) {
+                if (touch.clientX < window.innerWidth / 2) {
+                // Rewind 15 seconds
+                video.currentTime = currentTime - seekDuration;
+                } else {
+                // Forward 15 seconds
+                video.currentTime = currentTime + seekDuration;
+                }
+            }
+            }
+        }
+        }
 });
