@@ -244,5 +244,5 @@ $(function() {
     }
 
     // 바로 시작
-    video.play();
+    // video.play();
 });
