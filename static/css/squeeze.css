@@ -889,13 +889,14 @@ margin: 0;
 box-shadow: none;
 }
 
-.volume-controls,
+/* .volume-controls,
 .volume-controls button {
     display: none;
-}
+} */
 
 .volume-controls input[type="range"] {
-width: 60px;
+    width: 60px;
+    display:none;
 }
 
 #rewind-btn, #forward-btn {
@@ -967,4 +968,25 @@ display: inline-block;
 
 .fullscreen-btn:hover {
     background-color: transparent;
+}
+
+.volume-controls {
+    position: absolute;
+    top:4px;
+    right:4px;
+}
+
+.volume-controls #mute-btn {
+    border-radius: 8px;
+    background: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width:48px;
+    height: 48px;
+    padding: 0 16px;
+}
+
+.volume-controls #mute-btn.unmuted {
+    display: none;
 }
