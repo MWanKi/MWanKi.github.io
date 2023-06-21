@@ -78,6 +78,13 @@
         }
 
         $(function(){
+            if (params.course_id == null) {
+                $('.card').remove();
+                $('.box-content').append('<h1 style="padding: 40px 0; text-align:center;">403 Forbidden<br/><br/>잘못된 접근입니다.</h1>');
+            } else {
+                history.pushState(null, null, './course_detail_thanks.html')
+            }
+
             $('.txt-course-name').text(course_name);
         })
     </script>
