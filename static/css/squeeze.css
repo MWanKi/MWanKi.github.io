@@ -990,3 +990,11 @@ display: inline-block;
 .volume-controls #mute-btn.unmuted {
     display: none;
 }
+
+.course-detail-container .ul-index .txt-time {
+    color:gray;
+    font-size:12px;
+    position: relative;
+    letter-spacing: 0;
+    top:3px;
+}
