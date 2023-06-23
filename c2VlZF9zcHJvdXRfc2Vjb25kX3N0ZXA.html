@@ -65,7 +65,7 @@
 
         $(function(){
             let videoData = {
-                '1': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/838189020?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;""></iframe></div>`,
+                '1': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/838885748?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
                 '2': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/838550944?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
             }
 
@@ -73,9 +73,12 @@
                 blockPage();
             } else {
                 switch(params.course_id) {
+                    case "f1st":
+                        $('.video-container').append(videoData['1']);
+                        removeComingSoon(1);
+                        break;
                     case "s2nd":
-                        let content = videoData['2'];
-                        $('.video-container').append(content);
+                        $('.video-container').append(videoData['2']);
                         removeComingSoon(2);
                         break;
                     default:
@@ -123,8 +126,8 @@
                     <li class="li-coming-soon">
                         <a class="btn-load-video" href="#">
                             <div class="box-thumb">
-                                <img src="./static/images/thumbnails/chap1.avif" alt="강의 썸네일">
-                                <span class="txt-time">06:03</span>
+                                <img src="./static/images/thumbnails/chap1.jpg" alt="강의 썸네일">
+                                <span class="txt-time">08:07</span>
                             </div>
                             <div class="box-txt">
                                 <ul class="ul-index">
@@ -141,7 +144,7 @@
                     <li class="li-coming-soon">
                         <a class="btn-load-video" href="#">
                             <div class="box-thumb">
-                                <img src="./static/images/thumbnails/chap2.avif" alt="강의 썸네일">
+                                <img src="./static/images/thumbnails/chap2.jpg" alt="강의 썸네일">
                                 <span class="txt-time">06:02</span>
                             </div>
                             <div class="box-txt">
