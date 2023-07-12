@@ -149,6 +149,7 @@
                 }
 
                 if (name.length && email.length) {
+                    $('button').attr('disabled', 'disabled');
                     $.ajax({
                         url: "https://script.google.com/macros/s/AKfycbznmuRLAH6hr_pVDHSFDDkUE5Z0wK_2y_ZCaJAn2UzIgc2MtLeEafXSUrwbdPmFUyKG/exec",
                         data: {
@@ -222,8 +223,9 @@
                             <em>무료 대기 예약 등록</em>을 시작합니다. <br/><br/>
                         </p>
                         <div class="box-thumbnail">
-                            <img src="" alt="">
-                            <span class="txt-running-time">2:12:56</span>
+                            <!-- <img src="" alt="">
+                            <span class="txt-running-time">2:12:56</span> -->
+                            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/844636819?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="0강 - 펀딩을 먼저 해야하는 이유"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
                         </div>
                         <div class="box-index">
                             <ul class="ul-index">
@@ -243,7 +245,7 @@
                                 <li><span class="chapter">14강</span> 똑똑하게 펀딩 심사 제출하기</li>
                                 <li><span class="chapter">15강</span> 펀딩 진행중 절대 놓치면 안 되는 1가지</li>
                                 <li><span class="chapter">16강</span> 리워드 발송법 및 무사고 프로젝트 마무리</li>
-                            </ul>
+                            </ul>잔
                         </div>
                         <div class="box-seperator"></div>
                         <form class="" id="contact-form" method="post" action="#">
