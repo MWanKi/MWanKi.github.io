@@ -501,11 +501,23 @@ input:-webkit-autofill:active {
 }
 
 .txt-free {
-    font-size:120px;
+    font-size:90px;
     font-weight: 900;
     word-break: keep-all;
     color:#ff4f02;
     line-height:1;
+}
+
+@media (max-width: 471px) {
+    .txt-free {
+        font-size:70px;
+    }
+}
+
+@media (max-width: 383px) {
+    .txt-free {
+        font-size:60px;
+    }
 }
 
 .txt-just-cover {
@@ -514,12 +526,16 @@ input:-webkit-autofill:active {
     font-weight: bold;
 }
 
-.txt-btn-desc {
+.txt-btn-desc, .txt-btn-desc strong {
     color:rgba(255, 255, 255, 0.7);
     font-size: 16px;
     font-weight: normal;
     display: block;
     margin-top: 8px;
+}
+
+.txt-btn-desc strong {
+    display: inline;
 }
 
 .box-prize {
@@ -1041,4 +1057,73 @@ display: inline-block;
     text-align: center;
     font-size: 14px;
     color:rgb(228, 59, 44);
+}
+
+.txt-colabo {
+    margin: 0 12px;
+    color:rgba(0,0,0,0.3)
+}
+
+.box-ambition h2 {
+    font-size: 32px;
+}
+
+.btn-header:hover {
+    text-decoration: none;
+}
+
+.box-versus ul {
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:12px;
+}
+
+.box-versus li:nth-child(1),
+.box-versus li:nth-child(3) {
+    display: flex;
+    word-break: keep-all;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 150px;
+    max-width: 150px;
+    height: 35vw;
+    background: #eee;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.box-versus li:nth-child(3) {
+    background-color: gold;
+}
+
+.txt-question {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.txt-mono {
+    color:gray;
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    margin: 32px 0 40px;
+}
+
+.box-host {
+    margin-top: 80px;
+}
+
+.box-host-img img {
+    width:100%;
+    border-radius: 10px;
+}
+
+.benefit {
+    display: none;
 }
