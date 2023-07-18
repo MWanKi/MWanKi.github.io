@@ -1370,6 +1370,16 @@ body {
     }
 }
 
+/* 애니메이션 키 프레임 설정 */
+@keyframes moveImages2 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-200%); /* 이미지들이 왼쪽으로 이동하도록 설정 */
+    }
+}
+
 .box-achievement {
     margin: 0 0 120px;
 }
@@ -1381,12 +1391,48 @@ body {
     margin-bottom: 40px;
 }
 
+.box-course-achievement {
+    width: 100%;
+    overflow: hidden;
+}
+
+.course-detail-container .box-course-achievement .txt-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.box-course-achievement .image-container {
+    animation: moveImages2 10s linear infinite; /* 애니메이션 속성 설정 */
+}
+
 @media (max-width: 471px) {
+    /* 애니메이션 키 프레임 설정 */
+    @keyframes moveImages2 {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-450%); /* 이미지들이 왼쪽으로 이동하도록 설정 */
+        }
+    }
+
     .box-achievement {
         transform: translateX(-20px);
         width:100vw;
         overflow: hidden;
         max-width: 100vw;
+    }
+
+    .box-course-achievement {
+        transform: translateX(0px);
+        max-width: calc(100vw - 70px);
+        width: 100%;
+    }
+
+    .box-course-achievement .image-container {
+        animation: moveImages2 10s linear infinite; /* 애니메이션 속성 설정 */
     }
 
     .course-detail-container .ul-index .txt-time {
