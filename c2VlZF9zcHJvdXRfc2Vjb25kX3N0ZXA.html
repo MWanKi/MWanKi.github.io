@@ -58,15 +58,17 @@
         }
 
         function removeComingSoon(eq) {
-            for (let i = 0; i <= eq; i++) {
-                $('.ul-lecture').find('li').eq(i).removeClass('li-coming-soon');
+            for (let i = 0; i < eq; i++) {
+                console.log(i)
+                $('.ul-lecture').find('> li').eq(i).removeClass('li-coming-soon');
             }
         }
 
         $(function(){
             let videoData = {
-                '1': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/845025024?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
-                '2': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/845331296?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
+                '1': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/845025024?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
+                '2': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/845331296?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
+                '3': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/845946605?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
             }
 
             if (params.course_id == null) {
@@ -80,6 +82,10 @@
                     case "s2nd":
                         $('.video-container').append(videoData['2']);
                         removeComingSoon(2);
+                        break;
+                    case "t3rd":
+                        $('.video-container').append(videoData['3']);
+                        removeComingSoon(3);
                         break;
                     default:
                         blockPage();
@@ -162,7 +168,8 @@
                     <li class="li-coming-soon">
                         <a class="btn-load-video" href="#">
                             <div class="box-thumb">
-                                <img src="./static/images/lecture_1.png" alt="강의 썸네일">
+                                <img src="./static/images/thumbnails/chap3.jpg" alt="강의 썸네일">
+                                <span class="txt-time">06:24</span>
                             </div>
                             <div class="box-txt">
                                 <ul class="ul-index">
