@@ -66,9 +66,11 @@
 
         $(function(){
             let videoData = {
-                '1': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/845025024?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
+                '1': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/845025024?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
                 '2': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/845331296?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
                 '3': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/845946605?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
+                '4': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/846887098?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
+                '5': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/848213500?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
             }
 
             if (params.course_id == null) {
@@ -86,6 +88,14 @@
                     case "t3rd":
                         $('.video-container').append(videoData['3']);
                         removeComingSoon(3);
+                        break;
+                    case "f4th":
+                        $('.video-container').append(videoData['4']);
+                        removeComingSoon(4);
+                        break;
+                    case "f5th":
+                        $('.video-container').append(videoData['5']);
+                        removeComingSoon(5);
                         break;
                     default:
                         blockPage();
@@ -186,7 +196,8 @@
                     <li class="li-coming-soon">
                         <a class="btn-load-video" href="#">
                             <div class="box-thumb">
-                                <img src="./static/images/lecture_1.png" alt="강의 썸네일">
+                                <img src="./static/images/thumbnails/chap4.jpg" alt="강의 썸네일">
+                                <span class="txt-time">09:35</span>
                             </div>
                             <div class="box-txt">
                                 <ul class="ul-index">
@@ -203,14 +214,15 @@
                     <li class="li-coming-soon">
                         <a class="btn-load-video" href="#">
                             <div class="box-thumb">
-                                <img src="./static/images/lecture_1.png" alt="강의 썸네일">
+                                <img src="./static/images/thumbnails/chap5.jpg" alt="강의 썸네일">
+                                <span class="txt-time">13:13</span>
                             </div>
                             <div class="box-txt">
                                 <ul class="ul-index">
                                     <li>
                                         <span class="chapter">5강</span>
                                         <p class="txt-title">
-                                            사람들이 전자책을 구매하는 심리와 설득 테크닉
+                                            매출로 이어지는 목차 초간단 작성법
                                         </p>
                                     </li>
                                 </ul>
