@@ -1376,7 +1376,7 @@ body {
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(-200%); /* 이미지들이 왼쪽으로 이동하도록 설정 */
+        transform: translateX(-250%); /* 이미지들이 왼쪽으로 이동하도록 설정 */
     }
 }
 
