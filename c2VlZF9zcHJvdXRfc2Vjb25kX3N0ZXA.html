@@ -76,6 +76,7 @@
                 '8': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/848669011?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
                 '9': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/849151553?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
                 '10': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/850776056?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
+                '10': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/851335998?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
             }
 
             if (params.course_id == null) {
@@ -87,15 +88,15 @@
                         removeComingSoon(1);
                         break;
                     case "s2nd":
-                        $('.video-container').append(videoData['2']);
+                        $('.video-container').append(videoData['1']);
                         removeComingSoon(2);
                         break;
                     case "t3rd":
-                        $('.video-container').append(videoData['3']);
+                        $('.video-container').append(videoData['1']);
                         removeComingSoon(3);
                         break;
                     case "f4th":
-                        $('.video-container').append(videoData['4']);
+                        $('.video-container').append(videoData['1']);
                         removeComingSoon(4);
                         break;
                     case "f5th":
@@ -108,6 +109,10 @@
                         break;
                     case "t10th":
                         $('.video-container').append(videoData['10']);
+                        removeComingSoon(10);
+                        break;
+                    case "e11eh":
+                        $('.video-container').append(videoData['11']);
                         removeComingSoon(10);
                         break;
                     default:
@@ -326,6 +331,24 @@
                                         <span class="chapter">10강</span>
                                         <p class="txt-title">
                                             초간단 미리캔버스 상세페이지 제작 비법
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="li-coming-soon">
+                        <a class="btn-load-video" href="#">
+                            <div class="box-thumb">
+                                <img src="./static/images/thumbnails/chap5.jpg" alt="강의 썸네일">
+                                <span class="txt-time">11:43</span>
+                            </div>
+                            <div class="box-txt">
+                                <ul class="ul-index">
+                                    <li>
+                                        <span class="chapter">11강</span>
+                                        <p class="txt-title">
+                                            지나가던 사람도 멈춰 세우는 제목 짓는 법
                                         </p>
                                     </li>
                                 </ul>
