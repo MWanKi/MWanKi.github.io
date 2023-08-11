@@ -807,7 +807,8 @@ input:-webkit-autofill:active {
     width: 160px;
     height: calc(160px * 0.5625);
     background :#000;
-    border-radius: 5px;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .ul-lecture li .box-thumb .txt-time {
