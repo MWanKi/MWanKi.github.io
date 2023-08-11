@@ -81,6 +81,7 @@
                 '13': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/852618883?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
                 '14': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/853320442?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
                 '15': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/853364133?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
+                '16': `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/853705596?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`,
             }
 
             if (params.course_id == null) {
@@ -134,6 +135,10 @@
                     case "f15th":
                         $('.video-container').append(videoData['15']);
                         removeComingSoon(15);
+                        break;
+                    case "s16th":
+                        $('.video-container').append(videoData['16']);
+                        removeComingSoon(16);
                         break;
                     default:
                         blockPage();
@@ -439,6 +444,24 @@
                                 <ul class="ul-index">
                                     <li>
                                         <span class="chapter">15강</span>
+                                        <p class="txt-title">
+                                            펀딩 진행중 절대 놓치면 안 되는 1가지
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="li-coming-soon">
+                        <a class="btn-load-video" href="#">
+                            <div class="box-thumb">
+                                <img src="./static/images/thumbnails/chap5.jpg" alt="강의 썸네일">
+                                <span class="txt-time">18:05</span>
+                            </div>
+                            <div class="box-txt">
+                                <ul class="ul-index">
+                                    <li>
+                                        <span class="chapter">16강</span>
                                         <p class="txt-title">
                                             펀딩 진행중 절대 놓치면 안 되는 1가지
                                         </p>
