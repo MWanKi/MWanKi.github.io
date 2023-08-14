@@ -22,11 +22,6 @@ function removeComingSoon(eq) {
 }
 
 function videoEmbedCodeGen(id) {
-    let result = `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/`+id+`?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`
-    return result;
-}
-
-$(function(){
     let videoData = {
         '1': '845025024',
         '2': '845331296',
@@ -45,7 +40,11 @@ $(function(){
         '15': '853364133',
         '16': '853705596',
     }
+    let result = `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/`+videoData[id]+`?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`
+    return result;
+}
 
+$(function(){
     if (params.course_id == null) {
         blockPage();
         return;
