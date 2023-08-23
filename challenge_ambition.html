@@ -68,7 +68,7 @@
                 </p>
             </div>
             <div class="card form">
-            <h1>챌린지에 참여만 하면<br/>한 달만에 전자책 완성!</h1>
+            <h1>챌린지에 참여만 하면<br/>보름만에 전자책 완성!</h1>
 			<p class="txt-title">
                 🌱 지식 창업의 성공적인 시작! 전자책 챌린지 캠프 🌱<br/>
             </p>
@@ -84,8 +84,8 @@
                 </p>
                 <script type="text/javascript">
                     var now = new Date();
-                    var dueDateNumber = 30; // 마감일자 +1일
-                    var earlybirdDateNumber = dueDateNumber - 3;
+                    var dueDateNumber = 27; // 마감일자 +1일
+                    var earlybirdDateNumber = dueDateNumber - 3 + 3;
                     var dueDate = new Date(now.getFullYear(), now.getMonth(), dueDateNumber);
                     var dueMonth = now.getDate() > dueDate ? now.getMonth() + 2 : now.getMonth() + 1;
                     var earlybirdDate = new Date(now.getFullYear(), now.getMonth(), earlybirdDateNumber);
@@ -107,7 +107,7 @@
 
                     function showBenefit() {
                         $('.benefit').css({'display':'inline-block'});
-                        $('.txt-free').text("₩340,000");
+                        $('.txt-free').text("₩79,000");
                     }
 
                     function updateTimer() {
@@ -141,12 +141,13 @@
             <p class="txt-title txt-title2">
                 전자책으로 퍼스널 브랜딩 및 수익을 이뤄내는 <br/><b>인플루언서들의 이야기가 여러분이 될 수도 있습니다.</b>
             </p>
-            <form id="contact-form" method="get" action="https://forms.gle/vowX5P6xq4WzET9ZA">
+            <form id="contact-form" method="get" action="https://forms.gle/BpQgpzmYtHfpZ47o7">
 				<button type="submit">
                     <i class="fa-solid fa-spinner fa-spin-pulse"></i>
                     지금 챌린지 참여하기
                     <i class="fas fa-arrow-right"></i>
-                    <span class="txt-btn-desc benefit"><strong class="txt-due-month"></strong>월 <strong class="txt-earlybird-date"></strong>일부터 참가비가 3만원 인상됩니다</span>
+                    <!-- <span class="txt-btn-desc benefit"><strong class="txt-due-month"></strong>월 <strong class="txt-earlybird-date"></strong>일부터 참가비가 2만원 인상됩니다</span> -->
+                    <span class="txt-btn-desc benefit">9월부터 참가비가 2만원 인상됩니다</span>
                 </button>
                 <div class="box-count">
                     <p class="txt-count-loading"><i class="fa-solid fa-spinner fa-spin-pulse"></i> &nbsp;신청자 수를 불러오고 있습니다.</p>
@@ -159,9 +160,9 @@
                         type: 'GET',
                         success: function(data) {
                             if (data.result == "success") {
-                                $('#num-apply-count').text(parseInt(data.row) + 36);
+                                $('#num-apply-count').text(parseInt(data.row) + 40);
                             } else {
-                                $('#num-apply-count').text(36);
+                                $('#num-apply-count').text(40);
                             }
 
                             $('.box-count .txt-count-loading').hide();
@@ -196,12 +197,13 @@
                     참가자 분들은 전자책 완성 후 <b>퍼스널 브랜딩</b>에 활용하고,<br/>모임 운영이나 컨설팅, 강의 등으로 <b>수익화</b>를 진행하고 계시죠.
                 </p>
             </div>
-            <form id="contact-form" method="get" action="https://forms.gle/vowX5P6xq4WzET9ZA">
+            <form id="contact-form" method="get" action="https://forms.gle/BpQgpzmYtHfpZ47o7">
 				<button type="submit">
                     <i class="fa-solid fa-spinner fa-spin-pulse"></i>
                     지금 챌린지 참여하기
                     <i class="fas fa-arrow-right"></i>
-                    <span class="txt-btn-desc benefit"><strong class="txt-due-month"></strong>월 <strong class="txt-earlybird-date"></strong>일부터 참가비가 3만원 인상됩니다</span>
+                    <!-- <span class="txt-btn-desc benefit"><strong class="txt-due-month"></strong>월 <strong class="txt-earlybird-date"></strong>일부터 참가비가 2만원 인상됩니다</span> -->
+                    <span class="txt-btn-desc benefit">9월부터 참가비가 2만원 인상됩니다</span>
                 </button>
 			</form>
             <div class="box-host">
@@ -214,16 +216,15 @@
             <div class="box-story">
                 <h2>Q. 전자책이 처음인 왕초보도 가능할까요?</h2>
                 <p class="txt-story">
-                    <b>1~7기 운영을 통해 책을 처음 써보는 참가자들도 전자책을 완성할 수 있다는 걸 증명</b>했습니다.
+                    <b>1~8기 운영을 통해 책을 처음 써보는 참가자들도 전자책을 완성할 수 있다는 걸 증명</b>했습니다.
                     <b>회사원, 유튜버, 블로거, 외국어 강사, 미용사</b> 등 다양한 분들이 참여하여 본인만의 이야기를 담은 전자책을 완성했습니다.
                 </p>
                 <br/>
                 <br/>
                 <h2>Q. 아직 전자책 주제를 못 정했어도 괜찮을까요?</h2>
                 <p class="txt-story">
-                    당신만의 전자책 주제를 찾는 방법과
-                    그중에서도 <b>잘 팔릴만한 주제를 찾는 시장조사 하는 법</b>을 알려드립니다.
-                    너무 경험이 없어 할 이야기가 없다면 곤란하지만,
+                    <b>주제를 이미 정하신 상태여야 보름 만에 전자책을 완성하실 확률이 높습니다.</b>
+                    만약 너무 경험이 없어 할 이야기가 없다면 곤란하지만,
                     그렇지 않으시다면 당신을 위한 커리큘럼이 준비되어 있습니다.
                 </p>
                 <br/>
@@ -233,7 +234,7 @@
                     글쓰기가 익숙치 않으신 분들을 위해
                     설득력 있는 글쓰기 테크닉에 대해 알려드립니다.
                     또한 퀄리티 있는 전자책 완성을 위해
-                    <b>4주 동안 총 3회에 걸쳐 작성하신 전자책을 점검하고
+                    <b>2주 동안 총 2회에 걸쳐 작성하신 전자책을 점검하고
                     첨삭</b>해드립니다.
                 </p>
             </div>
@@ -248,26 +249,27 @@
                     <img src="./static/images/review_.jpg" alt="전자책 목업 이미지">
                 </div> -->
             </div>
-            <form id="contact-form" method="get" action="https://forms.gle/vowX5P6xq4WzET9ZA">
+            <form id="contact-form" method="get" action="https://forms.gle/BpQgpzmYtHfpZ47o7">
 				<button type="submit">
                     <i class="fa-solid fa-spinner fa-spin-pulse"></i>
                     지금 챌린지 참여하기
                     <i class="fas fa-arrow-right"></i>
-                    <span class="txt-btn-desc benefit"><strong class="txt-due-month"></strong>월 <strong class="txt-earlybird-date"></strong>일부터 참가비가 3만원 인상됩니다</span>
+                    <!-- <span class="txt-btn-desc benefit"><strong class="txt-due-month"></strong>월 <strong class="txt-earlybird-date"></strong>일부터 참가비가 2만원 인상됩니다</span> -->
+                    <span class="txt-btn-desc benefit">9월부터 참가비가 2만원 인상됩니다</span>
                 </button>
 			</form>
 
             <div class="box-path box-story">
                 <h2>
                     여기서만 경험할 수 있는 <br/>
-                    '진<span style="font-size:20px; font-weight:normal">(眞)</span> 19단계' 커리큘럼</h2>
+                    '진<span style="font-size:20px; font-weight:normal">(眞)</span> 16단계' 커리큘럼</h2>
                 <p class="txt-story">
                     다른 전자책 챌린지는 호스트가 일정만 정해줍니다. 질문에 답변만 해줄 뿐이죠.
                     하지만 전자책 챌린지 캠프는 체계적인 커리큘럼을 통해 전자책을 완성할 수 있도록 도와드립니다.
                 </p>
                 <div class="box-book">
                     <div class="box-img">
-                        <img src="./static/images/curri.jpg" alt="커리큘럼 이미지">
+                        <img src="./static/images/curri.png" alt="커리큘럼 이미지">
                     </div>
                     <p class="txt-book-desc">
                         커리큘럼 진행일정
@@ -286,9 +288,9 @@
                     모든 커리큘럼이 준비되어 있습니다. 당신은 신청만 하시면 됩니다.
                 </p>
                 <br/><br/>
-                <h3>전자책 챌린지 캠프 19단계 커리큘럼</h3>
+                <h3>전자책 챌린지 캠프 16단계 커리큘럼</h3>
                 <ol>
-                    <li>1. 지식 창업의 시작을 방해하는 권위 프레임 깨기 <span>₩50,000</span></li>
+                    <!-- <li>1. 지식 창업의 시작을 방해하는 권위 프레임 깨기 <span>₩50,000</span></li>
                     <li>2. 나만의 전자책 재료 나열하는 법 <span>₩50,000</span></li>
                     <li>3. 팔리는 전자책, 사람들이 찾는 주제 정하는 법 <span>₩200,000</span></li>
                     <li>4. 시장의 니즈를 파악해 목차 작성하는 법 <span>₩200,000</span></li>
@@ -310,26 +312,47 @@
                     <li>[🎁 BONUS] '수익화 전자책 만들기 12 Steps' 전자책 제공 <span>₩35,000</span></li>
                     <li>[🎁 BONUS] 전자책 제작 점검 및 첨삭 서비스 <span>₩200,000</span></li>
                     <li>[🎁 BONUS] 4주간 과제 피드백 및 1:1 문의 서비스 <span>₩200,000</span></li>
+                 -->
+                    <li>1. 팔리는 전자책, 사람들이 찾는 주제 정하는 법 <span>₩200,000</span></li>
+                    <li>2. 시장의 니즈를 파악해 목차 작성하는 법 <span>₩200,000</span></li>
+                    <li>3. 궁금증 유발해 구매를 부르는 목차 작성법 <span>₩100,000</span></li>
+                    <li>4. 전자책 글쓰기 돌입전 마인드셋  <span>₩50,000</span></li>
+                    <li>5. 전자책 규격 선정 <span>₩20,000</span></li>
+                    <li>6. 가독성 높이는 워드 설정 3가지 <span>₩20,000</span></li>
+                    <li>7. 타겟을 고려한 글쓰기 비법 <span>₩100,000</span></li>
+                    <li>8. 독자가 책에 몰입할 수 있도록 도와주는 ㅇㅇ <span>₩10,000</span></li>
+                    <li>9. 설득력 있는 글쓰기 테크닉 3종 <span>₩50,000</span></li>
+                    <li>10. 전자책을 있어 보이게 하는 2가지 요소 <span>₩50,000</span></li>
+                    <li>11. 저작권법 고시하기 <span>₩10,000</span></li>
+                    <li>12. 유용한 워드 기능 소개 <span>₩20,000</span></li>
+                    <li>13. 전자책 퀄리티 높이는 필수 퇴고법 3가지 <span>₩50,000</span></li>
+                    <li>14. 간지 디자인 <span>₩10,000</span></li>
+                    <li>15. 검색 최적화 제목 만드는 법 <span>₩20,000</span></li>
+                    <li>16. 표지 디자인 테크닉 <span>₩50,000</span></li>
+                    <li>[🎁 BONUS] '수익화 전자책 만들기 12 Steps' 전자책 제공 <span>₩35,000</span></li>
+                    <li>[🎁 BONUS] 전자책 제작 점검 및 첨삭 서비스 <span>₩200,000</span></li>
+                    <li>[🎁 BONUS] 2주간 과제 피드백 및 1:1 문의 서비스 <span>₩200,000</span></li>
                 </ol>
                 <p class="txt-total-value">
-                    총 커리큘럼 가치: ₩1,965,000
+                    총 커리큘럼 가치: ₩1,895,000
                 </p>
                 <p class="txt-if-do-now">
                     그런데 지금 신청하면
                 </p>
                 <p class="txt-free">
-                    ₩370,000
+                    ₩99,000
                 </p>
                 <p class="txt-just-cover benefit">
-                    <strong class="txt-due-month"></strong>월 <span class="txt-earlybird-date"></span>일부터 37만 원으로 인상될 예정입니다.
+                    <!-- <strong class="txt-due-month"></strong>월 <span class="txt-earlybird-date"></span>일부터 37만 원으로 인상될 예정입니다. -->
+                    9월부터 9.9만 원으로 인상될 예정입니다.
                 </p>
             </div>
-            <form id="contact-form" method="get" action="https://forms.gle/vowX5P6xq4WzET9ZA">
+            <form id="contact-form" method="get" action="https://forms.gle/BpQgpzmYtHfpZ47o7">
 				<button type="submit">
                     <i class="fa-solid fa-spinner fa-spin-pulse"></i>
                     지금 챌린지 참여하기
                     <i class="fas fa-arrow-right"></i>
-                    <!-- <span class="txt-btn-desc benefit">7월 27일부터 참가비가 3만원 인상됩니다</span> -->
+                    <!-- <span class="txt-btn-desc benefit">7월 27일부터 참가비가 2만원 인상됩니다</span> -->
                 </button>
 			</form>
             <div class="box-story box-prize">
@@ -349,7 +372,7 @@
                 <br/>
                 <br/>
                 <p class="txt-story">
-                    30만 원이라는 금액은 계획없이 쓴다면 사치를 하거나 술자리 몇 번에 탕진해버리고 맙니다.
+                    8만 원이라는 금액은 계획없이 쓴다면 사치를 하거나 술자리 몇 번에 탕진해버리고 맙니다.
                 </p>
                 <div class="box-versus">
                     <ul>
@@ -363,12 +386,13 @@
                     선택은 당신의 몫입니다.
                 </p>
             </div>
-            <form id="contact-form" method="get" action="https://forms.gle/vowX5P6xq4WzET9ZA">
+            <form id="contact-form" method="get" action="https://forms.gle/BpQgpzmYtHfpZ47o7">
 				<button type="submit">
                     <i class="fa-solid fa-spinner fa-spin-pulse"></i>
                     지금 챌린지 참여하기
                     <i class="fas fa-arrow-right"></i>
-                    <span class="txt-btn-desc benefit"><strong class="txt-due-month"></strong>월 27일부터 참가비가 3만원 인상됩니다</span>
+                    <!-- <span class="txt-btn-desc benefit"><strong class="txt-due-month"></strong>월 27일부터 참가비가 2만원 인상됩니다</span> -->
+                    <span class="txt-btn-desc benefit">9월부터 참가비가 2만원 인상됩니다</span>
                 </button>
 			</form>
             <br/>
@@ -391,12 +415,12 @@
                     아마 후회 없으실 겁니다.
                 </p>
             </div>
-            <form id="contact-form" method="get" action="https://forms.gle/vowX5P6xq4WzET9ZA">
+            <form id="contact-form" method="get" action="https://forms.gle/BpQgpzmYtHfpZ47o7">
 				<button type="submit">
                     <i class="fa-solid fa-spinner fa-spin-pulse"></i>
                     지금 챌린지 참여하기
                     <i class="fas fa-arrow-right"></i>
-                    <!-- <span class="txt-btn-desc benefit">7월 27일부터 참가비가 3만원 인상됩니다</span> -->
+                    <!-- <span class="txt-btn-desc benefit">7월 27일부터 참가비가 2만원 인상됩니다</span> -->
                 </button>
 			</form>
 
