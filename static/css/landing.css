@@ -197,6 +197,20 @@
     overflow: hidden;
 }
 
+.box-hero .img-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+}
+
 .box-hero .box-txt {
     padding-top: 72px;
     position: relative;
