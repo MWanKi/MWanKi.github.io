@@ -1357,10 +1357,10 @@ display: inline-block;
     color:#000;
 }
 
-.box-next .ul-strategy li .box-title .txt-title span {
-    color:rgb(153, 153, 153);
+.box-next .ul-strategy li .box-title span {
+    color:orangered;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .box-next-video.box-next-step {
@@ -1373,11 +1373,19 @@ display: inline-block;
 
 .box-next .ul-strategy li .box-thumb {
     width:100%;
+    margin-top: 16px;
     position: relative;
+    height: 280px;
 }
 
 .box-next .ul-strategy li .box-thumb img {
     max-width:50%;
+}
+
+.box-next .ul-strategy li .box-thumb .img-mockup1 {
+    position: relative;
+    top: -20px;
+    max-width: 53%;
 }
 
 .box-next .ul-strategy li .box-thumb .img-mockup2 {
@@ -1417,11 +1425,20 @@ display: inline-block;
     right: 20px;
 }
 
+.box-next .ul-strategy li .box-thumb .img-bg {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    max-width: none;
+    z-index: 0;
+}
+
 .box-next .ul-strategy li .box-thumb .img-badge {
     position: absolute;
     width: 80px;
-    top:0;
-    left:20px;
+    top: -10px;
+    left: -10px;
 }
 
 .box-next .ul-strategy li .box-cta {
@@ -1456,6 +1473,26 @@ display: inline-block;
     color:#000;
 }
 
+.box-next .ul-strategy li .txt-prod-name {
+    font-size: 16px;
+    font-weight: 600;
+    color:#000;
+    padding: 24px 0 24px;
+}
+
+.box-next .ul-strategy li .txt-desc {
+    font-size: 13px;
+    padding: 0 40px;
+    line-height: 1.7;
+    word-break: keep-all;
+}
+
+.box-next .ul-strategy li .txt-bonus {
+    padding-top: 24px;
+    font-size: 16px;
+    color: orangered;
+    font-weight: bold;
+}
 
 @media (max-width: 471px) {
     .txt-free {

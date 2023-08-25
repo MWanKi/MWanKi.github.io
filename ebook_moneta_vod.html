@@ -25,7 +25,6 @@
 	<link rel="stylesheet" href="./static/css/squeeze.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://player.vimeo.com/api/player.js"></script>
-    <!-- <script src="./static/js/video.js"></script> -->
     <!-- Hotjar Tracking Code for squeeze_thanks -->
     <script>
         (function(h,o,t,j,a,r){
@@ -97,48 +96,70 @@
             </p>
             <p class="txt-next-desc">
                 실패를 피하기 위해 강의를 끝까지 보셨다면<br/>
-                당신에게 맞는 수익화 전략을 즉시 시작해보세요.
+                당신에게 맞는 수익화 전략을 즉시 시작해보세요!
             </p>
             <ul class="ul-strategy">
                 <li class="card">
                     <div class="box-title">
-                        <p class="txt-title">장기 수익화 전략 <span>for Beginner</span></p>
+                        <span>초보자용</span>
+                        <p class="txt-title">장기 수익화 전략 </p>
                     </div>
                     <div class="box-thumb">
+                        <img class="img-bg" src="./static/images/bg.png" alt="">
                         <img class="img-mockup1" src="./static/images/challenge_mockup1.png" alt="">
                         <img class="img-mockup2" src="./static/images/challenge_mockup2.png" alt="">
                         <img class="img-mockup3" src="./static/images/challenge_mockup3.png" alt="">
                         <img class="img-badge" src="./static/images/badge.png" alt="">
                     </div>
                     <div class="box-txt">
-
+                        <p class="txt-prod-name">15일 전자책 완성 챌린지</p>
+                        <p class="txt-desc">
+                            혹시 수익화가 처음이신가요?<br/>
+                            당신의 퍼스널 브랜딩을 위한 전자책 15일만에 완성하는 챌린지에 지금 참여해보세요!
+                        </p>
+                        <p class="txt-bonus">▼ 3.9만원 상당 수익화 전자책 무료 받기 ▼</p>
                     </div>
                     <div class="box-cta">
-                        <button type="submit">
-                            15일 전자책 완성하기
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
+                        <form action="./challenge_ambition.html">
+                            <button type="submit">
+                                15일 전자책 완성하기
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </form>
                     </div>
                 </li>
                 <li class="card">
                     <div class="box-title">
-                        <p class="txt-title">단기 수익화 전략 <span>for Expert</span></p>
+                        <span>전문가용</span>
+                        <p class="txt-title">단기 수익화 전략</p>
                     </div>
                     <div class="box-thumb">
+                        <img class="img-bg" src="./static/images/bg.png" alt="">
                         <img class="img-mockup4" src="./static/images/mingzan_profile.png" alt="">
                         <img class="img-mockup5" src="./static/images/challenge_mockup5.png" alt="">
                         <img class="img-mockup6" src="./static/images/challenge_mockup4.png" alt="">
                         <img class="img-badge" src="./static/images/badge2.png" alt="">
                     </div>
                     <div class="box-txt">
-
+                        <p class="txt-prod-name">시드 스프라웃 코스 2.0</p>
+                        <p class="txt-desc">
+                            이미 이뤄놓은 성과가 있으신가요?<br/>
+                            당신의 노하우를 담은 전자책 펀딩으로 새로운 수익 파이프라인을 만들어 보세요!
+                        </p>
+                        <p class="txt-bonus">▼ 100만원 상당 VOD 1~8강 무료 수강하기 ▼</p>
                     </div>
                     <div class="box-cta">
-                        <button type="submit">
+                        <button id="btn-sprout" type="submit">
                             전자책 펀딩 시작하기
                             <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
+                    <script>
+                        $('#btn-sprout').click(function(){
+                            location.href = './course_detail.html?course_id=1';
+                            return;
+                        });
+                    </script>
                 </li>
             </ul>
         </div>
