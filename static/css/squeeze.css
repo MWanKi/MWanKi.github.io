@@ -52,6 +52,10 @@ body {
     margin:0 auto;
 }
 
+.box-vod-content {
+    margin:0 auto;
+}
+
 .card {
     padding: 56px 20px;
     box-shadow: 0px 10px 40px 0px rgba(29, 46, 59, 0.15);
@@ -1223,6 +1227,7 @@ display: inline-block;
     font-size: 32px;
     font-weight: 700;
     color:#000;
+    word-break: keep-all;
 }
 
 .btn-logo:hover {
@@ -1242,18 +1247,17 @@ display: inline-block;
 }
 
 .box-learn-more {
-    width:960px;
+    max-width:960px;
     margin: 80px auto;
 }
 
 .box-head-copy .txt-head-copy {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-    padding:24px 0;
+    padding:24px 16px;
     font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    word-break: keep-all;
 }
 
 .box-head-copy .txt-head-copy .txt-highlight {
@@ -1325,6 +1329,7 @@ display: inline-block;
     font-size: 48px;
     font-weight: 600;
     color:#000;
+    word-break: keep-all;
 }
 
 .box-next .txt-next-desc {
@@ -1332,6 +1337,7 @@ display: inline-block;
     font-size: 18px;
     font-weight: 300;
     line-height: 1.7;
+    word-break: keep-all;
 }
 
 .box-next .ul-strategy {
@@ -1384,8 +1390,10 @@ display: inline-block;
 
 .box-next .ul-strategy li .box-thumb .img-mockup1 {
     position: relative;
-    top: -20px;
+    top: calc(50% - 20px);
     max-width: 53%;
+    min-width: 197px;
+    transform: translateY(-50%);
 }
 
 .box-next .ul-strategy li .box-thumb .img-mockup2 {
@@ -1405,6 +1413,7 @@ display: inline-block;
 .box-next .ul-strategy li .box-thumb .img-mockup4 {
     position: relative;
     top:-20px;
+    min-width: 148px;
     max-width: 40%;
     max-height:372px;
 }
@@ -1527,6 +1536,30 @@ display: inline-block;
 
     .course-detail-thanks-container .ul-index li .txt-vod-desc {
         display: none;
+    }
+
+    .ul-free-resources {
+        padding: 20px;
+    }
+    
+    .ul-free-resources li {
+        flex-direction: column;
+    }
+
+    .ul-free-resources li .box-thumb {
+        max-width: 100%;
+    }
+
+    .box-next .box-arrow {
+        max-width: 70%;
+    }
+
+    .box-next .ul-strategy {
+        flex-direction: column;
+        padding: 24px 0;
+    }
+    .box-next .ul-strategy li.card {
+        margin-bottom: 24px;
     }
 }
 
