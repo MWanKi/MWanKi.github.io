@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GJTHG7JNB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2GJTHG7JNB');
+    </script>
+	<title>밍잔 | 시드 스프라웃 코스</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW, NOARCHIVE">
+    <meta name="GOOGLEBOT" content="NOSNIPPET">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="naver-site-verification" content="22d00cae0c6f71c8eb815194f12fdda4890c0713" />
+    <link rel="shortcut icon" href="static/images/ico.png">
+	<link rel="stylesheet" href="./static/css/reset.css">
+	<link rel="stylesheet" href="./static/css/squeeze.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <!-- <script src="./static/js/video.js"></script> -->
+    <!-- Hotjar Tracking Code for squeeze_thanks -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:3450797,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+</head>
+<body>
+    <!-- <script src="./static/js/seed_sprout.js"></script> -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
+    <script>
+        let queryString = window.location.search;
+        let durationChecker;
+        queryString = queryString.substring(1);
+        let params = {};
+        let paramPairs = queryString.split('&');
+
+        for (let i = 0; i < paramPairs.length; i++) {
+            let pair = paramPairs[i].split('=');
+            let key = decodeURIComponent(pair[0]);
+            let value = decodeURIComponent(pair[1]);
+            params[key] = value;
+        }
+
+        function blockPage() {
+            $('.card').remove();
+            $('.box-content').append('<h1 style="padding: 40px 0; text-align:center;">403 Forbidden<br/><br/>잘못된 접근입니다.</h1><p style="text-align:center; font-size:13px;">이 페이지를 다시 보시려면 <br/>보내드린 이메일 링크를 통해 접속해주세요.</p>');
+        }
+
+
+        function removeComingSoon(eq) {
+            for (let i = 0; i < eq; i++) {
+                $('.ul-lecture').find('> li').eq(i).removeClass('li-coming-soon');
+            }
+        }
+
+        function videoEmbedCodeGen(id) {
+            let videoData = {
+                '1': '857207117',
+                '2': '857207117',
+                // '1': '845025024',
+                // '2': '845331296',
+                '3': '845946605',
+                '4': '846887098',
+            }
+            let result = `<div style="padding:56.25% 0 0 0;position:relative;"><iframe id="player" src="https://player.vimeo.com/video/`+videoData[id]+`?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`
+            return result;
+        }
+
+        $(function(){
+            if (params.course_id == null) {
+                // blockPage();
+                // return;
+            } 
+
+            switch(params.course_id) {
+                case "f1st":
+                    loadVideo($('.btn-load-video').eq(0));
+                    removeComingSoon(1);
+                    break;
+                case "s2nd":
+                    loadVideo($('.btn-load-video').eq(1));
+                    removeComingSoon(2);
+                    break;
+                case "t3rd":
+                    loadVideo($('.btn-load-video').eq(2));
+                    removeComingSoon(3);
+                    break;
+                case "f4th":
+                    loadVideo($('.btn-load-video').eq(3));
+                    removeComingSoon(4);
+                    break;
+                default:
+                    // blockPage();
+                    break;
+            }
+
+            // history.pushState(null, null, './c2VlZF9zcHJ.html');
+
+            function loadVideo(a) {
+                if (a.parent().hasClass('li-coming-soon')) {
+                    alert('이전 강의를 먼저 시청하세요.');
+                    return;
+                }
+                clearInterval(durationChecker);
+                $('.txt-vod-title').text(a.find('.txt-title').text());
+                $('.ul-lecture-new li a').removeClass('active');
+                a.addClass('active');
+                let eq = a.parent().index()+1;
+                let content = videoEmbedCodeGen(eq);
+                $('.box-next-video').hide();
+                $('.video-container-new').html(content);
+                $('html, body').animate({scrollTop:0}, 'fast');
+
+                try {
+                    checkPlayTime();
+                } catch(e){
+                    console.log(e);
+                }
+            }
+
+            $('.btn-load-video').click(function() {
+                loadVideo($(this));
+                return false;
+            })
+
+            $('.box-next-video button').click(function() {
+                // console.log($('.ul-lecture-new li a.active').parent().next());
+                try {
+                    let nextLi = $('.ul-lecture-new li a.active').parent().next();
+                    console.log(nextLi);
+                if (nextLi.length == 0) {
+                    // 5~8강 이메일 보내기
+                    alert('이메일')
+                    return;
+                }
+                nextLi.removeClass('li-coming-soon');
+                let next = nextLi.find('a');
+                loadVideo(next);
+                }catch(e) {
+                    console.log(e);
+                }
+                
+                return false;
+            })
+            
+
+            function checkPlayTime() {
+                var player = new Vimeo.Player($("#player")[0]);
+                var currentPos, percentage, vdoEndTym = "";
+
+                player.on('timeupdate', function (getAll) {
+                    currentPos = getAll.seconds;
+                    vdoEndTym = getAll.duration;
+                    percentage = (getAll.percent * 100);
+
+                    if (percentage > 80) {
+                        $('.box-next-video').fadeIn();
+                    } else {
+                        $('.box-next-video').fadeOut();
+                    }
+                });
+            }
+        })
+    </script>
+	
+    <div class="box-content">
+        <div class="box-header">
+            <a class="btn-logo" href="./index.html">
+                <div class="box-profile">
+                    <img src="./static/images/profile_big.jpg" alt="프로필">
+                </div>
+                <div class="box-name">
+                    <p class="txt-name">밍잔</p>
+                    <p class="txt-role">시드 스프라웃 코스 2.0</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="box-lecture-list-new">
+        <ul class="ul-lecture-new">
+            <li>
+                <a class="btn-load-video" href="#">
+                    <div class="box-thumb">
+                        <img src="./static/images/thumbnails/chap1.jpg" alt="강의 썸네일">
+                        <span class="txt-time">10:24</span>
+                    </div>
+                    <div class="box-txt">
+                        <ul class="ul-index">
+                            <li>
+                                <span class="chapter">1강</span>
+                                <p class="txt-title">
+                                    잘 다니던 직장을 갑자기 잃는다면?
+                                </p>
+                                <p class="txt-creator">
+                                    밍잔
+                                </p>
+                                <p class="txt-vod-desc">
+                                    만약에 본업을 갑자기 잃는다면 어떻게 해야 할까요? 
+                                    저는 책임전가로 인해 제가 세웠던 법인회사에서 나와야 했고,
+                                    이후로 혼자서 생존을 위해 뭘 해야 할지 고민한 끝에...
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </a>
+            </li>
+            <li class="li-coming-soon">
+                <a class="btn-load-video" href="#">
+                    <div class="box-thumb">
+                        <img src="./static/images/thumbnails/chap2.jpg" alt="강의 썸네일">
+                        <span class="txt-time">08:36</span>
+                    </div>
+                    <div class="box-txt">
+                        <ul class="ul-index">
+                            <li>
+                                <span class="chapter">2강</span>
+                                <p class="txt-title">
+                                    당신이 아직 전자책을 못 만든 이유와 초간단 해결법
+                                </p>
+                                <p class="txt-creator">
+                                    밍잔
+                                </p>
+                                <p class="txt-vod-desc">
+                                    아직까지 실행을 하지 못 하고 있는 이유는 대부분 2가지입니다.
+                                    첫 번째는 스스로에게 자격이 없다고 생각하는 것이고,
+                                    두 번째는 너무 실력이 좋은 바람에 알려줄 수 있는...
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </a>
+            </li>
+            <li class="li-coming-soon">
+                <a class="btn-load-video" href="#">
+                    <div class="box-thumb">
+                        <img src="./static/images/thumbnails/chap3.jpg" alt="강의 썸네일">
+                        <span class="txt-time">06:24</span>
+                    </div>
+                    <div class="box-txt">
+                        <ul class="ul-index">
+                            <li>
+                                <span class="chapter">3강</span>
+                                <p class="txt-title">
+                                    의외로 잘 모르는 팔리는 주제 찾는 법
+                                </p>
+                                <p class="txt-creator">
+                                    밍잔
+                                </p>
+                                <p class="txt-vod-desc">
+                                    경험상 처음 수익화를 시도하는 사람들의 대부분이 안 팔리는 전자책을 만듭니다.
+                                    하지만 일이 이렇게 흘러가게 되는 것도 이해가 갑니다. 
+                                    그래서 어떻게 해야 되냐면...
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </a>
+            </li>
+            <li class="li-coming-soon">
+                <a class="btn-load-video" href="#">
+                    <div class="box-thumb">
+                        <img src="./static/images/thumbnails/chap4.jpg" alt="강의 썸네일">
+                        <span class="txt-time">09:35</span>
+                    </div>
+                    <div class="box-txt">
+                        <ul class="ul-index">
+                            <li>
+                                <span class="chapter">4강</span>
+                                <p class="txt-title">
+                                    진짜 시장 조사를 통한 전자책 기획법
+                                </p>
+                                <p class="txt-creator">
+                                    밍잔
+                                </p>
+                                <p class="txt-vod-desc">
+                                    어느정도 팔릴 것 같은 주제를 찾았다면, 전자책을 쓰기만 하면 됩니다.
+                                    그런데 대부분 상품 기획을 해본 적이 없어 
+                                    어떻게 해야 할지 모르는 분들이 많습니다.
+                                    그래서 이번 강의에서는...
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="box-title">
+        <p class="txt-vod-title"></p>
+    </div>
+    <div class="video-container-new"></div>
+    <div class="box-next-video">
+        <button type="submit">
+            다음 강의 보기
+        </button>
+    </div>
+    <div class="box-learn-more">
+        <div class="box-head-copy">
+            <p class="txt-head-copy">
+                <span class="txt-highlight">더 많은 정보를 원하시나요...?</span>그렇다면, 아래에 유료급 자료 2가지를 무료로 즉시 받아보세요:
+            </p>
+        </div>
+        <div class="box-free-resources">
+            <ul class="ul-free-resources">
+                <li>
+                    <div class="box-thumb">
+                        <img src="./static/images/mockup.jpg" alt="모네타 스타팅 가이드북">
+                    </div>
+                    <div class="box-txt">
+                        <p class="txt-title">
+                            Step #1 - 지식 수익화 스타팅 가이드북을 읽어보세요...
+                        </p>
+                        <p class="txt-desc">
+                            실력도 부족하고, 권위도 없어서 지식으로 돈을 벌 수 있을지 걱정되시나요? 
+                            <u>저 또한 같은 고민을 했고, 극복한 뒤엔 온라인 강의를 런칭할 수 있었습니다.</u>
+                            지금 당신에게 필요한 건 <b>리프레이밍</b>입니다.<br/><br/>
+
+                            직장 없이 경제적 자립을 바라고 있다면 '모네타 스타팅 가이드북'을 꼭 읽어보세요. 
+                            흙수저도 자동수익을 얻을 수 있었던 비법을 모두 공개합니다!
+                        </p>
+                        <div class="box-cta">
+                            <button type="submit">
+                                수익화 가이드북 PDF 무료로 즉시 다운로드
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="box-thumb">
+                        <img src="./static/images/moneta_vod.jpg" alt="전자책 수익화 전략 VOD">
+                    </div>
+                    <div class="box-txt">
+                        <p class="txt-title">
+                            Step #2 - 전자책 수익화 전략 VOD를 시청해보세요!
+                        </p>
+                        <p class="txt-desc">
+                            지식을 수익화 할 마음의 결정을 하셨나요? 저는 이 전략을 알기 전까지 8년 동안 사업 실패를 경험했습니다. 
+
+                            <b>이 강의는 당신이 저와 같은 고통을 겪지 않았으면 하는 바람에서 만들어졌습니다.</b><br/><br/>
+
+                            오랫동안 다녔던 당신의 직장을 떠나 전자책에 도전할 정도로 진심이라면, 지금 바로 수익화 전략 정보를 얻어가세요!
+                        </p>
+                        <div class="box-cta">
+                            <button type="submit">
+                                전자책 수익화 전략 VOD 무료 시청하기
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
