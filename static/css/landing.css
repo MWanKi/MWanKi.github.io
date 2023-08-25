@@ -722,6 +722,7 @@
     cursor: pointer;
     text-decoration: none;
     word-break: keep-all;
+    text-align: left;
 }
 
 .ul-question li a::after {
