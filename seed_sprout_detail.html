@@ -176,22 +176,70 @@
                         <form class="" id="contact-form" method="post" action="#">
                             <p class="txt-course-title">
                                 시드 스프라웃 코스 2.0:<br/>
-                                오늘 시작합니다!
+                                곧 시작합니다! @ <span class="txt-time"></span> <span class="txt-ampm"></span>
                             </p>
                             <div class="box-timer">
                                 <div class="box-num box-hour">
-                                    <div class="box-value">00</div>
+                                    <div class="box-value">--</div>
                                     <p class="txt-label">HOUR</p>
                                 </div>
                                 <div class="box-num box-min">
-                                    <div class="box-value">00</div>
+                                    <div class="box-value">--</div>
                                     <p class="txt-label">MINUTES</p>
                                 </div>
                                 <div class="box-num box-sec">
-                                    <div class="box-value">00</div>
+                                    <div class="box-value">--</div>
                                     <p class="txt-label">SECONDS</p>
                                 </div>
                             </div>
+                            <script>
+                                // 현재 시간 구하기
+                                var now = new Date();
+
+                                // 현재 시간으로부터 1~5분 뒤 랜덤으로 구하기
+                                var random = Math.floor(Math.random() * 5) + 1;
+                                var randomTime = new Date(now.getTime() + random * 60000);
+
+                                // 분이 0으로 끝나지 않으면 0으로 끝나게 올림
+                                if (randomTime.getMinutes() % 10 != 0) {
+                                    randomTime.setMinutes(randomTime.getMinutes() + (10 - randomTime.getMinutes() % 10));
+                                }
+
+                                // 1초씩 카운트다운해서 적용하기
+                                var timer = setInterval(function() {
+                                    var now = new Date();
+                                    var diff = randomTime - now;
+
+                                    var hour = Math.floor(diff / 1000 / 60 / 60);
+                                    var min = Math.floor(diff / 1000 / 60) % 60;
+                                    var sec = Math.floor(diff / 1000) % 60;
+
+                                    // 2자리수로 변경
+                                    hour = hour < 10 ? '0' + hour : hour;
+                                    min = min < 10 ? '0' + min : min;
+                                    sec = sec < 10 ? '0' + sec : sec;
+
+                                    $('.box-hour .box-value').text(hour);
+                                    $('.box-min .box-value').text(min);
+                                    $('.box-sec .box-value').text(sec);
+
+                                    // .txt-time에 randomTime 시:분 넣기
+                                    var time = randomTime.getHours() + ':' + randomTime.getMinutes();
+                                    $('.txt-time').text(time);
+                                    
+                                    // txt-ampm에 오전 오후 넣기
+                                    var ampm = now.getHours() < 12 ? 'AM' : 'PM';
+                                    $('.txt-ampm').text(ampm);
+
+
+                                    if (diff <= 0) {
+                                        clearInterval(timer);
+                                        $('.box-hour .box-value').text('00');
+                                        $('.box-min .box-value').text('00');
+                                        $('.box-sec .box-value').text('00');
+                                    }
+                                }, 1000);
+                            </script>
                             <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block" type="name">
                                 <input class="elFormItem elInput inputHolder" id="name" type="name" name="name" placeholder="이름" maxlength="" required>
                                 <div class="elLabel">

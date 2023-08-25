@@ -1419,11 +1419,12 @@ body {
     justify-content: center;
     align-items: center;   
     font-size: 20px;
+    letter-spacing: 0;
 }
 
 .box-hero-content .box-timer .txt-label {
     margin-top: 8px;
-    font-size: 11px;
+    font-size: 10px;
     color:#fff;
     font-weight: normal;
     opacity: .3;
@@ -1506,6 +1507,11 @@ body {
 
 .box-course-achievement .image-container {
     animation: moveImages2 10s linear infinite; /* 애니메이션 속성 설정 */
+}
+
+.txt-time, .txt-ampm {
+    color: #fff;
+    letter-spacing: 0;
 }
 
 @media (max-width: 780px) {
