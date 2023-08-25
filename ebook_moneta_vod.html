@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GJTHG7JNB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2GJTHG7JNB');
+    </script>
+	<title>밍잔 | 시드 스프라웃 코스</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW, NOARCHIVE">
+    <meta name="GOOGLEBOT" content="NOSNIPPET">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="naver-site-verification" content="22d00cae0c6f71c8eb815194f12fdda4890c0713" />
+    <link rel="shortcut icon" href="static/images/ico.png">
+	<link rel="stylesheet" href="./static/css/reset.css">
+	<link rel="stylesheet" href="./static/css/squeeze.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <!-- <script src="./static/js/video.js"></script> -->
+    <!-- Hotjar Tracking Code for squeeze_thanks -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:3450797,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+</head>
+<body>
+    <!-- <script src="./static/js/seed_sprout.js"></script> -->
+
+    <script>
+        let queryString = window.location.search;
+        let durationChecker;
+
+        function videoEmbedCodeGen() {
+            return `<div style="padding:56.25% 0 0 0;position:relative;"><iframe id="player" src="https://player.vimeo.com/video/857207117?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`;
+        }
+
+        $(function(){
+            loadVideo($('.btn-load-video').eq(0));
+           
+            function loadVideo(a) {
+                if (a.parent().hasClass('li-coming-soon')) {
+                    alert('이전 강의를 먼저 시청하세요.');
+                    return;
+                }
+                clearInterval(durationChecker);
+                let content = videoEmbedCodeGen();
+                $('.video-container-new').html(content);
+                $('html, body').animate({scrollTop:0}, 'fast');
+            }
+        })
+    </script>
+	
+    <div class="box-content">
+        <div class="box-header">
+            <a class="btn-logo" href="./index.html">
+                <div class="box-profile">
+                    <img src="./static/images/profile_big.jpg" alt="프로필">
+                </div>
+                <div class="box-name">
+                    <p class="txt-name">밍잔</p>
+                    <p class="txt-role">지식 수익화 가이드</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="box-title">
+        <p class="txt-vod-title">비기너의 성공을 위한 전자책 수익화 전략</p>
+    </div>
+    <div class="video-container-new"></div>
+    <style>
+        .box-next-video {display: block !important;}
+    </style>
+    <div class="box-next-video box-next-step">
+        <div class="box-next">
+            <div class="box-arrow">
+                <img src="./static/images/arrow.png" alt="">
+                <img src="./static/images/arrow.png" alt="">
+                <img src="./static/images/arrow.png" alt="">
+            </div>
+            <p class="txt-next">
+                이제 다음 스텝은?
+            </p>
+            <p class="txt-next-desc">
+                실패를 피하기 위해 강의를 끝까지 보셨다면<br/>
+                당신에게 맞는 수익화 전략을 즉시 시작해보세요.
+            </p>
+            <ul class="ul-strategy">
+                <li class="card">
+                    <div class="box-title">
+                        <p class="txt-title">장기 수익화 전략 <span>for Beginner</span></p>
+                    </div>
+                    <div class="box-thumb">
+                        <img class="img-mockup1" src="./static/images/challenge_mockup1.png" alt="">
+                        <img class="img-mockup2" src="./static/images/challenge_mockup2.png" alt="">
+                        <img class="img-mockup3" src="./static/images/challenge_mockup3.png" alt="">
+                        <img class="img-badge" src="./static/images/badge.png" alt="">
+                    </div>
+                    <div class="box-txt">
+
+                    </div>
+                    <div class="box-cta">
+                        <button type="submit">
+                            15일 전자책 완성하기
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="box-title">
+                        <p class="txt-title">단기 수익화 전략 <span>for Expert</span></p>
+                    </div>
+                    <div class="box-thumb">
+                        <img class="img-mockup4" src="./static/images/mingzan_profile.png" alt="">
+                        <img class="img-mockup5" src="./static/images/challenge_mockup5.png" alt="">
+                        <img class="img-mockup6" src="./static/images/challenge_mockup4.png" alt="">
+                        <img class="img-badge" src="./static/images/badge2.png" alt="">
+                    </div>
+                    <div class="box-txt">
+
+                    </div>
+                    <div class="box-cta">
+                        <button type="submit">
+                            전자책 펀딩 시작하기
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
