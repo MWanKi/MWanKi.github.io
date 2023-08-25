@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GJTHG7JNB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2GJTHG7JNB');
+    </script>
+	<title>밍잔 | 시드 스프라웃 코스 2.0</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW, NOARCHIVE">
+    <meta name="GOOGLEBOT" content="NOSNIPPET">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="naver-site-verification" content="22d00cae0c6f71c8eb815194f12fdda4890c0713" />
+    <link rel="shortcut icon" href="static/images/ico.png">
+	<link rel="stylesheet" href="./static/css/reset.css">
+	<link rel="stylesheet" href="./static/css/squeeze.css">
+	<link rel="stylesheet" href="./static/css/landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Hotjar Tracking Code for squeeze -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:3450788,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+
+        var queryString = window.location.search;
+        queryString = queryString.substring(1);
+
+        var params = {};
+        var paramPairs = queryString.split('&');
+        for (var i = 0; i < paramPairs.length; i++) {
+            var pair = paramPairs[i].split('=');
+            var key = decodeURIComponent(pair[0]);
+            var value = decodeURIComponent(pair[1]);
+            params[key] = value;
+        }
+
+        let html_title = '밍잔 | ';
+        let course_name = '';
+        let course_detail = '';
+        let img_src = '';
+        let tag = '';
+
+        $(function() {
+            var name = $('#name').val();
+            var email = $('#email').val();
+
+            if (name.length) {
+                $('#name').parent().addClass('hasValue');
+                return;
+            }
+
+            if (email.length) {
+                $('#email').parent().addClass('hasValue');
+                return;
+            }
+
+            function showLoading() {
+                $('i.fa-spinner').css({'display':'inline-block'});
+                $('i.fa-ticket').hide();
+            }
+
+            function hideLoading() {
+                $('i.fa-spinner').hide();
+                $('i.fa-ticket').css({'display':'inline-block'});
+            }
+
+            $('#contact-form').submit(function (e) {
+                e.preventDefault();
+                showLoading();
+
+                var name = $('#name').val();
+                if (!name) {
+                    $('#name').focus();
+                    hideLoading();
+                    return;
+                }
+
+                var email = $('#email').val();
+                if (!email) {
+                    $('#email').focus();
+                    hideLoading();
+                    return;
+                }
+
+                if (name.length && email.length) {
+                    $('button').attr('disabled', 'disabled');
+                    $.ajax({
+                        url: "https://script.google.com/macros/s/AKfycbznmuRLAH6hr_pVDHSFDDkUE5Z0wK_2y_ZCaJAn2UzIgc2MtLeEafXSUrwbdPmFUyKG/exec",
+                        data: {
+                            name: name,
+                            email: email,
+                            tag: 'seed_sprout',
+                        },
+                        type: "POST",
+                        success: function(data){
+                            hideLoading();
+                            location.href = "./c2VlZF9zcHJ.html?course_id=f1st";
+                        },
+                        error: function(request, status, error){
+                            console.log('Error');
+                            hideLoading();
+                            alert("문제가 발생했습니다. @mingzan.dev로 DM주세요!")
+                        }
+                    });
+                }
+            });
+
+            $('input').focus(function() {
+                $(this).parent().addClass('elInputFocused');
+            });
+
+            $('input').blur(function() {
+                $(this).parent().removeClass('elInputFocused');
+
+                if ($(this).val().length) {
+                    $(this).parent().addClass('hasValue');
+                } else {
+                    $(this).parent().removeClass('hasValue');
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+	<div class="container landing-container course-detail-container seed-sprout-container">
+        <div class="box-content">
+            <div class="box-header">
+                <div class="box-header-content">
+                    <a href="./landing.html">
+                        <div class="box-logo">
+                            <div class="box-profile">
+                                <img src="./static/images/profile_big.jpg" alt="프로필">
+                            </div>
+                            <div class="box-name">
+                                <p class="txt-name">밍잔</p>
+                                <p class="txt-role">지식 수익화 가이드</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="box-menu">
+                        <a href="./courses.html">Courses</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-hero">
+                <div class="box-top-copy">
+                    <p>
+                        0강부터 8강까지 무료로 수강하실 수 있습니다. 비용이 들지 않지만, 시간이 얼마 남지 않았습니다!
+                        <span>
+                            "권위를 깨고 지식과 경험을 수익화하는 마인드셋, 카피라이팅 그리고 <br/>
+                            디자인 테크닉, 펀딩 등록 비법까지
+                        </span>
+                        <strong>(10분이란 짧은 시간 안에)</strong> 당신의 지식을 배당금으로 바꾸기 시작해보세요!"
+                    </p>
+                </div>
+                <div class="box-hero-content">
+                    <div class="box-thumbnail">
+                        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/844636819?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="0강 - 펀딩을 먼저 해야하는 이유"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                    </div>
+                    <div class="box-form">
+                        <form class="" id="contact-form" method="post" action="#">
+                            <p class="txt-course-title">
+                                시드 스프라웃 코스 2.0:<br/>
+                                오늘 시작합니다!
+                            </p>
+                            <div class="box-timer">
+                                <div class="box-num box-hour">
+                                    <div class="box-value">00</div>
+                                    <p class="txt-label">HOUR</p>
+                                </div>
+                                <div class="box-num box-min">
+                                    <div class="box-value">00</div>
+                                    <p class="txt-label">MINUTES</p>
+                                </div>
+                                <div class="box-num box-sec">
+                                    <div class="box-value">00</div>
+                                    <p class="txt-label">SECONDS</p>
+                                </div>
+                            </div>
+                            <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block" type="name">
+                                <input class="elFormItem elInput inputHolder" id="name" type="name" name="name" placeholder="이름" maxlength="" required>
+                                <div class="elLabel">
+                                    <div class="borderHolder"></div>
+                                <div class="borderHolder labelText">
+                                    <label>이름</label>
+                                </div>
+                                <div class="borderHolder"></div>
+                            </div>
+                            <div class="inputHolder" data-input-status-type="true"></div>
+                            </div>
+                            <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block " type="email">
+                                <input class="elFormItem elInput inputHolder" id="email" type="email" name="email" placeholder="이메일" maxlength="" required>
+                                <div class="elLabel">
+                                    <div class="borderHolder"></div>
+                                <div class="borderHolder labelText">
+                                    <label>이메일</label>
+                                </div>
+                                <div class="borderHolder"></div>
+                            </div>
+                            <div class="inputHolder" data-input-status-type="true"></div><div class="mailcheck index0"></div>
+                            </div>
+                            <button type="submit">
+                                <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+                                <i class="fa fa-ticket" aria-hidden="true"></i>
+                                무료 수강 대기 등록
+                            </button>
+                            <div class="box-term">
+                                <p class="txt-term">
+                                    <i data-page-element="IconNode" class="fas fa-lock"></i>
+                                    귀하의 정보를 제공함으로써 귀하는 <a href="#">서비스 약관</a> 및 <a href="./privacy.html" target="_blank">개인정보보호정책</a>에 따라 귀하의 정보 수집 및 사용에 동의합니다.
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <span class="bg"></span>
+                <video src="./static/videos/hero.mp4" poster="" aria-label="Video" controlslist="nodownload" autoplay playsinline="" muted="muted" loop="" preload="auto" type="video/m3u8" x-webkit-airplay="allow"></video>
+            </div>
+            <div class="box-index">
+                <ul class="ul-index">
+                    <li><span class="chapter">1강</span> 잘 다니던 직장을 갑자기 잃는다면? <span class="txt-time">(10:24)</span></li>
+                    <li><span class="chapter">2강</span> 당신이 아직 전자책을 못 만든 이유와 초간단 해결법<span class="txt-time">(08:36)</span></li>
+                    <li><span class="chapter">3강</span> 의외로 잘 모르는 팔리는 주제 찾는 법<span class="txt-time">(06:25)</span></li>
+                    <li><span class="chapter">4강</span> 진짜 시장 조사를 통한 전자책 기획법<span class="txt-time">(09:35)</span></li>
+                    <li><span class="chapter">5강</span> 매출로 이어지는 목차 초간단 작성법<span class="txt-time">(13:13)</span></li>
+                    <li><span class="chapter">6강</span> 또 사고 싶다고 칭찬 들었던 전자책 작성법<span class="txt-time">(14:37)</span></li>
+                    <li><span class="chapter">7강</span> 권위가 없어도 팔리는 스토리 카피라이팅<span class="txt-time">(12:17)</span></li>
+                    <li><span class="chapter">8강</span> 내가 아닌 전자책에 권위를 부여하는 법<span class="txt-time">(05:19)</span></li>
+                    <li><span class="chapter">9강</span> 이과 개발자도 790% 판매한 상세페이지 스킬<span class="txt-time">(27:23)</span></li>
+                    <li><span class="chapter">10강</span> 미리캔버스 상세페이지 제작 비법<span class="txt-time">(59:53)</span></li>
+                    <li><span class="chapter">11강</span> 지나가던 사람도 멈춰 세우는 제목 짓는 법<span class="txt-time">(11:43)</span></li>
+                    <li><span class="chapter">12강</span> 인공지능 기술 활용한 고퀄리티 썸네일 제작법<span class="txt-time">(31:31)</span></li>
+                    <li><span class="chapter">13강</span> 전환율을 높이는 필수 펀딩 이벤트 3가지<span class="txt-time">(12:17)</span></li>
+                    <li><span class="chapter">14강</span> 반려 안 당하고 똑똑하게 펀딩 심사 제출하기<span class="txt-time">(46:42)</span></li>
+                    <li><span class="chapter">15강</span> 펀딩 진행중 절대 놓치면 안 되는 1가지<span class="txt-time">(11:31)</span></li>
+                    <li><span class="chapter">16강</span> 리워드 발송법 및 무사고 프로젝트 마무리<span class="txt-time">(18:05)</span></li>
+                </ul>
+            </div>
+            <div class="box-txt">
+                <div class="box-form card">
+                    <h2 class="txt-course-name"></h2>
+                    <p class="txt-course-desc">
+                        이번 달 월급이 불만족스러워 수입을 늘리고 싶지만<br/>
+                        진전 없는 상황이 지속되고 있나요?<br/><br/><br/>
+                        만약에 직장 밖에서 당신 스스로 돈 버는 방법<br/>
+                        알려드리면 진짜 실행하실건가요?<br/><br/><br/>
+                    </p>
+                    <div class="box-achievement box-course-achievement">
+                        <p class="txt-title">수강생 성과</p>
+                        <div class="image-container">
+                            <img src="./static/images/achieve1.png" alt="이미지 1">
+                            <img src="./static/images/achieve2.png" alt="이미지 2">
+                            <img src="./static/images/achieve3.png" alt="이미지 3">
+                            <img src="./static/images/achieve4.png" alt="이미지 4">
+                            <img src="./static/images/achieve5.png" alt="이미지 5">
+                        </div>
+                    </div>
+                    <p class="txt-course-desc">
+                        <span class="box-target">
+                            <span class="disc">스스로 돈 버는 방법을 모르는 사람</span>
+                            <span class="disc">언젠가 본인 사업을 하고 싶은 사람</span>
+                            <span class="disc">직장 없는 삶이 두려운 사람</span>
+                            <span class="disc">은퇴 후의 삶이 두려운 사람</span>
+                            <span class="disc">집에서 무력함을 느끼는 경단녀</span>
+                        </span>
+                        <br/><br/>
+                        이 코스는 당신과 같은 사람들에게 <br/>
+                        세상엔 당신의 지식이 필요한 사람이 많다는
+                        사실을 일깨워 새로운 인생을 살도록 돕기 위해 제작됩니다.<br/><br/>
+                        당신의 지지가 수많은 사람들의 인생을 바꾸는데에 <br/>
+                        큰 힘이 됩니다.<br/><br/>
+                    </p>
+                    <form class="" id="contact-form" method="post" action="#">
+                        <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block" type="name">
+                            <input class="elFormItem elInput inputHolder" id="name" type="name" name="name" placeholder="이름" maxlength="" required>
+                            <div class="elLabel">
+                                <div class="borderHolder"></div>
+                            <div class="borderHolder labelText">
+                                <label>이름</label>
+                            </div>
+                            <div class="borderHolder"></div>
+                        </div>
+                        <div class="inputHolder" data-input-status-type="true"></div>
+                        </div>
+                        <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block " type="email">
+                            <input class="elFormItem elInput inputHolder" id="email" type="email" name="email" placeholder="이메일" maxlength="" required>
+                            <div class="elLabel">
+                                <div class="borderHolder"></div>
+                            <div class="borderHolder labelText">
+                                <label>이메일</label>
+                            </div>
+                            <div class="borderHolder"></div>
+                        </div>
+                        <div class="inputHolder" data-input-status-type="true"></div><div class="mailcheck index0"></div>
+                        </div>
+                        <button type="submit">
+                            <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+                            <i class="fa fa-ticket" aria-hidden="true"></i>
+                            무료 수강 대기 등록
+                        </button>
+                        <div class="box-term">
+                            <p class="txt-term">
+                                <i data-page-element="IconNode" class="fas fa-lock"></i>
+                                귀하의 정보를 제공함으로써 귀하는 <a href="#">서비스 약관</a> 및 <a href="./privacy.html" target="_blank">개인정보보호정책</a>에 따라 귀하의 정보 수집 및 사용에 동의합니다.
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer" style="margin-top:0;">
+        <div class="box-content">
+            <a href="./privacy.html" target="_blank">
+                개인정보처리방침
+            </a>
+            <p class="txt-copyright">
+                © 2023 Mingzan
+            </p>
+        </div>
+    </div>
+</body>
+</html>
