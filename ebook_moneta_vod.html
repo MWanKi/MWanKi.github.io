@@ -42,6 +42,17 @@
 
     <script>
         let queryString = window.location.search;
+        queryString = queryString.substring(1);
+        let params = {};
+        let paramPairs = queryString.split('&');
+
+        for (let i = 0; i < paramPairs.length; i++) {
+            let pair = paramPairs[i].split('=');
+            let key = decodeURIComponent(pair[0]);
+            let value = decodeURIComponent(pair[1]);
+            params[key] = value;
+        }
+
         let durationChecker;
 
         function videoEmbedCodeGen() {
@@ -50,7 +61,7 @@
 
         $(function(){
             loadVideo($('.btn-load-video').eq(0));
-           
+
             function loadVideo(a) {
                 if (a.parent().hasClass('li-coming-soon')) {
                     alert('이전 강의를 먼저 시청하세요.');
@@ -59,11 +70,16 @@
                 clearInterval(durationChecker);
                 let content = videoEmbedCodeGen();
                 $('.video-container-new').html(content);
-                $('html, body').animate({scrollTop:0}, 'fast');
+
+                if (params.offer == "ns") {
+                    $('html, body').animate({scrollTop:$('#nextStep').offset().top}, 'fast');
+                } else {
+                    $('html, body').animate({scrollTop:0}, 'fast');
+                }
             }
         })
     </script>
-	
+
     <div class="box-content">
         <div class="box-header">
             <a class="btn-logo" href="./index.html">
@@ -91,7 +107,7 @@
                 <img src="./static/images/arrow.png" alt="">
                 <img src="./static/images/arrow.png" alt="">
             </div>
-            <p class="txt-next">
+            <p id="nextStep" class="txt-next">
                 이제 다음 스텝은?
             </p>
             <p class="txt-next-desc">
