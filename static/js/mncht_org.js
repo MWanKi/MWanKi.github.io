@@ -32,6 +32,8 @@ $(function(){
         return;
     }
 
+    history.pushState(null, null, './mnc_first_vod.html');
+
     $('input').focus(function() {
         $(this).parent().addClass('elInputFocused');
     });
@@ -68,7 +70,7 @@ $(function(){
         location.href = 'https://forms.gle/rHNd9WqFeiLse6UVA';
         return;
     });
-    
+
     $('#password-form').submit(function (e) {
         e.preventDefault();
 
