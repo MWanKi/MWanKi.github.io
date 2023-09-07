@@ -1503,9 +1503,35 @@ display: inline-block;
     font-weight: bold;
 }
 
+.box-next .ul-strategy li:last-child .box-cta #btn-manychat {
+    background-color: #ff0200;
+} 
+
+.box-next .ul-strategy li:last-child .box-cta #btn-manychat:hover {
+    background-color: #d40000;
+}
+
+.box-input-password {
+    max-width:560px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0px 10px 40px 0px rgba(29, 46, 59, 0.15);
+    border-radius: 20px;
+}
+
 @media (max-width: 471px) {
     .txt-free {
         font-size:70px;
+    }
+
+    .box-input-password {
+        margin: 0 10px;
+        padding: 32px 20px;
+    }
+
+    .box-input-password button {
+        font-size: 20px;
     }
 
     .ul-lecture li .box-thumb {
