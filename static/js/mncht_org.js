@@ -19,6 +19,22 @@ function blockPage() {
     $('.box-content').append('<h1 style="padding: 40px 0; text-align:center;">403 Forbidden<br/><br/>잘못된 접근입니다.</h1><p style="text-align:center; font-size:13px;">이 페이지를 다시 보시려면 <br/>보내드린 이메일 링크를 통해 접속해주세요.</p>');
 }
 
+function checkPlayTime() {
+    var player = new Vimeo.Player($("#player")[0]);
+    var currentPos, percentage, vdoEndTym = "";
+
+    player.on('timeupdate', function (getAll) {
+        currentPos = getAll.seconds;
+        vdoEndTym = getAll.duration;
+        percentage = (getAll.percent * 100);
+
+        if (percentage > 80) {
+            $('.box-next-video').fadeIn();
+        } else {
+            $('.box-next-video').fadeOut();
+        }
+    });
+}
 
 let durationChecker;
 
@@ -64,6 +80,12 @@ $(function(){
         } else {
             $('html, body').animate({scrollTop:0}, 'fast');
         }
+
+        try {
+            checkPlayTime();
+        } catch(e){
+            console.log(e);
+        }
     }
 
     $('#btn-manychat').click(function(){
@@ -84,7 +106,6 @@ $(function(){
             $('.box-input-password').remove();
             $('.box-title').show();
             $('.video-container-new').show();
-            $('.box-next-video').show();
             loadVideo($('.btn-load-video').eq(0));
 
         } else {
