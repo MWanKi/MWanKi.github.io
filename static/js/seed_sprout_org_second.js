@@ -57,6 +57,7 @@ $(function () {
         case "e8th":
             removeComingSoon(4);
             loadVideo($('.btn-load-video').eq(3));
+            $('.box-next-video').css({ 'display': 'block' });
             break;
         default:
             blockPage();
