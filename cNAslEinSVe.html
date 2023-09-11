@@ -66,7 +66,7 @@
 
         function removeComingSoon(eq) {
             for (let i = 0; i < eq; i++) {
-                $('.ul-lecture').find('> li').eq(i).removeClass('li-coming-soon');
+                $('.ul-lecture-new').find('> li').eq(i).removeClass('li-coming-soon');
             }
         }
 
@@ -89,20 +89,20 @@
 
             switch (params.course_id) {
                 case "f5th":
-                    loadVideo($('.btn-load-video').eq(0));
                     removeComingSoon(1);
+                    loadVideo($('.btn-load-video').eq(0));
                     break;
                 case "s6th":
-                    loadVideo($('.btn-load-video').eq(1));
                     removeComingSoon(2);
+                    loadVideo($('.btn-load-video').eq(1));
                     break;
                 case "s7th":
-                    loadVideo($('.btn-load-video').eq(2));
                     removeComingSoon(3);
+                    loadVideo($('.btn-load-video').eq(2));
                     break;
                 case "e8th":
-                    loadVideo($('.btn-load-video').eq(3));
                     removeComingSoon(4);
+                    loadVideo($('.btn-load-video').eq(3));
                     break;
                 default:
                     blockPage();
@@ -294,7 +294,7 @@
                             </p>
                             <p class="txt-desc">
                                 더 확실하게 전자책 펀딩에 성공하고 싶으신가요?
-                                <u>저는 강의가 없어서 여러가지 책부터 봤고, 덕분에 전자책 펀딩 노하우를 정리할 수 있었습니다.</u>
+                                <u>펀딩 강의가 없어서 책부터 봐야했고, 덕분에 전자책 펀딩 노하우를 정리할 수 있었습니다.</u>
                                 지금 당신에게 필요한 책 추천 리스트를 공개합니다.<br /><br />
 
                                 펀딩을 성공하고, 강의가 제작될 수 있도록 토대가 된 책들입니다.
