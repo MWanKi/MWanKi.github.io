@@ -50,14 +50,182 @@
                 </div>
                 <div class="box-name">
                     <p class="txt-name">밍잔</p>
-                    <p class="txt-role">시드 스프라웃 코스 2.0</p>
+                    <p class="txt-role">펀딩 성공시켜준 책 BEST 20</p>
                 </div>
             </a>
         </div>
     </div>
-    <div class="box-vod-content">
-
+    <div class="box-book-list">
+        <div class="box-content">
+            <ul class="ul-book-list">
+                <li>
+                    <div class="box-thumb">
+                        <img src="" alt="책 표지">
+                    </div>
+                    <div class="box-txt">
+                        <p class="txt-title"></p>
+                        <p class="txt-author"></p>
+                        <p class="txt-desc"></p>
+                        <button class="btn-buy btn-cart">링크 바로가기 <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </li>
+            </ul>
+            <p class="txt-coupang">
+                이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
+            </p>
+        </div>
     </div>
 </body>
+<script>
+    let bookData = {
+        "title": "",
+        "author": "",
+        "desc": "",
+        "link": "",
+    };
+    let bookList = [];
 
+    for (var i = 0; i < 20; i++) {
+        switch(i) {
+            case 0:
+                bookData.title = "클루지";
+                bookData.author = "개리 마커스";
+                bookData.desc = "인간의 의사결정 프로세스에는 결함이 있다는 사실을 알게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9rbZM";
+                break;
+            case 1:
+                bookData.title = "일러스트로 바로 이해하는 가장 쉬운 행동 경제학";
+                bookData.author = "마카베 아키오";
+                bookData.desc = "인간의 심리적 결함을 어떻게 이용해 행동을 유도할 수 있는지 여러가지 방법들을 알게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9rcBv";
+                break;
+                
+            case 2:
+                bookData.title = "뇌, 욕망의 비밀을 풀다";
+                bookData.author = "한스-게오르크 호이젤";
+                bookData.desc = "모두에게 같은 방법이 먹히는 게 아니라 인간의 나이와 호르몬 유형에 따라 다른 방법으로 접근해야 한다는 사실을 알게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9rdUp";
+                break;
+
+            case 3:
+                bookData.title = "설득의 심리학";
+                bookData.author = "로버트 치알디니";
+                bookData.desc = "구매하도록 설득하기 위해서는 심리를 이용하는 스킬이 필요하다는 걸 알게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9rgmd";
+                break;
+            case 4:
+                bookData.title = "초전 설득";
+                bookData.author = "로버트 치알디니";
+                bookData.desc = "설득 스킬만으로 먹히는 게 아니라 설득시키는 순간이 어떤 상황인지가 더 중요하다는 사실을 알게 됩니다.";
+                bookData.link = "https://product.kyobobook.co.kr/detail/S000000709526";
+                break;
+            case 5:
+                bookData.title = "무조건 팔리는 카피 단어장";
+                bookData.author = "간다 마사노리";
+                bookData.desc = "효과 있는 카피들만 모아 영단어 외우듯 외워서 상황에 따라 사용할 수 있게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9rgRp";
+                break;
+            case 6:
+                bookData.title = "마케터의 문장";
+                bookData.author = "가나가와 아키노리";
+                bookData.desc = "일반인을 위한 카피 입문서로 카피라이팅의 기초를 알게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9rhPK";
+                break;
+            case 7:
+                bookData.title = "나 코치의 파는 기술";
+                bookData.author = "나유업";
+                bookData.desc = "아이템과 리워드 구성이 소비자에게 합리적인 가격으로 느껴지려면 어떻게 전략을 세워야 하는지 알게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9rh0f";
+                break;
+            case 8:
+                bookData.title = "마케팅 설계자";
+                bookData.author = "러셀 브런슨";
+                bookData.desc = "똑같은 아이템을 팔더라도 2~3배 높은 가격에 팔 수 있는 방법에 대해 알게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9rigt";
+                break;
+            case 9:
+                bookData.title = "스틱!";
+                bookData.author = "칩 히스";
+                bookData.desc = "숫자가 아니라 이야기를 통해 감정을 자극해야 사람들을 움직일 수 있다는 사실을 알게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9ri9V";
+                break;
+            case 10:
+                bookData.title = "잘 팔리는 한 줄 카피";
+                bookData.author = "가와카미 데쓰야";
+                bookData.desc = "감정을 자극하기 위해선 어떤 욕망을 건드려야 하는지 명쾌하게 정리됩니다.";
+                bookData.link = "https://link.coupang.com/a/9rjxR";
+                break;
+            case 11:
+                bookData.title = "무기가 되는 스토리";
+                bookData.author = "도널드 밀러";
+                bookData.desc = "그런데 구매를 결심하게 하는 가장 강력한 수단은 내 이야기가 아니라 고객의 이야기여야한다는 사실을 알게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9rjZD";
+                break;
+            case 12:
+                bookData.title = "유혹하는 글쓰기";
+                bookData.author = "스티븐 킹";
+                bookData.desc = "팬을 만드는 글쓰기에서 절대 하면 안 되는 것들과 퇴고는 언제 무엇을 중점적으로 해야하는지 알게 됩니다.";
+                bookData.link = "https://www.yes24.com/Product/Goods/57665154";
+                break;
+            case 13:
+                bookData.title = "한 권으로 끝내는 전자책 만들기 그리고 종이책 만들기";
+                bookData.author = "황병욱(빈디노)";
+                bookData.desc = "전자책의 후킹되는 목차 작성부터 프롤로그, 에필로그 구성 그리고 글쓰기 방법까지 전반적인 작업 흐름을 알게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9rlMl";
+                break;
+            case 14:
+                bookData.title = "카피라이팅 12블록 테크닉";
+                bookData.author = "포리얼";
+                bookData.desc = "12단계로 나눠진 구매를 부르는 상세페이지 카피를 쓰는 방법에 대해 알게 됩니다.";
+                bookData.link = "https://checkout.infodience.com/products/%EC%B9%B4%ED%94%BC%EB%9D%BC%EC%9D%B4%ED%8C%85-12%EB%B8%94%EB%A1%9D-%ED%85%8C%ED%81%AC%EB%8B%89-%EC%BD%94%EC%8A%A4";
+                break;
+            case 15:
+                bookData.title = "제로창업";
+                bookData.author = "요시에 마사루";
+                bookData.desc = "초보가 전자책을 쓰는 마인드셋을 장착하고, 전자책 이후 어떤 다양한 방식으로 지식을 수익화할 수 있는지 알게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9rnrn";
+                break;
+            case 16:
+                bookData.title = "원씽";
+                bookData.author = "게리 켈러";
+                bookData.desc = "내가 이 전자책을 쓰는 이유를 스스로에게 납득시키고, 완성까지 지속할 수 있는 마인드셋을 장착합니다.";
+                bookData.link = "https://link.coupang.com/a/9rn1a";
+                break;
+            case 17:
+                bookData.title = "타이포그래피 천일야화";
+                bookData.author = "원유홍,서승연,송명민";
+                bookData.desc = "폰트의 사용법과 책 내지와 표지를 디자인할 때 반드시 지켜줘야하는 것들을 알게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9rorw";
+                break;
+            case 18:
+                bookData.title = "컬러 디자인 북 도시 속 컬러를 읽다";
+                bookData.author = "박명환";
+                bookData.desc = "왜 아무 컬러나 쓰면 안 되는지에 대해 한 번에 이해하게 됩니다.";
+                bookData.link = "https://search.kyobobook.co.kr/search?keyword=%EC%BB%AC%EB%9F%AC%20%EB%94%94%EC%9E%90%EC%9D%B8%20%EB%B6%81&gbCode=TOT&target=total";
+                break;
+            case 19:
+                bookData.title = "프레임";
+                bookData.author = "최인철";
+                bookData.desc = "프레임을 씌워 사람들의 인식을 바꾸는 방법에 대해 알게 됩니다.";
+                bookData.link = "https://link.coupang.com/a/9ro99";
+                break;
+        }
+
+        let newBook = $('.ul-book-list li').eq(0).clone();
+        newBook.find('.box-thumb img').attr('src', './static/images/book_list/'+(i+1)+'.jpg');
+        newBook.find('.txt-title').text(bookData.title);
+        newBook.find('.txt-author').text(bookData.author);
+        newBook.find('.txt-desc').text(bookData.desc);
+        newBook.find('.btn-buy').attr('data-href', bookData.link);
+        $('.ul-book-list').append(newBook);
+    }
+    $('.ul-book-list li').eq(0).remove();
+
+    $(document).on('click' ,'.btn-cart', function() {
+        let href = $(this).data('href');
+        // 새창으로 띄우기
+        window.open(href);
+
+    });
+</script>
 </html>
