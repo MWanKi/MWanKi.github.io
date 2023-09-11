@@ -42,116 +42,7 @@
 </head>
 
 <body>
-    <!-- <script src="./static/js/seed_sprout.js"></script> -->
-
-    <script>
-        let queryString = window.location.search;
-        let durationChecker;
-        queryString = queryString.substring(1);
-        let params = {};
-        let paramPairs = queryString.split('&');
-
-        for (let i = 0; i < paramPairs.length; i++) {
-            let pair = paramPairs[i].split('=');
-            let key = decodeURIComponent(pair[0]);
-            let value = decodeURIComponent(pair[1]);
-            params[key] = value;
-        }
-
-        function blockPage() {
-            $('.box-vod-content').remove();
-            $('.box-content').append('<h1 style="padding: 40px 0; text-align:center;">403 Forbidden<br/><br/>잘못된 접근입니다.</h1><p style="text-align:center; font-size:13px;">이 페이지를 다시 보시려면 <br/>보내드린 이메일 링크를 통해 접속해주세요.</p>');
-        }
-
-
-        function removeComingSoon(eq) {
-            for (let i = 0; i < eq; i++) {
-                $('.ul-lecture-new').find('> li').eq(i).removeClass('li-coming-soon');
-            }
-        }
-
-        function videoEmbedCodeGen(id) {
-            let videoData = {
-                '1': '848213500',
-                '2': '848399755',
-                '3': '848618400',
-                '4': '848669011',
-            }
-            let result = `<div style="padding:56.25% 0 0 0;position:relative;"><iframe id="player" src="https://player.vimeo.com/video/` + videoData[id] + `?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`
-            return result;
-        }
-
-        $(function () {
-            if (params.course_id == null) {
-                blockPage();
-                return;
-            }
-
-            switch (params.course_id) {
-                case "f5th":
-                    removeComingSoon(1);
-                    loadVideo($('.btn-load-video').eq(0));
-                    break;
-                case "s6th":
-                    removeComingSoon(2);
-                    loadVideo($('.btn-load-video').eq(1));
-                    break;
-                case "s7th":
-                    removeComingSoon(3);
-                    loadVideo($('.btn-load-video').eq(2));
-                    break;
-                case "e8th":
-                    removeComingSoon(4);
-                    loadVideo($('.btn-load-video').eq(3));
-                    break;
-                default:
-                    blockPage();
-                    break;
-            }
-
-            history.pushState(null, null, './cNAslEinSVe.html');
-
-            function loadVideo(a) {
-                if (a.parent().hasClass('li-coming-soon')) {
-                    alert('다음 강의는 이메일로 발송됩니다.');
-                    return;
-                }
-                clearInterval(durationChecker);
-                $('.txt-vod-title').text(a.find('.txt-title').text());
-                $('.ul-lecture-new li a').removeClass('active');
-                a.addClass('active');
-                let eq = a.parent().index() + 1;
-                let content = videoEmbedCodeGen(eq);
-                $('.box-next-video').hide();
-                $('.video-container-new').html(content);
-                $('html, body').animate({ scrollTop: 0 }, 'fast');
-            }
-
-            $('.btn-load-video').click(function () {
-                loadVideo($(this));
-                return false;
-            })
-
-            $('.box-next-video button').click(function () {
-                try {
-                    let nextLi = $('.ul-lecture-new li a.active').parent().next();
-
-                    if (nextLi.length == 0) {
-                        alert('다음 강의는 이메일로 발송됩니다. 메일함을 확인해주세요!')
-                        return;
-                    }
-
-                    nextLi.removeClass('li-coming-soon');
-                    let next = nextLi.find('a');
-                    loadVideo(next);
-                } catch (e) {
-                    console.log(e);
-                }
-
-                return false;
-            })
-        })
-    </script>
+    <script src="./static/js/seed_sprout_second.js"></script>
 
     <div class="box-content">
         <div class="box-header">
@@ -271,10 +162,57 @@
             <p class="txt-vod-title"></p>
         </div>
         <div class="video-container-new"></div>
-        <div class="box-next-video">
-            <button type="submit">
-                다음 강의 보기
-            </button>
+        <div class="box-next-video box-next-step">
+            <div class="box-next">
+                <div class="box-arrow">
+                    <img src="./static/images/arrow.png" alt="">
+                    <img src="./static/images/arrow.png" alt="">
+                    <img src="./static/images/arrow.png" alt="">
+                </div>
+                <p id="nextStep" class="txt-next">
+                    이제 다음 스텝은?
+                </p>
+                <p class="txt-next-desc">
+                    전자책으로 즉시 수익화를 원하시나요?<br />
+                    매출이 바로 일어나는 전자책 펀딩을 시작해보세요!
+                </p>
+                <ul class="ul-strategy">
+                    <li class="card">
+                        <div class="box-title">
+                            <span>초단기 수익화 플랜</span>
+                            <p class="txt-title">전자책 펀딩 스페셜 코스</p>
+                        </div>
+                        <div class="box-thumb">
+                            <img class="img-bg" src="./static/images/bg.png" alt="">
+                            <img class="img-mockup4" src="./static/images/mingzan_profile.png" alt="">
+                            <img class="img-mockup5" src="./static/images/challenge_mockup5.png" alt="">
+                            <img class="img-mockup6" src="./static/images/challenge_mockup4.png" alt="">
+                        </div>
+                        <div class="box-txt">
+                            <p class="txt-prod-name">시드 스프라웃 코스 2.0</p>
+                            <p class="txt-desc">
+                                나머지 VOD 16강을 수강하셔서
+                                당신의 노하우를 담은 전자책으로
+                                새로운 수익 파이프라인을 만들어 보세요!
+                            </p>
+                            <p class="txt-bonus">▼ 아래 버튼을 누르세요 ▼</p>
+                        </div>
+                        <div class="box-cta">
+                            <button id="btn-sprout" type="submit">
+                                전자책 수익화 시작하기
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <script>
+                            $('#btn-sprout').click(function () {
+                                // 새창으로 열기
+                                window.open('https://moneta.run/shop/item.php?it_id=1691985066', '_blank');
+                                return;
+                            });
+                        </script>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="box-learn-more">
             <div class="box-head-copy">
