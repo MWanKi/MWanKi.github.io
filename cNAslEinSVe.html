@@ -72,10 +72,10 @@
 
         function videoEmbedCodeGen(id) {
             let videoData = {
-                '1': '845025024',
-                '2': '845331296',
-                '3': '845946605',
-                '4': '846887098',
+                '1': '848213500',
+                '2': '848399755',
+                '3': '848618400',
+                '4': '848669011',
             }
             let result = `<div style="padding:56.25% 0 0 0;position:relative;"><iframe id="player" src="https://player.vimeo.com/video/` + videoData[id] + `?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`
             return result;
@@ -88,19 +88,19 @@
             }
 
             switch (params.course_id) {
-                case "f1st":
+                case "f5th":
                     loadVideo($('.btn-load-video').eq(0));
                     removeComingSoon(1);
                     break;
-                case "s2nd":
+                case "s6th":
                     loadVideo($('.btn-load-video').eq(1));
                     removeComingSoon(2);
                     break;
-                case "t3rd":
+                case "s7th":
                     loadVideo($('.btn-load-video').eq(2));
                     removeComingSoon(3);
                     break;
-                case "f4th":
+                case "e8th":
                     loadVideo($('.btn-load-video').eq(3));
                     removeComingSoon(4);
                     break;
@@ -109,11 +109,11 @@
                     break;
             }
 
-            history.pushState(null, null, './c2VlZF9zcHJ.html');
+            history.pushState(null, null, './cNAslEinSVe.html');
 
             function loadVideo(a) {
                 if (a.parent().hasClass('li-coming-soon')) {
-                    alert('이전 강의를 먼저 시청하세요.');
+                    alert('다음 강의는 이메일로 발송됩니다.');
                     return;
                 }
                 clearInterval(durationChecker);
@@ -125,12 +125,6 @@
                 $('.box-next-video').hide();
                 $('.video-container-new').html(content);
                 $('html, body').animate({ scrollTop: 0 }, 'fast');
-
-                try {
-                    checkPlayTime();
-                } catch (e) {
-                    console.log(e);
-                }
             }
 
             $('.btn-load-video').click(function () {
@@ -156,24 +150,6 @@
 
                 return false;
             })
-
-
-            function checkPlayTime() {
-                var player = new Vimeo.Player($("#player")[0]);
-                var currentPos, percentage, vdoEndTym = "";
-
-                player.on('timeupdate', function (getAll) {
-                    currentPos = getAll.seconds;
-                    vdoEndTym = getAll.duration;
-                    percentage = (getAll.percent * 100);
-
-                    if (percentage > 80) {
-                        $('.box-next-video').fadeIn();
-                    } else {
-                        $('.box-next-video').fadeOut();
-                    }
-                });
-            }
         })
     </script>
 
@@ -196,23 +172,21 @@
                 <li>
                     <a class="btn-load-video" href="#">
                         <div class="box-thumb">
-                            <img src="./static/images/thumbnails/chap1.jpg" alt="강의 썸네일">
-                            <span class="txt-time">10:24</span>
+                            <img src="./static/images/thumbnails/chap5.jpg" alt="강의 썸네일">
+                            <span class="txt-time">13:13</span>
                         </div>
                         <div class="box-txt">
                             <ul class="ul-index">
                                 <li>
-                                    <span class="chapter">1강</span>
+                                    <span class="chapter">5강</span>
                                     <p class="txt-title">
-                                        전자책 한 권으로 완전히 바뀌는 마인드셋 3가지
+                                        매출로 이어지는 목차 초간단 작성법
                                     </p>
                                     <p class="txt-creator">
                                         밍잔
                                     </p>
                                     <p class="txt-vod-desc">
-                                        만약에 본업을 갑자기 잃는다면 어떻게 해야 할까요?
-                                        저는 책임전가로 인해 제가 세웠던 법인회사에서 나와야 했고,
-                                        이후로 혼자서 생존을 위해 뭘 해야 할지 고민한 끝에...
+
                                     </p>
                                 </li>
                             </ul>
@@ -222,23 +196,21 @@
                 <li class="li-coming-soon">
                     <a class="btn-load-video" href="#">
                         <div class="box-thumb">
-                            <img src="./static/images/thumbnails/chap2.jpg" alt="강의 썸네일">
-                            <span class="txt-time">08:36</span>
+                            <img src="./static/images/thumbnails/chap6.jpg" alt="강의 썸네일">
+                            <span class="txt-time">14:37</span>
                         </div>
                         <div class="box-txt">
                             <ul class="ul-index">
                                 <li>
-                                    <span class="chapter">2강</span>
+                                    <span class="chapter">6강</span>
                                     <p class="txt-title">
-                                        당신이 아직 전자책을 못 만든 이유와 초간단 해결법
+                                        또 사고 싶다고 칭찬 들었던 전자책 작성법
                                     </p>
                                     <p class="txt-creator">
                                         밍잔
                                     </p>
                                     <p class="txt-vod-desc">
-                                        아직까지 실행을 하지 못 하고 있는 이유는 대부분 2가지입니다.
-                                        첫 번째는 스스로에게 자격이 없다고 생각하는 것이고,
-                                        두 번째는 너무 실력이 좋은 바람에 알려줄 수 있는...
+
                                     </p>
                                 </li>
                             </ul>
@@ -248,23 +220,21 @@
                 <li class="li-coming-soon">
                     <a class="btn-load-video" href="#">
                         <div class="box-thumb">
-                            <img src="./static/images/thumbnails/chap3.jpg" alt="강의 썸네일">
-                            <span class="txt-time">06:24</span>
+                            <img src="./static/images/thumbnails/chap7.jpg" alt="강의 썸네일">
+                            <span class="txt-time">12:17</span>
                         </div>
                         <div class="box-txt">
                             <ul class="ul-index">
                                 <li>
-                                    <span class="chapter">3강</span>
+                                    <span class="chapter">7강</span>
                                     <p class="txt-title">
-                                        의외로 잘 모르는 팔리는 주제 찾는 법
+                                        권위가 없어도 팔리는 스토리 카피라이팅
                                     </p>
                                     <p class="txt-creator">
                                         밍잔
                                     </p>
                                     <p class="txt-vod-desc">
-                                        경험상 처음 수익화를 시도하는 사람들의 대부분이 안 팔리는 전자책을 만듭니다.
-                                        하지만 일이 이렇게 흘러가게 되는 것도 이해가 갑니다.
-                                        그래서 어떻게 해야 되냐면...
+
                                     </p>
                                 </li>
                             </ul>
@@ -274,24 +244,21 @@
                 <li class="li-coming-soon">
                     <a class="btn-load-video" href="#">
                         <div class="box-thumb">
-                            <img src="./static/images/thumbnails/chap4.jpg" alt="강의 썸네일">
-                            <span class="txt-time">09:35</span>
+                            <img src="./static/images/thumbnails/chap8.jpg" alt="강의 썸네일">
+                            <span class="txt-time">05:19</span>
                         </div>
                         <div class="box-txt">
                             <ul class="ul-index">
                                 <li>
-                                    <span class="chapter">4강</span>
+                                    <span class="chapter">8강</span>
                                     <p class="txt-title">
-                                        진짜 시장 조사를 통한 전자책 기획법
+                                        내가 아닌 전자책에 권위를 부여하는 법
                                     </p>
                                     <p class="txt-creator">
                                         밍잔
                                     </p>
                                     <p class="txt-vod-desc">
-                                        어느정도 팔릴 것 같은 주제를 찾았다면, 전자책을 쓰기만 하면 됩니다.
-                                        그런데 대부분 상품 기획을 해본 적이 없어
-                                        어떻게 해야 할지 모르는 분들이 많습니다.
-                                        그래서 이번 강의에서는...
+
                                     </p>
                                 </li>
                             </ul>
@@ -312,7 +279,7 @@
         <div class="box-learn-more">
             <div class="box-head-copy">
                 <p class="txt-head-copy">
-                    <span class="txt-highlight">더 많은 정보를 원하시나요...?</span>그렇다면, 아래에 유료급 자료 2가지를 무료로 즉시 받아보세요:
+                    <span class="txt-highlight">더 많은 정보를 원하시나요...?</span>그렇다면, 아래에 추천 책 BEST 20 리스트를 둘러보세요:
                 </p>
             </div>
             <div class="box-free-resources">
@@ -323,7 +290,7 @@
                         </div>
                         <div class="box-txt">
                             <p class="txt-title">
-                                Step #1 - 지식 수익화 스타팅 가이드북을 읽어보세요...
+                                펀딩 성공을 도와준 책 BEST 20권 리스트
                             </p>
                             <p class="txt-desc">
                                 실력도 부족하고, 권위도 없어서 지식으로 돈을 벌 수 있을지 걱정되시나요?
@@ -344,39 +311,6 @@
                                         element.href = "https://m.site.naver.com/1cwyU";
                                         element.target = "_blank";
                                         element.download = "https://m.site.naver.com/1cwyU";
-                                        document.documentElement.appendChild(element);
-                                        element.click();
-                                        document.documentElement.removeChild(element);
-                                    });
-                                </script>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="box-thumb">
-                            <img src="./static/images/moneta_vod.jpg" alt="전자책 수익화 전략 VOD">
-                        </div>
-                        <div class="box-txt">
-                            <p class="txt-title">
-                                Step #2 - 전자책 수익화 전략 VOD를 시청해보세요!
-                            </p>
-                            <p class="txt-desc">
-                                지식을 수익화 할 마음의 결정을 하셨나요? 저는 이 전략을 알기 전까지 8년 동안 사업 실패를 경험했습니다.
-
-                                <b>이 강의는 당신이 저와 같은 고통을 겪지 않았으면 하는 바람에서 만들어졌습니다.</b><br /><br />
-
-                                오랫동안 다녔던 당신의 직장을 떠나 전자책에 도전할 정도로 진심이라면, 지금 바로 수익화 전략 정보를 얻어가세요!
-                            </p>
-                            <div class="box-cta">
-                                <button id="btn-vod" type="submit">
-                                    전자책 수익화 전략 VOD 무료 시청하기
-                                    <i class="fas fa-arrow-right"></i>
-                                </button>
-                                <script>
-                                    $('#btn-vod').click(function () {
-                                        let element = document.createElement("a");
-                                        element.href = "./ebook_moneta_vod.html";
-                                        element.target = "_blank";
                                         document.documentElement.appendChild(element);
                                         element.click();
                                         document.documentElement.removeChild(element);
