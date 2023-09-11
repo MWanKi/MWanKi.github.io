@@ -1598,13 +1598,14 @@ display: inline-block;
 
 .ul-book-list {
     display: grid;
+    padding: 10px;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin: 20px 0;
 }
 
 .ul-book-list li {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .ul-book-list li .box-thumb {
