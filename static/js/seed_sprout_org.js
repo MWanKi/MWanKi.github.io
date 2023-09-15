@@ -23,7 +23,7 @@ function removeComingSoon(eq) {
 
 function videoEmbedCodeGen(id) {
     let videoData = {
-        '1': '845025024',
+        '1': '864804478',
         '2': '845331296',
         '3': '845946605',
         '4': '846887098',
@@ -40,17 +40,17 @@ function videoEmbedCodeGen(id) {
         '15': '853364133',
         '16': '853705596',
     }
-    let result = `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/`+videoData[id]+`?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`
+    let result = `<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/` + videoData[id] + `?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`
     return result;
 }
 
-$(function(){
+$(function () {
     if (params.course_id == null) {
         blockPage();
         return;
-    } 
+    }
 
-    switch(params.course_id) {
+    switch (params.course_id) {
         case "f1st":
             $('.video-container').append(videoEmbedCodeGen('1'));
             removeComingSoon(1);
@@ -82,14 +82,14 @@ $(function(){
 
     history.pushState(null, null, './c2VlZF9zcHJvdXRfc2Vjb25kX3N0ZXA.html');
 
-    $('.btn-load-video').click(function() {
+    $('.btn-load-video').click(function () {
         $('.ul-lecture li a').removeClass('active');
         $(this).addClass('active');
         if ($(this).parent().hasClass('li-coming-soon')) return;
-        let eq = $(this).parent().index()+1;
+        let eq = $(this).parent().index() + 1;
         let content = videoData[eq];
         $('.video-container').html(content);
-        $('html, body').animate({scrollTop:0}, 'fast');
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
 
         return false;
     })
