@@ -37,105 +37,8 @@
             r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-
-        var queryString = window.location.search;
-        queryString = queryString.substring(1);
-
-        var params = {};
-        var paramPairs = queryString.split('&');
-        for (var i = 0; i < paramPairs.length; i++) {
-            var pair = paramPairs[i].split('=');
-            var key = decodeURIComponent(pair[0]);
-            var value = decodeURIComponent(pair[1]);
-            params[key] = value;
-        }
-
-        let html_title = '밍잔 | ';
-        let course_name = '';
-        let course_detail = '';
-        let img_src = '';
-        let tag = '';
-
-        $(function () {
-            var name = $('#name').val();
-            var email = $('#email').val();
-
-            if (name.length) {
-                $('#name').parent().addClass('hasValue');
-                return;
-            }
-
-            if (email.length) {
-                $('#email').parent().addClass('hasValue');
-                return;
-            }
-
-            function showLoading() {
-                $('i.fa-spinner').css({ 'display': 'inline-block' });
-                $('i.fa-ticket').hide();
-            }
-
-            function hideLoading() {
-                $('i.fa-spinner').hide();
-                $('i.fa-ticket').css({ 'display': 'inline-block' });
-            }
-
-            $('#contact-form').submit(function (e) {
-                e.preventDefault();
-                showLoading();
-
-                var name = $('#name').val();
-                if (!name) {
-                    $('#name').focus();
-                    hideLoading();
-                    return;
-                }
-
-                var email = $('#email').val();
-                if (!email) {
-                    $('#email').focus();
-                    hideLoading();
-                    return;
-                }
-
-                if (name.length && email.length) {
-                    $('button').attr('disabled', 'disabled');
-                    $.ajax({
-                        url: "https://script.google.com/macros/s/AKfycbznmuRLAH6hr_pVDHSFDDkUE5Z0wK_2y_ZCaJAn2UzIgc2MtLeEafXSUrwbdPmFUyKG/exec",
-                        data: {
-                            name: name,
-                            email: email,
-                            tag: 'seed_sprout',
-                        },
-                        type: "POST",
-                        success: function (data) {
-                            hideLoading();
-                            location.href = "./c2VlZF9zcHJ.html?course_id=f1st";
-                        },
-                        error: function (request, status, error) {
-                            console.log('Error');
-                            hideLoading();
-                            alert("문제가 발생했습니다. @mingzan.dev로 DM주세요!")
-                        }
-                    });
-                }
-            });
-
-            $('input').focus(function () {
-                $(this).parent().addClass('elInputFocused');
-            });
-
-            $('input').blur(function () {
-                $(this).parent().removeClass('elInputFocused');
-
-                if ($(this).val().length) {
-                    $(this).parent().addClass('hasValue');
-                } else {
-                    $(this).parent().removeClass('hasValue');
-                }
-            });
-        })
     </script>
+    <script src="./static/js/seed_sprout_squeeze.js"></script>
 </head>
 
 <body>
@@ -178,7 +81,6 @@
                                 frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
                                 style="position:absolute;top:0;left:0;width:100%;height:100%;"
                                 title="0강 - 펀딩을 먼저 해야하는 이유"></iframe></div>
-                        <script src="https://player.vimeo.com/api/player.js"></script>
                     </div>
                     <div class="box-form">
                         <form class="" id="contact-form" method="post" action="#">
@@ -200,57 +102,6 @@
                                     <p class="txt-label">SECONDS</p>
                                 </div>
                             </div>
-                            <script>
-                                // 현재 시간 구하기
-                                var now = new Date();
-
-                                // 현재 시간으로부터 1~5분 뒤 랜덤으로 구하기
-                                var random = Math.floor(Math.random() * 5) + 1;
-                                var randomTime = new Date(now.getTime() + random * 60000);
-
-                                // 분이 0으로 끝나지 않으면 0으로 끝나게 올림
-                                if (randomTime.getMinutes() % 10 != 0) {
-                                    randomTime.setMinutes(randomTime.getMinutes() + (10 - randomTime.getMinutes() % 10));
-                                }
-
-                                // 1초씩 카운트다운해서 적용하기
-                                var timer = setInterval(function () {
-                                    var now = new Date();
-                                    var diff = randomTime - now;
-
-                                    var hour = Math.floor(diff / 1000 / 60 / 60);
-                                    var min = Math.floor(diff / 1000 / 60) % 60;
-                                    var sec = Math.floor(diff / 1000) % 60;
-
-                                    // 2자리수로 변경
-                                    hour = hour < 10 ? '0' + hour : hour;
-                                    min = min < 10 ? '0' + min : min;
-                                    sec = sec < 10 ? '0' + sec : sec;
-
-                                    $('.box-hour .box-value').text(hour);
-                                    $('.box-min .box-value').text(min);
-                                    $('.box-sec .box-value').text(sec);
-
-                                    // .txt-time에 randomTime 시:분 넣기
-                                    let minute = randomTime.getMinutes();
-                                    // 2자리수로 변경
-                                    minute = minute < 10 ? '0' + minute : minute;
-                                    var time = randomTime.getHours() + ':' + minute;
-                                    $('.txt-time').text(time);
-
-                                    // txt-ampm에 오전 오후 넣기
-                                    var ampm = now.getHours() < 12 ? 'AM' : 'PM';
-                                    $('.txt-ampm').text(ampm);
-
-
-                                    if (diff <= 0) {
-                                        clearInterval(timer);
-                                        $('.box-hour .box-value').text('00');
-                                        $('.box-min .box-value').text('00');
-                                        $('.box-sec .box-value').text('00');
-                                    }
-                                }, 1000);
-                            </script>
                             <div data-page-element="Input/V1" class="elFormItemWrapper elInputWrapper de-input-block"
                                 type="name">
                                 <input class="elFormItem elInput inputHolder" id="name" type="name" name="name"
@@ -298,16 +149,22 @@
             </div>
             <div class="box-index">
                 <ul class="ul-index">
-                    <li><span class="chapter">1강</span> 잘 다니던 직장을 갑자기 잃는다면? <span class="txt-time">(10:24)</span></li>
+                    <li><span class="chapter">1강</span> 잘 다니던 직장을 갑자기 잃는다면? <span class="txt-time">(10:24)</span>
+                    </li>
                     <li><span class="chapter">2강</span> 당신이 아직 전자책을 못 만든 이유와 초간단 해결법<span
                             class="txt-time">(08:36)</span></li>
-                    <li><span class="chapter">3강</span> 의외로 잘 모르는 팔리는 주제 찾는 법<span class="txt-time">(06:25)</span></li>
-                    <li><span class="chapter">4강</span> 진짜 시장 조사를 통한 전자책 기획법<span class="txt-time">(09:35)</span></li>
-                    <li><span class="chapter">5강</span> 매출로 이어지는 목차 초간단 작성법<span class="txt-time">(13:13)</span></li>
+                    <li><span class="chapter">3강</span> 의외로 잘 모르는 팔리는 주제 찾는 법<span class="txt-time">(06:25)</span>
+                    </li>
+                    <li><span class="chapter">4강</span> 진짜 시장 조사를 통한 전자책 기획법<span class="txt-time">(09:35)</span>
+                    </li>
+                    <li><span class="chapter">5강</span> 매출로 이어지는 목차 초간단 작성법<span class="txt-time">(13:13)</span>
+                    </li>
                     <li><span class="chapter">6강</span> 또 사고 싶다고 칭찬 들었던 전자책 작성법<span class="txt-time">(14:37)</span>
                     </li>
-                    <li><span class="chapter">7강</span> 권위가 없어도 팔리는 스토리 카피라이팅<span class="txt-time">(12:17)</span></li>
-                    <li><span class="chapter">8강</span> 내가 아닌 전자책에 권위를 부여하는 법<span class="txt-time">(05:19)</span></li>
+                    <li><span class="chapter">7강</span> 권위가 없어도 팔리는 스토리 카피라이팅<span class="txt-time">(12:17)</span>
+                    </li>
+                    <li><span class="chapter">8강</span> 내가 아닌 전자책에 권위를 부여하는 법<span class="txt-time">(05:19)</span>
+                    </li>
                     <li><span class="chapter">9강</span> 이과 개발자도 790% 판매한 상세페이지 스킬<span class="txt-time">(27:23)</span>
                     </li>
                     <li><span class="chapter">10강</span> 미리캔버스 상세페이지 제작 비법<span class="txt-time">(59:53)</span></li>
