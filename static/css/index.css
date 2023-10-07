@@ -90,6 +90,9 @@ h1 span {
     height: 12px;
     opacity: .7;
     background: none;
+    position: absolute;
+    top: 4px;
+    left: 4px;
 }
 
 .ul-button li a .box-thumb .img-watermark.class101 {
