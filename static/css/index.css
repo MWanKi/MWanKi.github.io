@@ -65,10 +65,10 @@ h1 span {
     max-width: 120px;
 }
 
-.ul-button li a .box-thumb img {
+.ul-button li a .box-thumb .img-thumb {
     width: 100%;
+    min-width: 120px;
     margin: 10px 0 0 10px;
-    border-radius: 4px 4px 0 0;
 }
 
 .ul-button li>.box-snc .box-thumb img {
@@ -86,17 +86,24 @@ h1 span {
 
 .ul-button li a .box-thumb .img-watermark {
     width: auto;
+    min-width: auto;
     height: 12px;
     opacity: .7;
-    position: absolute;
     background: none;
-    top: 10px;
-    right: 0px;
 }
 
 .ul-button li a .box-thumb .img-watermark.class101 {
-    height: 10px;
-    right: 0px;
+    margin: 10px 0 0 10px;
+}
+
+.ul-button li a .box-thumb .img-watermark.tumblbug {
+    margin: 10px 0 0 10px;
+    height: 20px;
+}
+
+.ul-button li a .box-thumb .img-watermark.wadiz {
+    margin: 5px 0 0 2px;
+    height: 24px;
 }
 
 .ul-button li .box-snc .txt-title,
@@ -129,16 +136,14 @@ h1 span {
 
 .ul-button li .txt-cta {
     display: flex;
-    margin: 10px 10px 0;
-    height: 48px;
-    font-size: 15px;
-    color: #fff;
-    background-color: #ff5213;
-    border-radius: 4px;
+    margin: 20px 10px 10px;
+    font-size: 12px;
+    color: #ff5213;
     justify-content: center;
     align-items: center;
     line-height: 1;
     font-weight: 500;
+    justify-content: flex-end;
 }
 
 .ul-button li .txt-cta i {
@@ -150,14 +155,15 @@ h1 span {
     display: flex;
 }
 
-.ul-button li .txt-desc span {
+.ul-button li .txt-desc span i {
     color: #ff5213;
     position: relative;
-    top: -3px;
-    font-size: 20px;
+    top: 5px;
+    font-size: 16px;
     display: inline-block;
     margin-right: 6px;
 }
+
 
 .ul-career {
     max-width: 340px;
@@ -210,7 +216,7 @@ h1 span {
 }
 
 .ul-button li .txt-cta.disabled {
-    background: grey;
+    color: grey;
 }
 
 .ul-button li .txt-desc.txt-gadget {
@@ -230,4 +236,16 @@ h1 span {
 .txt-author {
     margin-top: 30px;
     font-weight: 500;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.label,
+.label i {
+    font-size: 12px;
+    color: #ff0900;
 }
