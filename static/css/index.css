@@ -252,3 +252,21 @@ h1 span {
     font-size: 12px;
     color: #ff0900;
 }
+
+.divider {
+    position: relative;
+    height: 50px;
+}
+
+.divider::after {
+    display: block;
+    content: '';
+    height: 2px;
+    width: 60px;
+    border-top: 3px dotted #ddd;
+    position: absolute;
+    top: calc(50% + 4px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
