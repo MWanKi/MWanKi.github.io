@@ -128,7 +128,7 @@ h1 span {
 .ul-button li a .box-desc .txt-progress {
     color: #ff5213;
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .ul-button li a .box-desc .txt-due {
