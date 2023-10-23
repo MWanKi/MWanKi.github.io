@@ -555,7 +555,7 @@ input:-webkit-autofill:active {
 .txt-btn-desc,
 .txt-btn-desc strong {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 16px;
+    font-size: 13px;
     font-weight: normal;
     display: block;
     margin-top: 8px;
@@ -1777,4 +1777,78 @@ input:-webkit-autofill:active {
 
 .hide {
     display: none;
+}
+
+.btn-no-thanks {
+    display: flex;
+    margin: 30px 0 10px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+    color: #353535;
+}
+
+.box-challenge-step .ul-challenge-step {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    padding-top: 20px;
+    align-items: center;
+}
+
+.box-challenge-step .ul-challenge-step li {
+    font-size: 14px;
+}
+
+.box-challenge-step .ul-challenge-step li.current {
+    background-color: #e1ebf3;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.box-challenge-step .ul-challenge-step li span {
+    font-weight: 900;
+}
+
+.box-challenge-step .ul-challenge-step .li-text i {
+    color: #21ba52
+}
+
+.box-path.vip {
+    padding: 30px 12px;
+    border: 2px solid rgb(31, 170, 255)
+}
+
+.box-path.vip ol li span {
+    white-space: nowrap;
+}
+
+.txt-free.premium {
+    color: rgb(31, 170, 255)
+}
+
+button.premium {
+    background: rgb(31, 170, 255)
+}
+
+.txt-alert {
+    width: 100%;
+    margin: 30px 0 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: dashed;
+    border-width: 3px;
+    border-color: #e44e38;
+    background: rgb(254, 242, 240);
+    font-size: 13px;
+}
+
+.txt-alert span {
+    color: #e44e38;
+    font-weight: bold;
+}
+
+.txt-no-risk {
+    font-size: 12px;
+    color: #999;
 }
