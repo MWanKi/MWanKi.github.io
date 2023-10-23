@@ -520,15 +520,17 @@ input:-webkit-autofill:active {
 }
 
 .box-path ol li span {
+    white-space: nowrap;
     color: rgb(228, 59, 44);
     font-weight: 900;
 }
 
 .txt-total-value {
     font-weight: 900;
-    font-size: 28px;
+    font-size: 26px;
     margin: 32px 0 16px;
     word-break: keep-all;
+    white-space: nowrap;
     color: rgb(228, 59, 44);
 }
 
