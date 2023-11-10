@@ -1,6 +1,3 @@
-let referrer = document.referrer;
-alert(referrer)
-
 let queryString = window.location.search;
 queryString = queryString.substring(1);
 let params = {};
@@ -15,15 +12,12 @@ for (let i = 0; i < paramPairs.length; i++) {
 
 function isOutsider() {
     let referrer = document.referrer;
-    alert(referrer)
-    let outsider = true;
-
-    // referrer에 30945536이 있는지 체크
-    if (referrer.indexOf('30945536') > -1) {
+    if (referrer.indexOf('30945536') > -1 ||
+        referrer.indexOf('localhost') > -1 ||
+        referrer.indexOf('127.0.0.1') > -1) {
         return false;
     }
-
-    return outsider;
+    return true;
 }
 
 
@@ -32,7 +26,7 @@ function blockPage() {
     $('.box-title').remove();
     $('.video-container-new').remove();
     $('.box-next-video').remove();
-    $('.box-content').append('<h1 style="padding: 40px 0; text-align:center;">403 Forbidden<br/><br/>잘못된 접근입니다.</h1><p style="text-align:center; font-size:13px;">이 페이지를 다시 보시려면 <br/>네이버 카페 커리큘럼 링크를 통해 접속해주세요.</p>');
+    $('.box-content').append('<div style="height:calc(100vh - 72px); display:flex; justify-content:center; align-items:center; flex-direction:column"><h1 style="margin-top:-72px; padding: 40px 0; text-align:center; line-height:.7">403 Forbidden<br/><br/>잘못된 접근입니다.</h1><p style="text-align:center; font-size:16px; line-height:1.7">이 페이지를 다시 보시려면 <br/>네이버 카페 커리큘럼 링크를 통해 접속해주세요.</p></div>');
 }
 
 function checkPlayTime() {
@@ -79,7 +73,8 @@ function videoEmbedCodeGen(id) {
 
 $(function () {
     if (params.course_id == null || isOutsider()) {
-        // blockPage();
+        blockPage();
+        history.pushState(null, null, './insta_automation.html');
         return;
     }
 
@@ -99,20 +94,14 @@ $(function () {
         }
     });
 
-    loadVideo($('.btn-load-video').eq(0));
-
     switch (params.course_id) {
         case "f1st":
-            $('.video-container').append(videoEmbedCodeGen('1'));
             break;
         case "s2nd":
-            $('.video-container').append(videoEmbedCodeGen('2'));
             break;
         case "t3rd":
-            $('.video-container').append(videoEmbedCodeGen('3'));
             break;
         case "f4th":
-            $('.video-container').append(videoEmbedCodeGen('4'));
             break;
         default:
             blockPage();
