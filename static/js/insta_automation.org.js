@@ -1,3 +1,5 @@
+let referrer = document.referrer;
+alert(referrer)
 
 let queryString = window.location.search;
 queryString = queryString.substring(1);
