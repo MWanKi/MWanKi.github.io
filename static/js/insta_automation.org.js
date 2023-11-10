@@ -14,10 +14,10 @@ function isOutsider() {
     let referrer = document.referrer;
     alert(referrer)
     if (referrer == undefined ||
-        referrer.indexOf('30945536') > -1 ||
-        referrer.indexOf('localhost') > -1 ||
-        referrer.indexOf('naver.com') > -1 ||
-        referrer.indexOf('127.0.0.1') > -1) {
+        referrer.includes('30945536') ||
+        referrer.includes('localhost') ||
+        referrer.includes('naver.com') ||
+        referrer.includes('127.0.0.1') ) {
         return false;
     }
     return true;
