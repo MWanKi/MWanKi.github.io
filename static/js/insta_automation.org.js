@@ -12,7 +12,6 @@ for (let i = 0; i < paramPairs.length; i++) {
 
 function isOutsider() {
     let referrer = document.referrer;
-    alert(referrer)
     if (referrer == undefined ||
         referrer.includes('30945536') ||
         referrer.includes('localhost') ||
