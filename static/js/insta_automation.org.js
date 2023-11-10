@@ -13,8 +13,10 @@ for (let i = 0; i < paramPairs.length; i++) {
 function isOutsider() {
     let referrer = document.referrer;
     alert(referrer)
-    if (referrer.indexOf('30945536') > -1 ||
+    if (referrer == undefined ||
+        referrer.indexOf('30945536') > -1 ||
         referrer.indexOf('localhost') > -1 ||
+        referrer.indexOf('naver.com') > -1 ||
         referrer.indexOf('127.0.0.1') > -1) {
         return false;
     }
