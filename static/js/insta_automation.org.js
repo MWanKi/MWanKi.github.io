@@ -13,10 +13,12 @@ for (let i = 0; i < paramPairs.length; i++) {
 function isOutsider() {
     let referrer = document.referrer;
     if (referrer == undefined ||
+        referrer == null ||
+        referrer == '' ||
         referrer.includes('30945536') ||
         referrer.includes('localhost') ||
         referrer.includes('naver.com') ||
-        referrer.includes('127.0.0.1') ) {
+        referrer.includes('127.0.0.1')) {
         return false;
     }
     return true;
