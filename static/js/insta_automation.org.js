@@ -67,7 +67,7 @@ function loadVideo(id) {
 function videoEmbedCodeGen(id) {
     let videoData = {
         '1': '883305389',
-        '2': '',
+        '2': '883719907',
         '3': '',
         '4': '',
     }
