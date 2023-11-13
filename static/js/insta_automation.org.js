@@ -13,6 +13,8 @@ for (let i = 0; i < paramPairs.length; i++) {
 function isOutsider() {
     let referrer = document.referrer;
     var userAgent = navigator.userAgent.toLowerCase();
+    alert("1:" + userAgent.includes('kakaotalk'));
+    alert("2:" + userAgent.includes('kakao'));
 
     if (userAgent.includes('kakaotalk') ||
         referrer == undefined ||
