@@ -13,6 +13,7 @@ for (let i = 0; i < paramPairs.length; i++) {
 function isOutsider() {
     let referrer = document.referrer;
     var userAgent = navigator.userAgent.toLowerCase();
+    alert(userAgent)
 
     if (userAgent.indexOf('kakao') > -1 ||
         referrer == undefined ||
