@@ -15,8 +15,11 @@ function isOutsider() {
     var userAgent = navigator.userAgent.toLowerCase();
 
     if (userAgent.includes('kakaotalk') ||
-        userAgent.includes('kakao') ||
-        referrer == undefined ||
+        userAgent.includes('kakao')) {
+        return true;
+    }
+
+    if (referrer == undefined ||
         referrer == null ||
         referrer == '' ||
         referrer.includes('30945536') ||
