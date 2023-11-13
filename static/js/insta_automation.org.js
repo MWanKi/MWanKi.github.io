@@ -13,10 +13,9 @@ for (let i = 0; i < paramPairs.length; i++) {
 function isOutsider() {
     let referrer = document.referrer;
     var userAgent = navigator.userAgent.toLowerCase();
-    alert("1:" + userAgent.includes('kakaotalk'));
-    alert("2:" + userAgent.includes('kakao'));
 
     if (userAgent.includes('kakaotalk') ||
+        userAgent.includes('kakao') ||
         referrer == undefined ||
         referrer == null ||
         referrer == '' ||
@@ -75,7 +74,7 @@ function videoEmbedCodeGen(id) {
         '1': '883305389',
         '2': '883719907',
         '3': '884035807',
-        '4': '',
+        '4': '884053386',
     }
     let result = `<div style="padding:56.25% 0 0 0;position:relative;"><iframe id="player" src="https://player.vimeo.com/video/` + videoData[id] + `?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`
     return result;
