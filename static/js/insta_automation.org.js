@@ -64,6 +64,7 @@ function loadVideo(id) {
     let content = videoEmbedCodeGen(id);
     $('.video-container-new').html(content);
     $('.video-container-new').show();
+    $('.box-inin').show();
 
     try {
         checkPlayTime();
