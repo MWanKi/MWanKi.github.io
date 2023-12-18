@@ -147,7 +147,7 @@ $(document).on('submit', '#password-form', function (e) {
     switch (btoa(password)) {
         case "NDQ3NTg5MDc1OQ==":
             // 12월 17일 이후인 경우 리턴
-            if (new Date() > new Date('2023-12-17')) {
+            if (new Date() > new Date('2024-01-17')) {
                 alert('시청기간이 만료되었습니다.');
                 return;
             }
@@ -155,7 +155,7 @@ $(document).on('submit', '#password-form', function (e) {
             break;
         case "MDAxODY1NTEyMQ==":
             // 12월 17일 이후인 경우 리턴
-            if (new Date() > new Date('2023-12-17')) {
+            if (new Date() > new Date('2024-01-17')) {
                 alert('시청기간이 만료되었습니다.');
                 return;
             }
@@ -163,7 +163,7 @@ $(document).on('submit', '#password-form', function (e) {
             break;
         case "NTg5ODA1MjExNA==":
             // 12월 17일 이후인 경우 리턴
-            if (new Date() > new Date('2023-12-17')) {
+            if (new Date() > new Date('2024-01-17')) {
                 alert('시청기간이 만료되었습니다.');
                 return;
             }
@@ -171,7 +171,7 @@ $(document).on('submit', '#password-form', function (e) {
             break;
         case "OTY3NzM0NzE5Nw==":
             // 12월 17일 이후인 경우 리턴
-            if (new Date() > new Date('2023-12-17')) {
+            if (new Date() > new Date('2024-01-17')) {
                 alert('시청기간이 만료되었습니다.');
                 return;
             }
