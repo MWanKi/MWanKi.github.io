@@ -51,9 +51,11 @@ function checkPlayTime() {
         percentage = (getAll.percent * 100);
 
         if (percentage > 80) {
-            $('.box-next-video').fadeIn();
+            // $('.box-next-video').fadeIn();
+            $('.box-inin').fadeIn();
         } else {
-            $('.box-next-video').fadeOut();
+            // $('.box-next-video').fadeOut();
+            $('.box-inin').fadeOut();
         }
     });
 }
@@ -64,7 +66,7 @@ function loadVideo(id) {
     let content = videoEmbedCodeGen(id);
     $('.video-container-new').html(content);
     $('.video-container-new').show();
-    $('.box-inin').show();
+
 
     try {
         checkPlayTime();
@@ -79,6 +81,7 @@ function videoEmbedCodeGen(id) {
         '2': '883719907',
         '3': '884035807',
         '4': '884053386',
+        '5': '899892194',
     }
     let result = `<div style="padding:56.25% 0 0 0;position:relative;"><iframe id="player" src="https://player.vimeo.com/video/` + videoData[id] + `?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`
     return result;
@@ -116,6 +119,8 @@ $(function () {
             break;
         case "f4th":
             break;
+        case "f5th":
+            break;
         default:
             blockPage();
             break;
@@ -145,38 +150,43 @@ $(document).on('submit', '#password-form', function (e) {
     // 2일차 : 0018655121 => MDAxODY1NTEyMQ==
     // 3일차 : 5898052114 => NTg5ODA1MjExNA==
     // 네이버 후기 : 9677347197 => OTY3NzM0NzE5Nw==
+    // 5일차 : 3149944219 => MzE0OTk0NDIxOQ==
     switch (btoa(password)) {
         case "NDQ3NTg5MDc1OQ==":
             // 12월 17일 이후인 경우 리턴
-            if (new Date() > new Date('2024-01-17')) {
+            if (new Date() > new Date('2025-01-17')) {
                 alert('시청기간이 만료되었습니다.');
                 return;
             }
             loadVideo('1');
             break;
         case "MDAxODY1NTEyMQ==":
-            // 12월 17일 이후인 경우 리턴
-            if (new Date() > new Date('2024-01-17')) {
+            if (new Date() > new Date('2025-01-17')) {
                 alert('시청기간이 만료되었습니다.');
                 return;
             }
             loadVideo('2');
             break;
         case "NTg5ODA1MjExNA==":
-            // 12월 17일 이후인 경우 리턴
-            if (new Date() > new Date('2024-01-17')) {
+            if (new Date() > new Date('2025-01-17')) {
                 alert('시청기간이 만료되었습니다.');
                 return;
             }
             loadVideo('3');
             break;
         case "OTY3NzM0NzE5Nw==":
-            // 12월 17일 이후인 경우 리턴
-            if (new Date() > new Date('2024-01-17')) {
+            if (new Date() > new Date('2025-01-17')) {
                 alert('시청기간이 만료되었습니다.');
                 return;
             }
             loadVideo('4');
+            break;
+        case "MzE0OTk0NDIxOQ==":
+            if (new Date() > new Date('2025-01-17')) {
+                alert('시청기간이 만료되었습니다.');
+                return;
+            }
+            loadVideo('5');
             break;
         default:
             alert('비밀번호가 틀렸습니다.');
