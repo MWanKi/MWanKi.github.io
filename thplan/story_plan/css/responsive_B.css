@@ -1,0 +1,103 @@
+@media (max-width: 1024px) {
+    .container { padding: 0 30px; }
+    .hero-main-title { font-size: 3.5rem; }
+    .f-top { flex-direction: column; align-items: flex-start; gap: 40px; }
+    .f-meta { text-align: left; }
+}
+
+@media (max-width: 768px) {
+    .b-nav { display: none; }
+    .b-header { height: 70px; }
+    .b-hero { padding-bottom: 80px; }
+    .hero-tagline { font-size: 1.1rem; }
+    .hero-main-title { font-size: 2.2rem; letter-spacing: -1.5px; }
+    .hero-sub-text { font-size: 1rem; padding-right: 20px; }
+}
+
+@media (max-width: 1024px) {
+    .problem-title { font-size: 2rem; }
+    .success-grid { gap: 40px 20px; }
+}
+
+@media (max-width: 768px) {
+    .b-problem { padding: 100px 0; }
+    .success-grid { grid-template-columns: 1fr; } /* 모바일 1열 배치 */
+    .problem-header { margin-bottom: 60px; }
+    .card-text h3 { font-size: 1.3rem; }
+}
+
+@media (max-width: 1024px) {
+    .infographic-layout { flex-direction: column; text-align: center; gap: 80px; }
+    .info-content-left { width: 100%; }
+    .info-visual-right { width: 100%; height: auto; padding-top: 50px; flex-direction: column; }
+    .connect-svg { display: none; } /* 모바일에서는 선을 숨김 */
+    .node-group { margin: 50px auto 0; width: 100%; max-width: 400px; }
+    .node-box { width: 100%; transform: none !important; }
+    .center-hub { margin: 0 auto; }
+}
+
+@media (max-width: 768px) {
+    .info-main-title { font-size: 2.2rem; }
+    .b-infographic { padding: 100px 0; }
+}
+
+
+
+@media (max-width: 1024px) {
+    .philo-grid {
+        grid-template-columns: 1fr; /* 모바일/태블릿 수직 정렬 */
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .philo-card {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .philo-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .funnel-grid {
+        padding: 0 20px;
+    }
+    .funnel-card {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .funnel-grid {
+        flex-direction: column; /* 모바일에서 수직 나열 */
+    }
+    .funnel-card {
+        width: 100%;
+        height: 300px;
+    }
+    .funnel-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact-container { flex-direction: column; gap: 80px; }
+    .contact-title { font-size: 2.8rem; }
+}
+
+@media (max-width: 768px) {
+    .contact-form-wrap { padding: 40px 25px; }
+    .contact-title { font-size: 2rem; }
+    .contact-details { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .f-brand-area { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .f-main-content { flex-direction: column; gap: 60px; }
+    .f-info-group address { font-size: 1rem; }
+    .f-bottom-bar { flex-direction: column-reverse; align-items: flex-start; gap: 30px; }
+    .f-slogan { display: none; }
+}

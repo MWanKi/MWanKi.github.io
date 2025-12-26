@@ -1,0 +1,671 @@
+/* 공통 변수 */
+:root {
+    --b-bg: #050505;
+    --b-accent: #ffffff;
+    --b-gray: #888888;
+    --b-line: rgba(255, 255, 255, 0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    background-color: var(--b-bg); 
+    color: #fff; 
+    font-family: 'Pretendard', sans-serif; 
+    overflow-x: hidden;
+}
+.container { max-width: 1400px; margin: 0 auto; padding: 0 50px; }
+
+.b-hero .container {
+  width:100%;
+}
+
+/* [HEADER] */
+.b-header {
+    position: fixed; top: 0; width: 100%; height: 90px;
+    z-index: 1000; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex; align-items: center;
+    border-bottom: 1px solid var(--b-line);
+}
+.b-header.scrolled {
+    height: 70px; background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(20px);
+}
+.header-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.logo-img { height: 35px; width: auto; }
+
+.b-nav { display: flex; align-items: center; gap: 40px; }
+.b-nav a { text-decoration: none; color: var(--b-gray); font-size: 13px; font-weight: 700; letter-spacing: 2px; transition: 0.3s; }
+.b-nav a:hover { color: #fff; }
+.nav-cta-b { border: 1px solid #fff; padding: 10px 25px; border-radius: 50px; color: #fff !important; }
+
+/* [SECTION 01: HERO] */
+.b-hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 120px 0;
+}
+
+/* 배경 및 가독성 버그 수정 */
+.b-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.noise-overlay {
+    position: absolute; width: 100%; height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.3; pointer-events: none;
+}
+.glow-point {
+    position: absolute; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+    top: -100px; right: -100px;
+}
+
+.hero-content-b { position: relative; z-index: 10; width: 100%; text-align: left; }
+.hero-tagline { font-size: 1.3rem; color: var(--b-gray); margin-bottom: 30px; line-height: 1.6; }
+.hero-tagline strong { color: #fff; border-bottom: 2px solid #fff; }
+
+.hero-main-title {
+    font-size: clamp(2.5rem, 6vw, 5.5rem); font-weight: 900;
+    line-height: 1.1; letter-spacing: -3px; margin-bottom: 35px;
+}
+
+.hero-sub-text { font-size: 1.15rem; color: #555; max-width: 650px; margin-bottom: 60px;  line-height: 1.6; }
+
+/* 스크롤 아이콘 */
+.b-scroll-guide { display: flex; align-items: center; gap: 15px; }
+.mouse-icon { width: 22px; height: 38px; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 20px; position: relative; }
+.wheel { 
+    width: 3px; height: 6px; background: #fff; border-radius: 2px; 
+    position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+    animation: scrollAnim 2s infinite; 
+}
+@keyframes scrollAnim {
+    0% { opacity: 0; top: 5px; }
+    30% { opacity: 1; }
+    100% { opacity: 0; top: 22px; }
+}
+.scroll-label { font-size: 11px; letter-spacing: 2px; color: rgba(255, 255, 255, 0.3); font-weight: 800; }
+
+/* ================================================= */
+/* [FOOTER] PREMIUM DARK THEME */
+/* ================================================= */
+.b-footer {
+    padding: 100px 0 60px;
+    background-color: #050505;
+    border-top: 1px solid #111;
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+
+/* 브랜드 영역 */
+.f-brand-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #1a1a1a;
+    margin-bottom: 60px;
+}
+
+.f-logo { height: 28px; width: auto; opacity: 0.9; }
+.f-slogan { font-size: 11px; font-weight: 800; color: #333; letter-spacing: 3px; }
+
+/* 메인 콘텐츠 레이아웃 */
+.f-main-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    margin-bottom: 100px;
+}
+
+.f-label {
+    font-size: 10px;
+    font-weight: 900;
+    color: var(--b-accent); /* 포인트 블루 */
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+/* 기업 정보 */
+.f-info-group address {
+    font-style: normal;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 500;
+    margin-bottom: 40px;
+    word-break: keep-all;
+}
+
+.f-meta p { font-size: 13px; color: #555; margin-bottom: 8px; font-weight: 500; }
+.f-meta span { color: #222; font-weight: 800; margin-right: 15px; font-size: 11px; }
+
+/* 소셜 링크 */
+.f-social-links { display: flex; flex-direction: column; gap: 15px; }
+.f-link-item {
+    font-size: 14px;
+    font-weight: 700;
+    color: #666;
+    text-decoration: none;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.f-link-item:hover { color: #fff; transform: translateX(8px); }
+
+/* 하단 바 */
+.f-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    border-top: 1px solid #1a1a1a;
+}
+
+.f-copyright { font-size: 12px; color: #333; font-weight: 600; }
+
+.f-back-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    transition: 0.4s;
+}
+
+.f-back-top .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #222;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.f-back-top:hover .arrow {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    transform: translateY(-5px);
+}
+
+
+/* ================================================= */
+/* [SECTION 02] PROBLEM & SUCCESS STYLE */
+/* ================================================= */
+/* 2섹션 기본 베이스 */
+.b-problem { padding: 160px 0; background-color: #050505; }
+.problem-header { text-align: center; margin-bottom: 100px; }
+.problem-title { font-size: 2.8rem; font-weight: 800; line-height: 1.4; color: #fff; }
+.problem-desc { margin-top: 20px; color: #666; font-size: 1.1rem; line-height: 1.6; }
+
+
+/* 포인트 블루 박스 */
+.highlight-box { 
+    background-color: #3b82f6; color: #fff; padding: 0 12px; 
+    display: inline-block; transform: skewX(-10deg); /* 살짝 기울여서 역동성 부여 */
+}
+
+/* 그리드 레이아웃 */
+.success-grid { 
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px 40px; 
+}
+
+/* 카드 인터랙션 설정 */
+.success-card { 
+    cursor: pointer; perspective: 1000px; /* 3D 효과를 위한 원근법 */
+}
+
+.card-img-wrap { 
+    width: 100%; aspect-ratio: 16 / 10; overflow: hidden; 
+    margin-bottom: 25px; border-radius: 4px; background: #111;
+}
+
+.card-img-wrap img { 
+    width: 100%; height: 100%; object-fit: cover; 
+    transition: transform 0.2s ease-out; /* 틸트 반응 속도 */
+    will-change: transform;
+}
+
+.card-text h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; color: #fff; }
+.card-text .blue { color: #3b82f6; }
+.card-text p { color: #888; font-size: 1rem; line-height: 1.6; }
+
+/* ================================================= */
+/* [SECTION 03] PARTNERS STYLE */
+/* ================================================= */
+.b-partners {
+    padding: 160px 0;
+    background-color: #ffffff; /* 신뢰감을 주는 화이트 배경 */
+    color: #111;
+}
+
+.partners-header { text-align: center; margin-bottom: 80px; }
+.client-tag { color: #3b82f6; font-weight: 800; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; }
+.partners-title { font-size: 2.5rem; font-weight: 800; line-height: 1.3; margin: 20px 0; letter-spacing: -1.5px; }
+.blue-text { color: #3b82f6; }
+.partners-sub { color: #666; font-size: 1.1rem; }
+
+/* 탭 스타일 */
+.partner-tabs {
+    display: flex; justify-content: center; gap: 15px; margin-bottom: 60px;
+}
+.tab-btn {
+    padding: 12px 24px; border: 1px solid #eee; background: none; border-radius: 50px;
+    font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; color: #888;
+}
+.tab-btn.active, .tab-btn:hover {
+    background: #111; color: #fff; border-color: #111;
+}
+
+/* 로고 그리드 */
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4열 배치 */
+    gap: 20px;
+}
+
+.logo-item {
+    height: 120px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid #f0f0f0;
+    background: #fff;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    filter: grayscale(1); /* 기본 흑백 */
+    opacity: 0.6;
+}
+
+.logo-item span {
+    font-size: 15px; font-weight: 800; color: #222;
+}
+
+.logo-item:hover {
+    filter: grayscale(0); /* 호버 시 컬러 */
+    opacity: 1;
+    border-color: #3b82f6;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* 탭 전환 시 애니메이션 효과를 위한 클래스 */
+.logo-item.hide { display: none; }
+.logo-item.show { animation: fadeIn 0.5s forwards; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* [SECTION 04] 정밀 레이아웃 */
+.b-infographic {
+    padding: 160px 0;
+    background: #050505;
+    color: #fff;
+    overflow: hidden;
+}
+
+.infographic-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    min-height: 550px;
+}
+
+/* 좌측 영역 */
+.info-content-left { width: 40%; z-index: 10; }
+.info-badge { color: #0056ff; font-weight: 900; font-size: 13px; letter-spacing: 2px; }
+.info-main-title { font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.2; margin: 25px 0; }
+.info-main-title .accent { color: #0056ff; text-shadow: 0 0 20px rgba(0, 86, 255, 0.3); }
+.info-description { color: #888; font-size: 1.15rem; line-height: 1.8; }
+
+/* 우측 비주얼 영역 */
+.info-visual-right {
+    width: 55%;
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* 코어 원형 */
+.center-hub { position: relative; z-index: 10; flex-shrink: 0; }
+.hub-circle {
+    width: 110px; height: 110px;
+    background: radial-gradient(circle, #0056ff 0%, #0033cc 100%);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 40px rgba(0, 86, 255, 0.4);
+}
+.hub-label { font-weight: 950; font-size: 14px; letter-spacing: 1px; }
+.hub-caption { position: absolute; top: 130px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-weight: 700; font-size: 14px; }
+
+/* 펄스 애니메이션 */
+.glow-ring {
+    position: absolute; width: 100%; height: 100%;
+    border: 1px solid #0056ff; border-radius: 50%;
+    animation: hubPulse 3s infinite ease-out;
+}
+.glow-ring.delay { animation-delay: 1.5s; }
+@keyframes hubPulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2.3); opacity: 0; }
+}
+
+/* SVG 라인 */
+.connect-svg {
+    position: absolute;
+    left: 110px; /* hub-circle 너비만큼 이격 */
+    top: 5%;
+    width: calc(100% - 390px); /* 노드 박스 공간 확보 */
+    height: 90%;
+    z-index: 1;
+}
+.svg-path {
+    fill: none; stroke: #0056ff; stroke-width: 1.5; opacity: 0.3;
+    stroke-dasharray: 1000; stroke-dashoffset: 1000;
+}
+.b-infographic.active .svg-path { animation: lineFlow 2.5s forwards ease-in-out; }
+@keyframes lineFlow { to { stroke-dashoffset: 0; } }
+
+/* 노드 카드 */
+.node-group { margin-left: auto; display: flex; flex-direction: column; gap: 20px; z-index: 10; }
+.node-box {
+    width: 280px; background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px 25px; border-radius: 12px;
+    display: flex; align-items: center; gap: 20px;
+    backdrop-filter: blur(10px); transition: 0.4s;
+}
+.node-box:hover { border-color: #0056ff; transform: translateX(10px); background: rgba(0, 86, 255, 0.05); }
+.node-num { font-size: 10px; font-weight: 900; color: #0056ff; border: 1px solid #0056ff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.node-txt h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 3px; color: #fff; }
+.node-txt p { font-size: 0.9rem; color: #666; }
+
+
+/* ================================================= */
+/* [SECTION 05] PHILOSOPHY STYLE */
+/* ================================================= */
+.b-philosophy {
+    padding: 160px 0;
+    background-color: #000; /* 깊이감 있는 블랙 */
+}
+
+.philo-header {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.trust-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid var(--b-accent);
+    color: var(--b-accent);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+
+.philo-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -1.5px;
+}
+
+.blue-point {
+    color: var(--b-accent);
+    position: relative;
+    display: inline-block;
+}
+
+/* 카드 그리드 레이아웃 */
+.philo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.philo-card {
+    background: #0a0a0a;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 50px 40px;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.philo-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 2px;
+    background: var(--b-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+}
+
+.philo-card:hover {
+    transform: translateY(-10px);
+    background: #111;
+    border-color: rgba(0, 86, 255, 0.3);
+}
+
+.philo-card:hover::before {
+    transform: scaleX(1);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.card-body h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.card-body p {
+    font-size: 1.05rem;
+    color: var(--b-gray);
+    line-height: 1.7;
+    word-break: keep-all;
+}
+
+/* ================================================= */
+/* [SECTION 06] FUNNEL STYLE */
+/* ================================================= */
+.b-funnel {
+    padding: 120px 0;
+    background-color: #3b82f6; /* 레퍼런스 이미지의 블루 배경색 */
+    text-align: center;
+}
+
+.funnel-tag {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.funnel-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 60px;
+    letter-spacing: -1.5px;
+}
+
+/* 그리드 레이아웃 */
+.funnel-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.funnel-card {
+    flex: 1;
+    height: 500px;
+    position: relative;
+    border-radius: 4px; /* 레퍼런스처럼 약간 각진 모서리 */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.funnel-img-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.funnel-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 다크 오버레이 */
+.overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* 기본 어두움 */
+    transition: background 0.4s ease;
+}
+
+.funnel-txt-wrap {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 10;
+    color: #fff;
+}
+
+.funnel-txt-wrap h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.funnel-txt-wrap p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+/* 상담하기 버튼 */
+.funnel-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background: #fff;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* 호버 효과 */
+.funnel-card:hover img {
+    transform: scale(1.1);
+}
+
+.funnel-card:hover .overlay {
+    background: rgba(0, 0, 0, 0.3); /* 호버 시 밝아짐 */
+}
+
+.funnel-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+
+/* [SECTION 07] CONTACT PREMIUM FIX */
+.b-contact { padding: 180px 0; background-color: #050505; color: #fff; }
+.contact-container { display: flex; align-items: flex-start; gap: 100px; }
+
+.contact-info { flex: 0.8; }
+.contact-label { font-size: 11px; font-weight: 900; color: #444; letter-spacing: 5px; margin-bottom: 40px; }
+.contact-title { font-size: clamp(2.5rem, 4.5vw, 3.8rem); font-weight: 800; line-height: 1.15; color: #444; }
+.contact-title .focus-text { color: #fff; display: block; margin: 15px 0; }
+
+.contact-notice { margin-top: 60px; border-top: 1px solid #222; padding-top: 40px; }
+.contact-notice p { font-size: 1.05rem; color: #555; line-height: 1.8; margin-bottom: 10px; }
+
+/* Form Design */
+.contact-form-wrap { flex: 1.2; width: 100%; }
+.input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.input-group { margin-bottom: 50px; }
+.input-group label { display: block; font-size: 10px; font-weight: 700; color: #333; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 2px; }
+
+.input-group input, .input-group select, .input-group textarea {
+    width: 100%; background: none; border: none; border-bottom: 1px solid #1a1a1a;
+    padding: 15px 0; color: #fff; font-size: 15px; font-family: inherit; outline: none; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-group input:focus, .input-group select:focus, .input-group textarea:focus {
+    border-bottom-color: #fff;
+}
+
+/* Premium Button (방정맞지 않은 무게감) */
+.premium-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 80px;
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 0; /* 각진 디자인이 더 신뢰감을 줌 */
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-text {
+    position: relative;
+    z-index: 5;
+    color: #fff;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 3px;
+    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-bg {
+    position: absolute;
+    top: 100%; /* 아래에서 위로 올라오는 묵직한 효과 */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* 호버 시: 배경이 올라오고 글자는 검은색으로 */
+.premium-btn:hover {
+    border-color: #fff;
+}
+
+.premium-btn:hover .btn-bg {
+    top: 0;
+}
+
+.premium-btn:hover .btn-text {
+    color: #000;
+}
